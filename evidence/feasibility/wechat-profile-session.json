@@ -1,0 +1,145 @@
+{
+  "at": "2026-10-17T22:24:56.179186+08:00",
+  "status": "prepared_user_terminal_result_pending",
+  "goal_service_status_observed": "blocked",
+  "new_goal_created": false,
+  "authorization": {
+    "received": true,
+    "scope": "One new <=600 second two-account homepage/list experiment",
+    "temporary_user_CA_trust": "mp.weixin.qq.com only",
+    "proxy": "Active service HTTPS only, original upstream retained and restored",
+    "excluded": [
+      "chat/DB/keychain-session scanning",
+      "other accounts",
+      "HTTP/PAC/VPN changes",
+      "global dependencies",
+      "background installation",
+      "publication",
+      "TLS bypass"
+    ]
+  },
+  "agent_execution": {
+    "command": ".venv/bin/python -m validation profile-capture-session",
+    "terminal_allocated": true,
+    "exit_code": 2,
+    "reason_observed": "preflight_system_authorization_unavailable",
+    "stage": "read-only fresh baseline query",
+    "at_observed_beijing": "2026-10-17 22:20",
+    "new_experiment_created_by_agent": false,
+    "system_changes_by_agent": false,
+    "CA_generated_or_trusted_by_agent": false,
+    "network_requests_by_agent": 0
+  },
+  "current_local_observation": {
+    "experiment_directory_exists": false
+  },
+  "prior_recorded_recovery": {
+    "verified": true,
+    "process_stopped": true,
+    "note": "Prior record only, not a new system-state check"
+  },
+  "implementation": {
+    "module": "validation/profile_capture.py",
+    "match": "HTTPS exact host/path, two biz IDs, GET/200, home/getmsg only",
+    "response_body_in_proxy_read": false,
+    "stored_fields": "Fixed query/header/Cookie allowlists only; no raw request or flow",
+    "storage": ".auth/wechat-capture/profile-session/requests; 0700/0600",
+    "existing_article_credentials_replaced": false,
+    "per_account": "First action snapshot only; first offset=0 count<=10 list probed once",
+    "freshness_seconds": 30,
+    "minimum_probe_gap_seconds": 2,
+    "transport": "Existing system curl; HTTPS/TLS; no env proxy, redirects or retries",
+    "raw_response_persisted": false,
+    "credential_hash_persisted": false,
+    "omitted_query_field_count_recorded": true,
+    "raw_request_exact_replay_claimed": false,
+    "recovery_command": ".venv/bin/python -m validation profile-capture-recover",
+    "old_closed_recovery_cannot_modify_current_system": true
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 164,
+    "passed": 160,
+    "skipped": 4,
+    "failures": 0,
+    "log": ".tmp/wechat-session-validation/profile-session-tests.log",
+    "log_sha256": "cb29529db4610311a5caa1fb823bd55ff9c960547be3d34dd43a1c6e066604e9",
+    "skip_reasons": [
+      "3 browser integration tests not enabled",
+      "1 loopback bind permission denied"
+    ],
+    "new_evidence": [
+      "constructed target matching and field minimization",
+      "real private files, expiry/no-overwrite/one-probe gates",
+      "constructed worker and separate recovery routing",
+      "actual optional component headers/options and local test CA, no trust/listener/network"
+    ],
+    "not_equivalent_to": [
+      "live profile session",
+      "actual system trust/proxy restoration",
+      "real article/comment/full screenshot",
+      "sleep/wake recovery"
+    ]
+  },
+  "user_action_requested": {
+    "command": "cd /Users/chenge/project/liumo && .venv/bin/python -m validation profile-capture-session",
+    "when_ready": "Normally open the two account homepages and article lists in Mac WeChat",
+    "authentication": "User handles macOS prompt if shown",
+    "manual_token_or_enter_required": false,
+    "authorization_again_required": false
+  },
+  "not_verified": [
+    "new live capture and immediate functional use",
+    "this experiment actual recovery",
+    "real multi-article pagination/coverage and publication time",
+    "real comments/replies and original single full screenshot",
+    "automatic reacquisition/natural renewal",
+    "abnormal shutdown and device sleep/wake"
+  ],
+  "prior_evidence_preserved": [
+    "evidence/feasibility/wechat-session-live-attempt.json",
+    "evidence/feasibility/wechat-autonomous-validation.json"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "8118e99aa989c8cb49065672b69bbe51dae315a6858efe752a0c697d9f55d615",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "d3841e6d34db26153acd210d4af22b1f5bac414126f27f97e74fda0003edbe89",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "6be3970522295fb43b35d5bdd50c88752500a81136d1753c43e3a9ecb0b37bb3",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "0ed44faab04450bda502c6fb9cbedbb0b5b4b0cc4d3baabc4a0fed41a5ce1c1b",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "0b91fa4213da5d9c097d648ff5d9852ceffa2bc1d29ac47a2de74480a0777b1b",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "delivery_checks": {
+    "markdown_files": 10,
+    "local_links": 167,
+    "python_ast_files": 33,
+    "result": "passed",
+    "scope": "Static checks only, not live system/browser verification"
+  }
+}

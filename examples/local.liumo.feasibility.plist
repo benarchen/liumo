@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>local.liumo.feasibility</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/chenge/project/liumo/.venv/bin/python</string>
+		<string>-m</string>
+		<string>validation</string>
+		<string>schedule</string>
+		<string>--state</string>
+		<string>/Users/chenge/project/liumo/state/feasibility-schedule.json</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/chenge/project/liumo</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartCalendarInterval</key>
+	<dict/>
+	<key>StandardOutPath</key>
+	<string>/Users/chenge/project/liumo/logs/feasibility-schedule.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/chenge/project/liumo/logs/feasibility-schedule-error.log</string>
+</dict>
+</plist>

@@ -1,0 +1,68 @@
+{
+  "checked_at_beijing": "2026-10-20 23:31",
+  "scope": "initial_engineering_baseline_not_product_acceptance",
+  "baseline_tag": "baseline-20261020",
+  "branches": [
+    "main",
+    "dev"
+  ],
+  "target_repository": "https://github.com/benarchen/liumo",
+  "authorization": "user_explicit_local_git_commit_annotated_tag_and_public_github_sync",
+  "tests": {
+    "command": "LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v",
+    "tests": 415,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 43.516,
+    "environment": "approved_execution_local_browser_and_loopback",
+    "sandbox_initial_attempt": "408_tests_4_errors_1_skipped_browser_launch_and_loopback_not_passed"
+  },
+  "public_scope": [
+    "source",
+    "tests",
+    "dependency_manifests",
+    "docs",
+    "sanitized_evidence",
+    "constructed_examples"
+  ],
+  "excluded": [
+    ".auth/",
+    "archives/",
+    "state/",
+    ".tmp/",
+    ".venv/",
+    ".venv-capture/",
+    "node_modules/",
+    ".env",
+    "*.log",
+    "local_ai_configuration"
+  ],
+  "scan_scope": [
+    "private_key_markers",
+    "common_github_and_cloud_tokens",
+    "literal_credential_assignments",
+    "sensitive_query_values",
+    "email_patterns",
+    "candidate_file_types_sizes_and_symlinks",
+    "manual_review_of_findings"
+  ],
+  "reviewed_matches": "constructed_test_values_public_article_ids_and_authorization_descriptions_or_paths_no_real_credentials_identified",
+  "notification_visibility": "confirmed_by_user_in_conversation",
+  "runtime_observation": {
+    "last_feed_success": "2026-10-20T15:30:05.453734+00:00",
+    "feed_items": 20,
+    "discovered": 0,
+    "pending_or_failed": 0,
+    "formal_counts": {
+      "baseline": 20
+    }
+  },
+  "not_validated": [
+    "formal_post_activation_new_article_archive",
+    "device_sleep_wake",
+    "physical_network_disconnect_recovery",
+    "long_term_source_reliability"
+  ],
+  "git_identity_verification": "use_actual_local_refs_and_remote_refs_after_commit_and_push_no_self_referential_commit_hash_in_this_record"
+}

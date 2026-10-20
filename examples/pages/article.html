@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>留墨构造页面，不是真实公众号</title>
+<style>body{max-width:740px;margin:30px auto;font:18px/1.8 sans-serif}img{max-width:100%}.spacer{height:1400px}aside,footer{background:#eee;padding:18px}</style>
+<h1>留墨构造页面</h1><p>测试作者 · 2026-10-16 22:00（构造时间）</p>
+<article data-liumo-body>
+<p>这是第一段，用于验证<strong>正文</strong>和配图的离线保存。</p>
+<div class="spacer">长页面中段，用于触发懒加载。</div>
+<img loading="lazy" alt="构造配图" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aATkAAAAASUVORK5CYII=">
+<h2>正文末尾</h2><p>末尾标记：BODY-END。</p>
+</article>
+<section data-liumo-comments>
+<h2>留言</h2><div data-liumo-comment>构造评论一。</div>
+<button id="expand">展开回复</button><div id="reply" hidden data-liumo-comment>构造回复：REPLY-END。</div>
+</section>
+<aside>页面附属区域：点赞、分享入口的静态示意，不执行外部动作。</aside>
+<footer>页面底部：PAGE-END。</footer>
+<script>
+document.querySelector('#expand').addEventListener('click',function(){document.querySelector('#reply').hidden=false;this.remove()});
+const params=new URLSearchParams(location.search), c=document.querySelector('[data-liumo-comments]');
+if(params.get('comments')==='none')c.innerHTML='<p>暂无留言</p>';
+if(params.get('comments')==='failed')c.innerHTML='<p>评论加载失败</p>';
+if(params.get('comments')==='inaccessible')c.innerHTML='<p>请在微信客户端打开以查看留言</p>';
+if(params.get('comments')==='unknown')c.remove();
+if(params.get('image')==='failed')document.querySelector('img').src='missing.png';
+if(params.get('long')==='true')document.querySelector('.spacer').style.height='120000px';
+</script>
+</html>

@@ -1,0 +1,25 @@
+{
+  "at_beijing": "2026-10-17 00:25",
+  "evidence": "constructed_input",
+  "test": "test_stable_source_identity_url_alias_preserves_archive_and_scan",
+  "before": {
+    "command": ".venv/bin/python -m unittest discover -s tests -k stable_source_identity_url_alias -v",
+    "tests_run": 1,
+    "subtest_failures": 3,
+    "statuses": [
+      "pending",
+      "partial",
+      "complete"
+    ],
+    "issue": "identity_or_time_changed",
+    "complete_scan": false
+  },
+  "after": {
+    "full_suite_passed": true,
+    "tests_run": 35,
+    "source_identity_and_time_unchanged": true,
+    "duplicate_tasks_created": false,
+    "original_archive_state_and_url_preserved": true
+  },
+  "live_source_verified": false
+}

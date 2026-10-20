@@ -1,0 +1,210 @@
+{
+  "at": "2026-10-18T11:49:16.321008+08:00",
+  "status": "ended_UI_refresh_observed_control_and_recovery_passed_profile_route_unobserved",
+  "goal_service_status_last_observed": "blocked",
+  "new_goal_created": false,
+  "prepared_index": "evidence/feasibility/wechat-ui-diagnostic-session.json",
+  "authorization": {
+    "system_experiment_received": true,
+    "scope_unchanged": "One new credential-free 120 second experiment, current Mac HTTPS proxy with retained upstream, mp.weixin.qq.com-only trust, exact recovery",
+    "additional_screenshot_approval": "received explicitly from user after the specific request"
+  },
+  "user_feedback": {
+    "target": "right-side 猫笔刀 homepage",
+    "foreground_and_chat_hidden_confirmed": true,
+    "public_profile_and_article_cards_visible_in_user_supplied_image": true,
+    "timestamp_of_agent_refresh": null,
+    "user_image_copied_to_archive": false
+  },
+  "UI_observation": {
+    "getApp_connected": true,
+    "AX_window_title": "微信 (窗口)",
+    "AX_content": "window controls and menus; no target profile accessibility content",
+    "screenshot_produced": true,
+    "rejection_bypassed": false,
+    "refresh_performed": true,
+    "whole_app_screenshot_auto_review_rejected_previously": true,
+    "screenshot_produced_after_specific_approval": true,
+    "observed_target": "猫笔刀 profile and article list only",
+    "chat_content_observed": false,
+    "coordinate_click_results": "AXError.notImplemented; no menu or refresh confirmed",
+    "escape_key_delivered": true,
+    "next_control_method": "Normal Command+R shortcut visible in prior user-provided WeChat menu screenshot; only after control gate and before-sample",
+    "refresh_key": "Command+R",
+    "successful_refresh_key_deliveries": 1,
+    "first_key_attempt_blocked_due_user_change": true,
+    "fresh_state_read_before_successful_key": true,
+    "refresh_key_UTC": [
+      "2026-10-18T03:46:29.544Z",
+      "2026-10-18T03:46:29.552Z"
+    ],
+    "immediate_visual_change": "card images became placeholders",
+    "followup_visual_change": "card images reloaded and engagement values changed",
+    "raw_screenshots_in_local_archive": false,
+    "screenshot_evidence": "Computer Use outputs in this conversation; only safe summaries persisted",
+    "previous_auto_review_rejection_reason": "可能捕获微信私密内容；要求针对该具体截图的新增授权",
+    "screenshot_approval_received_and_capture_succeeded": true
+  },
+  "current_experiment_directory_exists": true,
+  "prior_experiments_preserved": true,
+  "program_test_hashes_match_prepared_188_index": true,
+  "program_tests_rerun": false,
+  "pending_actions": [],
+  "not_verified": [
+    "actual current homepage network route, origin/process and request parameters",
+    "cause and application origin of the pre-refresh certificate alert",
+    "functional source/pagination/publication times",
+    "comments/replies and original full-page screenshot",
+    "natural renewal, abnormal shutdown and device sleep/wake"
+  ],
+  "actions_this_turn": {
+    "UI_clicks": 0,
+    "credentials_read_or_changed": false,
+    "system_proxy_or_trust_changes": false,
+    "new_network_control_requests": 0,
+    "new_dependencies": false,
+    "Git_commit_or_push": false,
+    "UI_coordinate_click_attempts": 2,
+    "UI_coordinate_clicks_confirmed": 0,
+    "escape_key_delivered": true,
+    "screenshot_after_explicit_approval": true,
+    "successful_refresh_key_deliveries": 1,
+    "system_changes": "one authorized temporary host-limited trust and HTTPS proxy, restoration verified by controller",
+    "network_control_requests": 1,
+    "credentials_collected_or_read": false,
+    "source_comment_probes": 0
+  },
+  "delivery_checks": {
+    "at": "2026-10-18T11:50:43.681905+08:00",
+    "markdown_files": 10,
+    "local_links": 218,
+    "python_AST_files": 36,
+    "artifact_hashes_verified": 9,
+    "result": "passed",
+    "scope": "Current document/link/AST and artifact consistency; program tests inherited only by unchanged hashes"
+  },
+  "live_result": {
+    "started_UTC": "2026-10-18T03:45:14.054324+00:00",
+    "deadline_beijing": "2026-10-18T11:47:14.019845+08:00",
+    "duration_seconds": 120,
+    "trust_scope_verified": true,
+    "proxy_roundtrip_verified": true,
+    "final_status": "restored",
+    "reason": "session_window_expired",
+    "finished": true,
+    "capture_disabled": true,
+    "control": {
+      "status": "https_response_observed",
+      "request_attempted": true,
+      "cookies_or_tokens_sent": false,
+      "proxy_response_observed": true,
+      "account_access_verified": false,
+      "curl_exit_code": 0,
+      "http_status": 200,
+      "counters_at_control_end": {
+        "control_target_requests_seen": 1,
+        "control_target_responses_seen": 1
+      }
+    },
+    "recovery": {
+      "proxy": "restored_and_read_back",
+      "trust": "revoked_and_checked",
+      "safe_to_stop_proxy": true,
+      "verified": true
+    },
+    "proxy_process_stopped": true,
+    "capture": {
+      "running": false,
+      "passthrough_only": true,
+      "diagnostics": {
+        "control_target_requests_seen": 1,
+        "control_target_responses_seen": 1,
+        "tls_client_failures_seen": 1,
+        "tls_client_failures_target": 1,
+        "tls_client_target_reason_certificate_alert": 1
+      },
+      "status": "closed",
+      "saved_by_account": {},
+      "events": {},
+      "authentication_verified": false,
+      "automatic_renewal_verified": false
+    },
+    "conclusion": {
+      "at": "2026-10-18T03:49:16.320569+00:00",
+      "status": "diagnostic_finished_functional_route_not_verified",
+      "control_HTTP": 200,
+      "control_request_count": 1,
+      "control_response_count": 1,
+      "successful_refresh_key_deliveries": 1,
+      "UI_reload_observed": true,
+      "images_reloaded": true,
+      "engagement_numbers_changed": true,
+      "ordinary_target_HTTP_requests": 0,
+      "ordinary_target_HTTP_responses": 0,
+      "TLS_target_client_certificate_alerts": 1,
+      "TLS_alerts_before_successful_refresh_key": 1,
+      "TLS_alert_delta_from_before_to_followup": 0,
+      "can_attribute_alert_to_refresh": false,
+      "can_identify_actual_profile_network_route": false,
+      "recovery": {
+        "proxy": "restored_and_read_back",
+        "trust": "revoked_and_checked",
+        "safe_to_stop_proxy": true,
+        "verified": true
+      },
+      "proxy_process_stopped": true,
+      "credentials_collected": false,
+      "functional_source_or_archive_verified": false,
+      "further_user_action": "none for this experiment; do not rerun",
+      "next": "Stop repeating this unchanged interception experiment; establish supported current profile loading route from read-only evidence before any new system experiment"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "archives/feasibility/20261018T034548665318Z-ui-refresh-observation/after-followup.json",
+      "sha256": "61643dad200d2ee61d67fcb3a2dbda80b30ebacb0c9f344db0a2ecb45d083340"
+    },
+    {
+      "path": "archives/feasibility/20261018T034548665318Z-ui-refresh-observation/after.json",
+      "sha256": "4155c3d5ac1760de1f1bbfdb894bee145d962b253ca7343aa110f4a4c7daae2a"
+    },
+    {
+      "path": "archives/feasibility/20261018T034548665318Z-ui-refresh-observation/before-confirmed.json",
+      "sha256": "b7e2faa3120f532aa862a99ffd6e644557ccccd68f9cba1b7df2ab6b38ab56a5"
+    },
+    {
+      "path": "archives/feasibility/20261018T034548665318Z-ui-refresh-observation/before.json",
+      "sha256": "3ccce08e42ac1c9ea797f1ecd4d7f544fa2a8263fe16135cb582710b9f1e453d"
+    },
+    {
+      "path": "archives/feasibility/20261018T034548665318Z-ui-refresh-observation/blocked-key-attempt.json",
+      "sha256": "dc9fb58f33afef7db49a5006e1dc4b30303393068a91512a2f481f620209e398"
+    },
+    {
+      "path": "archives/feasibility/20261018T034548665318Z-ui-refresh-observation/conclusion.json",
+      "sha256": "4972eb3208e410e3e387e047d88ddcb6121aa1fa7ed78aa78a7981b874a10338"
+    },
+    {
+      "path": "archives/feasibility/20261018T034548665318Z-ui-refresh-observation/ui-followup.json",
+      "sha256": "5cf79c71e0a4ca97817396e58f9720180df410ad2b0bb8bfb53284b0cc4badc9"
+    },
+    {
+      "path": "archives/feasibility/20261018T034548665318Z-ui-refresh-observation/ui-observation.json",
+      "sha256": "1305668acc2d161e1f095b97881864d82910129ddca79b83e5d46b9ef7467eb9"
+    },
+    {
+      "path": "archives/feasibility/20261018T034741829995Z-ui-transport-diagnostic-session/session-summary.json",
+      "sha256": "ab2a21cb55ef5530d441f85fac8828b64486b4ab47b47b3aa32f1eff520f5f04"
+    }
+  ],
+  "user_action_required_now": "none; experiment ended and restored, old commands must not be rerun",
+  "decision": "No evidence that another identical refresh/capture would solve the route gap; defer further system experiments and do read-only route investigation",
+  "goal_completed": false,
+  "program_tests": {
+    "total": 188,
+    "passed": 184,
+    "skipped": 4,
+    "rerun_this_turn": false,
+    "basis": "All program/test hashes match the tested independent entry index; this turn only evidence/docs changed"
+  }
+}

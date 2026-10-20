@@ -1,0 +1,192 @@
+{
+  "reviewed_at_beijing": "2026-10-17 10:13",
+  "evidence": "real_article_via_user_terminal",
+  "artifact_directory": "/Users/chenge/project/liumo/archives/feasibility/20261017T014629454536Z-article",
+  "source_url": "https://mp.weixin.qq.com/s/ihaxygZIbs2HwXMNiMaqEg",
+  "account_name_observed": "猫笔刀",
+  "expected_account": "猫笔刀",
+  "account_label_matches": true,
+  "title": "上个月最值的一笔消费",
+  "status": "partial",
+  "metadata_sha256": "ef5ca7aed2baf48c13d7a0918b1efa01716e28f81a3ff1c4ac59d3359abbab11",
+  "screenshot": {
+    "dimensions": {
+      "width": 1100,
+      "height": 4292
+    },
+    "sha256": "69ef49f654cfa5c719ba26be8f5fc5c5416bcb0c2f9e4c4630230d6abbafaed7",
+    "visual_review": "body beginning, middle, ending, two article illustrations and video poster visible; comments and normal footer not confirmed"
+  },
+  "text_checks": {
+    "nonempty_source_lines": 38,
+    "lines_found_in_markdown_without_whitespace": 38,
+    "unmatched_lines": 0,
+    "first_and_last_line_present": true
+  },
+  "images": {
+    "downloaded": 2,
+    "hashes_match": true,
+    "failed_indices": [
+      2
+    ],
+    "failure_root_cause": "Second real capture identifies index 2 as a source-less, invisible, zero-size js_tail_panel_account_avatar; old artifacts preserved. Narrow code fix has constructed regression only.",
+    "offline_visual_review": {
+      "index_0": "local chart image opened and matches screenshot",
+      "index_1": "local robot illustration opened and matches screenshot",
+      "png_dimensions": {
+        "0": [
+          1080,
+          701
+        ],
+        "1": [
+          1080,
+          519
+        ]
+      }
+    }
+  },
+  "comments": {
+    "result": "failed_or_inaccessible_not_no_comments",
+    "failed_requests": 4,
+    "visible_observations": [
+      {
+        "id": "js_comment_bottom_text",
+        "visible": true
+      },
+      {
+        "id": "js_a11y_comment_btn_txt",
+        "visible": false
+      },
+      {
+        "id": "js_bt_cmt_container",
+        "visible": false
+      }
+    ],
+    "root_cause": "Second capture observes HTTP 200 / business code -3 from /mp/appmsg_comment; meaning not established, no more same-direction retry."
+  },
+  "publication_time": {
+    "visible_text": "2026年10月16日 07:20",
+    "epoch_candidate": "1792160400",
+    "epoch_in_shanghai": "2026-10-16T22:20:00+08:00",
+    "epoch_in_los_angeles": "2026-10-16T07:20:00-07:00",
+    "interpretation": "visible 07:20 matches Los Angeles conversion; browser time zone was not recorded, so do not interpret visible time as Shanghai or automatically verify source list time"
+  },
+  "full_archive_passed": false,
+  "automatic_discovery_passed": false,
+  "body_selector_observed": "#js_content was present in this real sample; external PR report does not establish universal removal",
+  "first_reviewed_at_beijing": "2026-10-17 09:49",
+  "diagnostic_capture": {
+    "reviewed_at_beijing": "2026-10-17 10:13",
+    "artifact_directory": "/Users/chenge/project/liumo/archives/feasibility/20261017T021042329739Z-article",
+    "status": "partial",
+    "metadata_sha256": "55a3613ce824a5731561ac92d897f1c36f1f0f68abab81b3c810b919aa1e498a",
+    "observation_sha256": "f3ba51273d934aaa9200aae1d8479eb30234b0d838484571b5fa55260e925281",
+    "screenshot_sha256": "69ef49f654cfa5c719ba26be8f5fc5c5416bcb0c2f9e4c4630230d6abbafaed7",
+    "screenshot_dimensions": {
+      "width": 1100,
+      "height": 4292
+    },
+    "visual_review": "Full image inspected: article beginning, ending, two body illustrations and video poster; no comment text or normal footer completeness confirmed.",
+    "text_check": {
+      "nonempty_lines": 38,
+      "matched_in_markdown": 38
+    },
+    "local_images_hashes_match": true,
+    "comments": {
+      "status": "failed",
+      "reason": "comment_request_failed_no_retry",
+      "expanded": 0,
+      "failed_comment_requests": 4,
+      "request_failures": [
+        {
+          "reason": "business_rejected",
+          "host": "mp.weixin.qq.com",
+          "path": "/mp/appmsg_comment",
+          "http_status": 200,
+          "business_code": -3
+        },
+        {
+          "reason": "business_rejected",
+          "host": "mp.weixin.qq.com",
+          "path": "/mp/appmsg_comment",
+          "http_status": 200,
+          "business_code": -3
+        },
+        {
+          "reason": "business_rejected",
+          "host": "mp.weixin.qq.com",
+          "path": "/mp/appmsg_comment",
+          "http_status": 200,
+          "business_code": -3
+        },
+        {
+          "reason": "business_rejected",
+          "host": "mp.weixin.qq.com",
+          "path": "/mp/appmsg_comment",
+          "http_status": 200,
+          "business_code": -3
+        }
+      ]
+    },
+    "empty_avatar_node": {
+      "index": 2,
+      "source_host": null,
+      "has_source": false,
+      "complete": true,
+      "natural_width": 0,
+      "natural_height": 0,
+      "visible": false,
+      "rendered_width": 0,
+      "rendered_height": 0,
+      "parent_tag": "div",
+      "id": "js_tail_panel_account_avatar",
+      "alt": ""
+    },
+    "publication_time": {
+      "browser_time_zone": "America/Los_Angeles",
+      "visible_text": "2026年10月16日 07:20",
+      "epoch_candidate": "1792160400",
+      "converted_beijing": "2026-10-16T22:20:00+08:00",
+      "display_matches_browser_zone": true,
+      "source_list_timestamp_semantics_verified": false
+    },
+    "fix_validation": "Constructed regression uses the observed node conditions; not rerun in real browser. Existing archive and old failure marker untouched.",
+    "next_step": "No more maobidao repeats; user runs stormzhang technical sample. WeRead source login/list evidence still missing."
+  },
+  "additional_user_capture": {
+    "directory": "/Users/chenge/project/liumo/archives/feasibility/20261017T021222579396Z-article",
+    "metadata_sha256": "29356b9ea9484c2666e6d6348eb7e293540857553d4dec26c6ec2a818ad8a336",
+    "result": "same business code -3 and hidden empty avatar; no new explanation, do not request another repeat"
+  },
+  "user_page_observation": {
+    "reported_at_beijing": "2026-10-17 10:18",
+    "evidence": "user_report_not_automated_check",
+    "statement": "两个公众号的验证页面都没有看到评论，文章最下面什么也没有",
+    "interpretation": "Current validation pages did not display comments. Combined with business rejection -3, this is not confirmed absence of comments; no platform-wide or login-cause conclusion."
+  },
+  "user_comment_existence_confirmation": {
+    "reported_at_beijing": "2026-10-17 10:20",
+    "evidence": "user_report_not_direct_agent_inspection",
+    "statement": "两篇文章下面都有几十条留言的",
+    "exact_count_verified": false,
+    "validation_browser_displayed_comments": false,
+    "comment_capture_validation": "failed_existing_comments_not_obtained",
+    "business_code_meaning": "unverified",
+    "next_distinguishing_check": "whether same articles show comments in current Mac WeChat; no credential extraction"
+  },
+  "user_screenshot_comparison": {
+    "reviewed_at_beijing": "2026-10-17 10:22",
+    "evidence": "user_supplied_image_visually_reviewed_by_agent",
+    "local_image": "/Users/chenge/project/liumo/archives/feasibility/20261017T022229326032Z-user-comment-reference/maobidao.png",
+    "sha256": "eadc401a409819bc03aa2096a9dd6828e7101d02dad5e2b41a7b3c1de5530784",
+    "header_displayed_comment_count": 33,
+    "count_scope": "visible header only, not verified total including replies",
+    "visible_comment_text": true,
+    "visible_author_reply": true,
+    "advertisement_visible": false,
+    "full_article_or_all_replies_captured": false,
+    "capture_time": "unknown",
+    "client_context": "supplied in response to current Mac WeChat visibility check; exact app and session not programmatically verified",
+    "conclusion": "Normal reading window can display comments/replies. Dedicated validation browser failed to load them. Cause and reproducible automated capture remain unverified."
+  }
+}

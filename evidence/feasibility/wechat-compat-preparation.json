@@ -1,0 +1,375 @@
+{
+  "recorded_at": "2026-10-18T15:28:25.343033+08:00",
+  "status": "offline_component_preparation_passed_system_scope_confirmation_pending",
+  "goal_status": "blocked",
+  "new_goal_created": false,
+  "runtime_implemented": false,
+  "system_experiment_authorized": false,
+  "original_C15_still_closed": true,
+  "new_fixed_session_directory_exists": false,
+  "versions": {
+    "mitmproxy": "12.2.3",
+    "cryptography": "46.0.4"
+  },
+  "source_files": [
+    {
+      "path": "/Users/chenge/project/liumo/.venv-capture/lib/python3.14/site-packages/mitmproxy/certs.py",
+      "sha256": "ae28677e520565d7282054ab4e3bfad44dad4b745d5fd73a73d57959500e08b6",
+      "version": "12.2.3",
+      "positions": "CertStore.from_store/from_files/add_cert_file/get_cert; create_ca and dummy_cert",
+      "access_date_beijing": "2026-10-18",
+      "remote_HEAD_checked": false
+    },
+    {
+      "path": "/Users/chenge/project/liumo/.venv-capture/lib/python3.14/site-packages/mitmproxy/addons/tlsconfig.py",
+      "sha256": "c663494472e1af7c2f6b30867a0d74dcc5cb1c95f7b87284246fdbb4abe65dcb",
+      "version": "12.2.3",
+      "positions": "configure at 471; get_cert at 585; SAN inference and custom certificate selection",
+      "access_date_beijing": "2026-10-18",
+      "remote_HEAD_checked": false
+    },
+    {
+      "path": "/Users/chenge/project/liumo/.venv-capture/lib/python3.14/site-packages/mitmproxy/options.py",
+      "sha256": "b9b2f976e5ecb17402f1512126201c3eed195775e918741bba604acf46f60317",
+      "version": "12.2.3",
+      "positions": "upstream_cert option at 125, independent ssl_insecure option",
+      "access_date_beijing": "2026-10-18",
+      "remote_HEAD_checked": false
+    }
+  ],
+  "run": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline",
+  "scope": {
+    "system_trust_changed": false,
+    "proxy_or_listener_started": false,
+    "network_requests_made": false,
+    "WeChat_verified": false,
+    "temporary_directory_removed": true,
+    "private_keys_retained": false
+  },
+  "matrix_summary": {
+    "control_accepted": 14,
+    "root_accepted": 2,
+    "root_rejected": 13,
+    "control_rejected": 1
+  },
+  "actual_memory_TLS_checks": 34,
+  "component_selection": {
+    "upstream_wildcard_and_server_IP_context": true,
+    "default_selection_TLS": {
+      "control": {
+        "outcome": "accepted",
+        "TLS_version": "TLSv1.3"
+      },
+      "root": {
+        "outcome": "rejected",
+        "verify_code": 47,
+        "reason": "permitted_subtree"
+      }
+    },
+    "fixed_selection_TLS": {
+      "outcome": "accepted",
+      "TLS_version": "TLSv1.3"
+    },
+    "wrong_host_TLS": {
+      "outcome": "rejected",
+      "verify_code": 62,
+      "reason": "hostname_mismatch"
+    },
+    "fixed_certificate_selected": true,
+    "fixed_SAN": [
+      "mp.weixin.qq.com"
+    ],
+    "configured_CA_preserved": true,
+    "ssl_insecure": false,
+    "upstream_cert": false,
+    "master_run_called": false,
+    "passed": true
+  },
+  "test_context": "real installed component and verifiers; synthetic certificates/upstream metadata, not WeChat",
+  "tests": {
+    "total": 222,
+    "passed": 218,
+    "skipped": 4,
+    "failures": 0,
+    "new_tests": 6,
+    "log": ".tmp/wechat-session-validation/wechat-compat-tests.log",
+    "sha256": "7bf4acc85b34d4bd1a9bb117fd5f396be6d3443e8b00466c7cdbf2d87edfe23d",
+    "network_sockets_and_DNS_blocked_in_actual_component_test": true,
+    "local_Unix_event_loop_socketpair_allowed": true
+  },
+  "proposal": {
+    "status": "prepared_not_running",
+    "system_runtime_implemented": false,
+    "system_experiment_authorized": false,
+    "duration_seconds_proposed": 180,
+    "cleanup_reserve_seconds": 120,
+    "active_budget_seconds": 60,
+    "cleanup_steps": [
+      {
+        "step": "disable_interception_and_save",
+        "seconds": 5
+      },
+      {
+        "step": "read_proxy",
+        "seconds": 5
+      },
+      {
+        "step": "restore_proxy",
+        "seconds": 30
+      },
+      {
+        "step": "read_back_proxy",
+        "seconds": 5
+      },
+      {
+        "step": "remove_user_trust",
+        "seconds": 30
+      },
+      {
+        "step": "delete_this_certificate",
+        "seconds": 30
+      },
+      {
+        "step": "read_back_certificate",
+        "seconds": 5
+      },
+      {
+        "step": "verify_revocation",
+        "seconds": 5
+      },
+      {
+        "step": "stop_process_and_delete_owned_keys",
+        "seconds": 5
+      }
+    ],
+    "target_host": "mp.weixin.qq.com",
+    "sample": "maobidao",
+    "max_UI_refreshes": 1,
+    "candidate_leaf_SAN": [
+      "mp.weixin.qq.com"
+    ],
+    "ssl_insecure": false,
+    "certificate_profile": "permit target DNS, exclude subdomains and all IPv4/IPv6",
+    "new_system_scope": [
+      "one new user SSL constrained CA, no old -s policy string",
+      "fresh local 0600 CA and target-leaf key files; remove after process stops",
+      "temporary current-service HTTPS proxy, exact original-value recovery",
+      "180-second window proposed, with 120 seconds reserved for cleanup"
+    ],
+    "collect_credentials": false,
+    "read_response_body": false,
+    "system_or_network_operations_executed": false,
+    "not_verified": [
+      "installed proxy CA and fixed leaf in actual WeChat",
+      "real restoration within proposed time",
+      "source and full screenshot functionality"
+    ]
+  },
+  "known_runtime_gaps": [
+    "no new system execution/recovery entry until scope confirmed",
+    "old boolean verify helper must not be used to prove revocation",
+    "fixed-duration cleanup and WeChat behavior not actually tested",
+    "CA private-key lifecycle differs from public-only C15"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "b6479e39170657c3fc062aeec09ea47726dfb60379c02d3d2bac0bcd9b370115",
+    "validation/anchor_scope.py": "9829213425a12df4b265b7e4caca6d62792724c9199fa44d3dbfb5e35aa77937",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "d45ca5c76a0701cb42bf5bb09f06ced20d6ec4fdad7b3a9f5063620bcd1b30ae",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "bb510484fef67e18813da907a3c6eb901bde59a047c8a5cb6eec534b9fcce200",
+    "validation/certificate_scope.py": "cb7fac5d22d6b94198560ee9c483affdcae6c8a18fbf0870a18dd207aac407a4",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "ba94c1e7844199738bf92c923afe3fc78aef78ec8d9115b4cb3eceaacbee4417",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "validation/transport_diagnostic.py": "b56514b8084db4c1d21669ee022a18450d4f45258e56ee089cc5cb18b7fe809b",
+    "validation/wechat_compat.py": "4dfab5efecf66491fdc54f24676b9c225d7873833bd4318b290fea389a71acf0",
+    "tests/test_anchor_scope.py": "187b80a0f744956777c6861f0638c2006d09a8ab98319be77b4784eb698be6f9",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "e8ad74c65b47035fbac07aa4f80b474ed9ec32e77f701622eeafd94e2f6422ad",
+    "tests/test_capture_observation.py": "5411b9f41d9931a048faad24827ea1471d2df89fee186d3eb7bab436c96d08a1",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_certificate_scope.py": "73a1ed0f439823689bb554074a4db79330d7237071180398be377174854fbbe4",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_transport_diagnostic.py": "8c0c732d797da2057674e9c70b1a16ccc5bcfb9fc4659b6bab76af77eb317f0f",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97",
+    "tests/test_wechat_compat.py": "d66c4483fed4bd16421bbc17ae7e3f26c73105748a4c31ce080f9af671ccebdc"
+  },
+  "artifacts": [
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/compatibility.json",
+      "sha256": "fad11a01c0abb9b2c71bfe329e584e65850104cb7b9e6cc234ffac12370c259d"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/component-default-leaf.pem",
+      "sha256": "ab8b759f93b8bdfe290150bad497dfbba46a162647d63033cf6d84265b733237"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/component-fixed-leaf.pem",
+      "sha256": "355058787716f6ebddc4d5e617bad4da966995e6d5f4a9b1af4b5af2d0fb9aa7"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/control.pem",
+      "sha256": "6ad22b4015018bda1f5b349b3636bf9d8592fa0a5268c8e6077c7a612451afc1"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/ipv4-leaf.pem",
+      "sha256": "1a5fea9b34edbf874ad9ed8ea1bbed980400c1fe781ac2efc0a5ac34ac63139e"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/ipv6-leaf.pem",
+      "sha256": "a919129c1423338636a6baa1470f2265ef482fa6570c595967a3f568d153c1c0"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/mixed_ipv4-leaf.pem",
+      "sha256": "86bd7cbfbd540f6e64342f31d13e1568bdff03cc73d6297b24774ebe117777f2"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/mixed_ipv6-leaf.pem",
+      "sha256": "301b0c84a32ed208edc2dad262e5ca1e14fcf7535c9b0c0caaa1550a3e2cd6ec"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/mixed_other-leaf.pem",
+      "sha256": "7d87a025c957ecfa9ac3de21bd97b50982dc5eabea6cc4db4f67c2ec51a6e975"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/mixed_subdomain-leaf.pem",
+      "sha256": "9b0e63de430eec7bbfc96fd86e857e1318a436eaaf35ff856ba4cb34c052a8fb"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/other-leaf.pem",
+      "sha256": "829fcdba889a14a2100e590397252ee3af50009d7a23ea7b9a062d5b864ff399"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/prefix-leaf.pem",
+      "sha256": "ad4418cdd06d89edb4d6990b7e8f10ac4591ec6b501f9658198fb90cc78980f6"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/root.pem",
+      "sha256": "118de7d8516bcd352e64cc8bb85a4ebab6efc560e61f7bdcd9468ebcc1a79d22"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/subdomain-leaf.pem",
+      "sha256": "7dbc9045890dd59328fbbbcd4987a3b72a924cafb572f32d1a32a6b59886fcc4"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/suffix-leaf.pem",
+      "sha256": "62fe9cac7cb614da25d386b11e4b36f5a87366149587bc843aab7bc249b2cdf5"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/target-leaf.pem",
+      "sha256": "ad94403f7dbfc1d482e2202e111b6567a42cfac0d9df06e798707253ef735bc2"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/target_leaf.pem",
+      "sha256": "355058787716f6ebddc4d5e617bad4da966995e6d5f4a9b1af4b5af2d0fb9aa7"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/uppercase_target-leaf.pem",
+      "sha256": "c2a0cf76cc921eacf6e4a004042d04ccacfeb30e83fa3f7bcb2098165302a596"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/wildcard_parent-leaf.pem",
+      "sha256": "e71dcb183f6ad010c3d781ad177e444d1d35b0a372b69a5200f364794adb5209"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/wildcard_subdomain-leaf.pem",
+      "sha256": "29dde4c6715763373dcab74fdbbd3f6d4649aed4fe05308639990b375786a4c0"
+    },
+    {
+      "path": "archives/feasibility/20261018T072555231039Z-wechat-compat-offline/wrong_host-leaf.pem",
+      "sha256": "829fcdba889a14a2100e590397252ee3af50009d7a23ea7b9a062d5b864ff399"
+    }
+  ],
+  "not_verified": [
+    "WeChat proxy/certificate compatibility",
+    "actual full restoration within proposed window",
+    "discovery, pagination, comments/replies and original full screenshot",
+    "credential renewal and device wake"
+  ],
+  "delivery_checks": {
+    "markdown_files": 14,
+    "local_links": 309,
+    "python_ast_files": 42,
+    "public_artifacts": 21,
+    "result": "passed"
+  },
+  "delivery_documents": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "24fda826351f8d813a5627954fae59925d516584e0eba1b0cb241780ad599546"
+    },
+    {
+      "path": "README.md",
+      "sha256": "880c912c861df1efef8166744723237676bd1b9b1da402b4e1a4f650efb67f88"
+    },
+    {
+      "path": "PRODUCT_DESIGN.md",
+      "sha256": "0cf628c8f7d1ac0dfed8c0e99d885970e5f2c2c36e8b5735f23a297d570f15e4"
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "ac51393a66e6e8b7986c471ffcb5cb2b9d5c469f3699f6f52507f895503b167c"
+    },
+    {
+      "path": "goals/20261016-2359-feasibility.md",
+      "sha256": "462a911b938de0c3e4e979500b330ec6b7bc9afc31a5d46f887a9e059ff09559"
+    },
+    {
+      "path": "goals/20261017-1606-wechat-session-validation.md",
+      "sha256": "e5af38b5774ee8697f65846845a77c45db8e6b72a074f552df0bb60e6ddb6516"
+    },
+    {
+      "path": "docs/wechat-profile-route-review.md",
+      "sha256": "a9979e1241050ba06e63c89a3d045e4ec194638e6104dde61912ad0c0f936329"
+    },
+    {
+      "path": "docs/certificate-scope-offline.md",
+      "sha256": "8c6bc55731411d6eeba3989c2b84275dfb2eae3e4176074d8ef9341209b50800"
+    },
+    {
+      "path": "docs/installed-anchor-experiment.md",
+      "sha256": "90458b43166241d962a6bd32691240a2d0dc0c8181ba6c21793229b9a3287b08"
+    },
+    {
+      "path": "docs/wechat-compatibility-validation.md",
+      "sha256": "19e01ede725fc36ec3a6fb7bff8d84acfb7db22eb8da6e6a0be60e824626d577"
+    },
+    {
+      "path": "docs/http-route.md",
+      "sha256": "840ce80d35b2f71cd3d4a1793dfea0666275328ff39e6ad12dd71f1d0348b854"
+    },
+    {
+      "path": "docs/wechat-session-validation.md",
+      "sha256": "10e19e5deb58ac6202715968911d764cc9d170e0d87dae0d12abdce1cd5d16ec"
+    },
+    {
+      "path": "docs/wechat-session-operations.md",
+      "sha256": "04229012f2b8317d5215f20bb94926d0f2de000f90f7fd0c5757547c1ec9c039"
+    },
+    {
+      "path": "docs/feasibility.md",
+      "sha256": "4dc7816a5df074aaf25c65bdc5f93b340d8286aeaced6bfcf74d76df40af88ab"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "recorded_at": "2026-10-20T00:00:42.684900+00:00",
+  "scope": "user_confirmed_maobidao_RSS_snapshot_MVP_original_time_and_page_screenshot_deferred",
+  "product_status": "manual_core_ready_background_not_installed",
+  "passed": {
+    "real_public_feed_items": 20,
+    "real_RSS_technical_roundtrip_new_items": 1,
+    "RSS_sample_local_images": 6,
+    "RSS_sample_local_markdown_bytes": 6473,
+    "isolated_repeat_discovered": 0,
+    "isolated_repeat_archived": 0,
+    "formal_baseline_initialized": true,
+    "formal_check_resume_no_new": true,
+    "local_image_references_and_hashes": true,
+    "unit_and_explicit_local_browser_tests": {
+      "total": 415,
+      "passed": 415,
+      "skipped": 0
+    }
+  },
+  "original_page_attempts": [
+    {
+      "path": "/Users/chenge/project/liumo/archives/mvp-samples/20261019T153311281595Z/metadata.json",
+      "reason": "access_restricted",
+      "sha256": "8e04c7980ee150f47ceae53ed667b96d5cf1c7d03853e42a0fb3b3e2c3546136"
+    },
+    {
+      "path": "/Users/chenge/project/liumo/archives/mvp-samples/20261019T153422194009Z/metadata.json",
+      "reason": "browser_TargetClosedError",
+      "sha256": "4e379c020100af929d909ddcad335a771cdb08ba09550d4490172ea4faef4cf6"
+    }
+  ],
+  "original_page_caveat": "Two attempts selected different current RSS articles; user reported repeated verification errors. Not a single-variable comparison; no unique cause inferred.",
+  "initial_RSS_image_proxy_attempt": {
+    "path": "/Users/chenge/project/liumo/archives/mvp-samples/20261019T154755489608Z/metadata.json",
+    "status": "partial",
+    "image_failures": 6,
+    "root_cause": "not_uniquely_determined"
+  },
+  "selected_image_route": "deterministic_https_Tencent_upstream_explicitly_present_in_RSS_proxy_u_query_no_automatic_fallback",
+  "not_verified": [
+    "formal_post_activation_new_article",
+    "original_page_and_original_publication_time",
+    "desktop_notification_display",
+    "actual_network_loss_and_recovery",
+    "device_sleep_wake_and_background_trigger",
+    "external_backup_restore"
+  ],
+  "constructed_or_injected": [
+    "activation_boundaries",
+    "network_failure_backoff",
+    "interruption_and_failure_recovery",
+    "notification_failure",
+    "timezone_and_missed_slot_coalescing",
+    "image_and_screenshot_failures"
+  ],
+  "deferred": [
+    "comments",
+    "stormzhang",
+    "original_page_screenshot",
+    "original_publication_time_verification"
+  ],
+  "formal_state": {
+    "status": "complete",
+    "start_at": "2026-10-19T15:51:46.228864+00:00",
+    "last_feed_success": "2026-10-19T23:59:00.745659+00:00",
+    "last_attempt": "2026-10-19T23:59:00.745659+00:00",
+    "last_outcome": {
+      "status": "complete",
+      "feed_items": 20,
+      "discovered": 0,
+      "pending_or_failed": 0
+    },
+    "next_retry_at": null,
+    "feed_issues": [],
+    "source_changed_keys": [],
+    "article_access_paused": false,
+    "source_access_paused": null,
+    "needs_manual_retry": 0,
+    "counts": {
+      "baseline": 20
+    },
+    "recent": [],
+    "comments_status": "not_requested",
+    "background_installation": "not_managed_by_cli"
+  },
+  "RSS_sample": {
+    "path": "/Users/chenge/project/liumo/archives/mvp-samples/20261019T155011296684Z",
+    "metadata_sha256": "21346e2ec393cc335ef655eddb74ec21b3fd509def2373d19dbfea274896ccc5",
+    "markdown_sha256": "b278bf27b542b5619fdf72935495356cb4ddf0300162277cf62bfc4919269f9f",
+    "images": [
+      {
+        "index": 0,
+        "path": "images/3f463545ec3d4b58e7d45e8c.jpg",
+        "sha256": "3f463545ec3d4b58e7d45e8c161623e838b738f19483650548e59ecbc61fa66e",
+        "bytes": 239673
+      },
+      {
+        "index": 1,
+        "path": "images/944976ecd21e194836e7842c.png",
+        "sha256": "944976ecd21e194836e7842c847ad2cd453f8a6c96f498ed2d0a053347614af7",
+        "bytes": 119465
+      },
+      {
+        "index": 2,
+        "path": "images/ab99ebc1fc9f5f5b09203d06.jpg",
+        "sha256": "ab99ebc1fc9f5f5b09203d06f35b953f9b9c086efa1e6404263759b69da665eb",
+        "bytes": 172386
+      },
+      {
+        "index": 3,
+        "path": "images/f543dc07f5a8be9854663d24.png",
+        "sha256": "f543dc07f5a8be9854663d2484b0ceb17b8ef5d7e9c97d2ca7224b0493f98f7e",
+        "bytes": 288151
+      },
+      {
+        "index": 4,
+        "path": "images/f8cef065542a9f8b80abe269.png",
+        "sha256": "f8cef065542a9f8b80abe26925cd169796698138218b47171fbc85316e7b5512",
+        "bytes": 170459
+      },
+      {
+        "index": 5,
+        "path": "images/29e38eae95e27c6849cd21d5.png",
+        "sha256": "29e38eae95e27c6849cd21d5846eb075907c2c657b9f4708f45c82bfde5fa41a",
+        "bytes": 97811
+      }
+    ]
+  },
+  "roundtrip_evidence": {
+    "path": "/Users/chenge/project/liumo/evidence/feasibility/maobidao-rss-roundtrip.json",
+    "sha256": "de8ffa3e02105e56cc8b66fa8990c3d38baed5f9bceb20c4c76cdd96072eeabb"
+  },
+  "code_and_test_sha256": {
+    "liumo/__init__.py": "e9e2260a65e0e170ea50bf63fcae41db283a3814572fef6384805f3b014336f0",
+    "liumo/__main__.py": "daa28706fe1d26ab25660a282f9141269c2bd49a73dd8aa69caeaad8625ee898",
+    "liumo/archive.py": "8e9bbce1e6e7310f298e8ccc215a3143197d68b3313b9fa51631fbb1b5c1ca20",
+    "liumo/rss.py": "1153cfae25d5702fca9200c27dba8d59b1b64d517e4936989ce3e8d4c9e6d8f7",
+    "liumo/rss_archive.py": "4a8a9f483e7b25e996b773bc85fa5f4f4649dd97cbbee7039c0abdbd3b4f78c9",
+    "liumo/runner.py": "fa13c0fc585e613685293748f7c2e623726d6aa1bda069d40ff935840e69c4df",
+    "liumo/store.py": "5a412839b5183b8d051c9e7ddf749a2ddd259dea3a6205d15778124463484928",
+    "tests/test_mvp.py": "a955ad02e0567dcad6b798b66f3f06ec2bfad71c78cebbc3e51a108e943b245a",
+    "tests/test_mvp_browser.py": "d99153eb6be80e28dde914455ecb6afca044936e5c3d9dbed84cd782f044a205",
+    "tests/test_mvp_rss_archive.py": "1bcf78eed0a7f4855fbe8a075b6afc9332bc8eb9acaf96cb5d432e076adf9411"
+  },
+  "full_test_log": {
+    "path": "/Users/chenge/project/liumo/.tmp/maobidao-mvp/full-tests.log",
+    "sha256": "4ff6b7e7d2ed183991a15905c3b350c73536d7ce01378a989171bd561672c761",
+    "exit_code": 0
+  },
+  "safety": {
+    "new_dependencies": 0,
+    "system_configuration_changes": 0,
+    "background_jobs_installed": 0,
+    "git_operations": 0,
+    "guixu_changes": 0,
+    "default_RSS_path_reads_account_sessions": false,
+    "original_page_requests_after_RSS_scope_acceptance": 0
+  },
+  "goal_service_status": "blocked_unfinished_no_resume_API_no_second_goal_created",
+  "delivery_checks": {
+    "markdown_files": 8,
+    "absolute_local_links": 155,
+    "heading_fragments": 10,
+    "roadmap_order_and_counts": "passed",
+    "code_hashes_match_tested_version": true,
+    "plist_validated": true,
+    "artifact_hashes_validated": true
+  },
+  "delivered_at_beijing": "2026-10-20 08:01",
+  "documents_sha256": {
+    "AGENTS.md": "7b4398f353dc3bb7d9a9564757093afeec7fb84004223d83b7846c37089c1aa2",
+    "README.md": "ab618dc879eba9f0194a2bd696f3946a5a32a097c2efedc21b1d647760666bf1",
+    "PRODUCT_DESIGN.md": "1529b8d2b067251c8819e7c38dc174f2fcc98a12ad112ffc9847882975859bc7",
+    "ROADMAP.md": "d3514c1622285b374712fb2b630dcc47d1491eb8564ce2580b8744f060c4be82",
+    "goal/20261019-2328-maobidao-mvp.md": "57ab69ee687b8bf9645a3ea27d8ed883803fef635063f84e1a3d0ff8ce7826dc",
+    "goal/20261019-2121-v1-auto-follow.md": "943bcd28912265a066974548d315faaf9db3aa4725343e3e4929f31ea930dd99",
+    "docs/maobidao-mvp.md": "e21907d283a550fd1c00a494689f4d3419cec0137a37685a3ee6bb9809feba7d",
+    "docs/legacy-validation-commands.md": "e123e67cfeaa47ff98eaf568307da67a913d77ed9aebd6db7dd082a5221b0ab1"
+  }
+}

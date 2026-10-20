@@ -1,0 +1,115 @@
+{
+  "recorded_at": "2026-10-17T10:54:47+08:00",
+  "scope": "Public internet documentation and source review only; no candidate execution, new WeChat requests, installation or login.",
+  "evidence_level": "upstream_documentation_and_pinned_source_not_local_validation",
+  "goal_service_status": "blocked",
+  "documentation_checks": {
+    "checked_at": "2026-10-17 10:55 Asia/Shanghai",
+    "markdown_files": 6,
+    "existing_local_links": 59,
+    "checks": ["code_fences", "table_column_counts", "local_links", "dash_style", "evidence_json_parse"],
+    "result": "passed",
+    "candidate_or_live_validation_run": false
+  },
+  "routes": [
+    {
+      "repository": "https://github.com/wechat-article/wechat-article-exporter",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "package_version": "2.3.21",
+      "sources": [
+        "https://github.com/wechat-article/wechat-article-exporter/issues/200",
+        "https://docs.mptext.top/advanced/wxdown-service",
+        "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/apis/index.ts"
+      ],
+      "findings": [
+        "Maintainer announced maintenance ended on 2026-07-30, attributing failure to a closed upstream interface.",
+        "Pinned getComment requires __biz, uin, key and pass_ticket via localStorage and the deployed application API.",
+        "Credential guide requires per-account capture through a local proxy, trusted CA and WeChat in-app article access.",
+        "Credential lifetime of roughly 25 minutes is an upstream documentation estimate only."
+      ],
+      "not_established": [
+        "Current live usability for either target account",
+        "All comment and reply pagination",
+        "Complete original-page single screenshot",
+        "Cause of existing business code -3",
+        "Complete backend credential routing audit"
+      ]
+    },
+    {
+      "repository": "https://github.com/monkeychen/wx-kit",
+      "release": "v0.12.2",
+      "release_commit": "bb2bcfb319c9875b0f9d9fa4f8966b6e2b060ffc",
+      "observed_main_commit": "b6a32ee5ed56a89c7c5c4fd25dab966619930982",
+      "sources": [
+        "https://github.com/monkeychen/wx-kit",
+        "https://github.com/monkeychen/wx-kit/releases/tag/v0.12.2",
+        "https://github.com/monkeychen/wx-kit/blob/main/docs/devlog/wx-kit-vibe-coding.md"
+      ],
+      "findings": [
+        "Current README explicitly limits subscriptions to the latest article per account.",
+        "Release v0.12.2 was published on 2026-10-08.",
+        "Author devlog describes fetch plus offscreen BrowserWindow fallback; this is not a pinned-source audit of download implementation."
+      ],
+      "not_established": [
+        "Multi-article catchup; latest-only fails current requirement",
+        "WeChat session storage and complete credential destinations",
+        "Original-page comments, replies and complete single screenshot"
+      ]
+    },
+    {
+      "repository": "https://github.com/rachelos/we-mp-rss",
+      "commit": "9b40351fd1913e7f74cf88f65740cd67a28baf81",
+      "sources": [
+        "https://github.com/rachelos/we-mp-rss/blob/9b40351fd1913e7f74cf88f65740cd67a28baf81/core/wx/model/weread_mp.py",
+        "https://github.com/rachelos/we-mp-rss"
+      ],
+      "findings": [
+        "Pinned code contains multi-article parsing, offset pagination and latest-only fallback.",
+        "Existence of pagination code does not establish current server-side availability.",
+        "Previous project source audit identified credential, shelf mutation, account switching, TLS and logging boundaries; no whole-tool adoption."
+      ],
+      "not_established": [
+        "Target-account identification, publication time and pagination",
+        "Reconciliation with wx-kit server-side limitation report",
+        "Comments, reply coverage and original-page single screenshot"
+      ]
+    }
+  ],
+  "decision": "Withdraw priority recommendation to continue the WeRead probe; review coverage and credential evidence first. No product requirements reduced.",
+  "retrieval_limits": [
+    "Some GitHub API, tree and source reads failed; failures are not evidence that a capability is absent.",
+    "wx-kit fixed-version download-article implementation and exporter comment backend were not successfully retrieved."
+  ],
+  "cached_public_files": [
+    {
+      "path": ".tmp/feasibility/research-solutions/exporter-readme.md",
+      "sha256": "d20700e0a7d5f792d51b0d5c55bb1f863f7b44ddec6cd08e1e6c26e726e250af",
+      "temporary_cache_only": true
+    },
+    {
+      "path": ".tmp/feasibility/research-solutions/exporter-api.ts",
+      "sha256": "a56f735281bafcae32a1f3e08ef3ec8fb6ef191f8aafb58b9518a2231e04da6f",
+      "temporary_cache_only": true
+    },
+    {
+      "path": ".tmp/feasibility/research-solutions/exporter-package.json",
+      "sha256": "79b199a4f74a137a3170a6cfd608fb7d836a1da6eb13f611b4e10fc1909154f3",
+      "temporary_cache_only": true
+    },
+    {
+      "path": ".tmp/feasibility/research-solutions/wxkit-readme.md",
+      "sha256": "bdf627958225771d6f47dc92eb1666149ccf6188020efb421910b53f61e40ce9",
+      "temporary_cache_only": true
+    },
+    {
+      "path": ".tmp/feasibility/research-solutions/wxkit-roadmap.md",
+      "sha256": "7d53170a4b65a2ae7d25dada4ce46e66c5051b34fcf3e5388ce16b6fbaf864dd",
+      "temporary_cache_only": true
+    },
+    {
+      "path": ".tmp/feasibility/research-solutions/werss-readme.md",
+      "sha256": "b4421ca6fdcba3566f0d4005501f41a3e060fa00b649be4b6278d376d547c5e9",
+      "temporary_cache_only": true
+    }
+  ]
+}

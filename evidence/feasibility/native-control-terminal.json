@@ -1,0 +1,287 @@
+{
+  "recorded_at": "2026-10-18T14:45:57.656996+08:00",
+  "status": "ordinary_terminal_explicit_anchor_matrix_passed_installed_anchor_and_WeChat_unverified",
+  "goal_status": "blocked",
+  "new_goal_created": false,
+  "source_report": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/certificate-scope.json",
+  "source_run_at": "2026-10-18T06:41:24.099626+00:00",
+  "native_positive_control": {
+    "outcome": "accepted",
+    "exit_code": 0,
+    "CT_diagnostic_present": true,
+    "OSStatus_codes": [],
+    "trust_result": 4
+  },
+  "summary": {
+    "python_memory_TLS": {
+      "dns_only": {
+        "status": "scope_not_preserved",
+        "unexpected_cases": [
+          "subdomain",
+          "wildcard_subdomain",
+          "mixed_subdomain",
+          "ipv4",
+          "ipv6",
+          "mixed_ipv4",
+          "mixed_ipv6"
+        ],
+        "WeChat_verified": false
+      },
+      "exact_dns_no_ip": {
+        "status": "passed_offline_matrix",
+        "unexpected_cases": [],
+        "WeChat_verified": false
+      }
+    },
+    "macOS_explicit_anchor": {
+      "dns_only": {
+        "status": "scope_not_preserved",
+        "unexpected_cases": [
+          "subdomain",
+          "wildcard_subdomain",
+          "mixed_subdomain",
+          "ipv4",
+          "ipv6",
+          "mixed_ipv4",
+          "mixed_ipv6"
+        ],
+        "WeChat_verified": false
+      },
+      "exact_dns_no_ip": {
+        "status": "passed_offline_matrix",
+        "unexpected_cases": [],
+        "WeChat_verified": false
+      }
+    }
+  },
+  "audit": {
+    "rows": 102,
+    "cases_per_profile": 17,
+    "profiles_per_validator": 3,
+    "validators": 2,
+    "native_complete": true,
+    "public_certificates": 20,
+    "certificate_signatures_SAN_and_critical_constraints_checked": true,
+    "private_key_content_absent": true,
+    "keys_removed_reported": true,
+    "source_code_hashes_unchanged": 38
+  },
+  "scope": {
+    "native_keychain_search": false,
+    "network_or_listener_used": false,
+    "system_trust_changed": false,
+    "private_keys_retained": false,
+    "temporary_directory_removed": true,
+    "WeChat_verified": false,
+    "live_experiment_started": false
+  },
+  "limits": [
+    "New certificates were generated; not a same-certificate context-only experiment",
+    "Old Agent internal-error cause remains undetermined",
+    "Explicit roots are not installed user trust anchors",
+    "Real discovery, comments, replies and original full screenshot still unverified"
+  ],
+  "tests": {
+    "rerun": false,
+    "reason": "All 38 program/test hashes match prior tested baseline",
+    "baseline": "evidence/feasibility/native-control-diagnostic.json",
+    "total": 200,
+    "passed": 196,
+    "skipped": 4,
+    "failures": 0
+  },
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "a711f66219edc80ed2c2cd216d89e1bacadbde42a2f81d47c9ecfd1932febff9",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "d45ca5c76a0701cb42bf5bb09f06ced20d6ec4fdad7b3a9f5063620bcd1b30ae",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "bb510484fef67e18813da907a3c6eb901bde59a047c8a5cb6eec534b9fcce200",
+    "validation/certificate_scope.py": "f1314668091b006a4b15391e682e9f81bff5fc8a59911c672485311ea3e0c2ae",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "ba94c1e7844199738bf92c923afe3fc78aef78ec8d9115b4cb3eceaacbee4417",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "validation/transport_diagnostic.py": "b56514b8084db4c1d21669ee022a18450d4f45258e56ee089cc5cb18b7fe809b",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "e8ad74c65b47035fbac07aa4f80b474ed9ec32e77f701622eeafd94e2f6422ad",
+    "tests/test_capture_observation.py": "5411b9f41d9931a048faad24827ea1471d2df89fee186d3eb7bab436c96d08a1",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_certificate_scope.py": "73a1ed0f439823689bb554074a4db79330d7237071180398be377174854fbbe4",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_transport_diagnostic.py": "8c0c732d797da2057674e9c70b1a16ccc5bcfb9fc4659b6bab76af77eb317f0f",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "artifacts": [
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/bad_signature-leaf.pem",
+      "sha256": "8a5058041b84a0414c0bcf0583a5f7404d67595d1425812c4483c0058dd72741"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/certificate-scope.json",
+      "sha256": "9fbe46952af85cb61a4c6843751bf3e4c6f8054147ae7a028a638d7be22392d6"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/dns_only-root.pem",
+      "sha256": "d6c4f0259da2a2437f86a101d8782216cf7263f9fab1fea17f91b5c7889fcac1"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/exact_dns_no_ip-root.pem",
+      "sha256": "7a7ac9544d93434bd7babeb8b0a6689dc9fe3c52444661f31236f389c266d120"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/expired-leaf.pem",
+      "sha256": "27f93100a50783010358a9fb37024becc35a8e81cb4a9329e00f96fafbcd29b2"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/ipv4-leaf.pem",
+      "sha256": "4d58f7f1039236e411fbec7b05b4d09ddc803811e4c9ee1dfd6883dd60d8cd95"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/ipv6-leaf.pem",
+      "sha256": "8f34f8e34d8dd930edca31152207af8f6548e1119b89abd3345c63c81c5bf0e5"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/mixed_ipv4-leaf.pem",
+      "sha256": "627b154330721286e30f33ea18bce1a4184b89d55f3db116573bbca448671f1f"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/mixed_ipv6-leaf.pem",
+      "sha256": "33ff0ca97d56e9a8c5118ff17faacac1df5d24fc4a96beea1261e8aba55b0fef"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/mixed_other-leaf.pem",
+      "sha256": "bf0c9870efda277f33ae9d3659f1f81efaca58f492f9ce3f4c163b4c5d028393"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/mixed_subdomain-leaf.pem",
+      "sha256": "59b478fb70e1640ed95d5d2a9856dd6477d1a429d80b17338c5ff88627503394"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/other-leaf.pem",
+      "sha256": "3dc751bd83a1ed0399794b0070b5329b1480bebf8da98920a2f9a522d054fe69"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/prefix-leaf.pem",
+      "sha256": "7255cff64c9450839f14b9a06bbc61d368c2d2cd6417e72fa0383ac61611384b"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/subdomain-leaf.pem",
+      "sha256": "3920c91cb384cc0416f1679c80cd9aaa7adc531887300d060b3f2e7311697c37"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/suffix-leaf.pem",
+      "sha256": "fa6d5460abc62354d4108f503b52c570d60d5723d4077bf5faf25a55f2d6c3c7"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/target-leaf.pem",
+      "sha256": "15c60b4e34bd5271e93a111861565564373cd8c9e5f8aa5e0845e8e787b1f79b"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/unconstrained-root.pem",
+      "sha256": "4e0fa03c671eecc0e377441f3cecdd671ef6d03fa4172507a4745d552f3197d7"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/uppercase_target-leaf.pem",
+      "sha256": "fe5f96c880ed8a6b87a1553e0a728cbf0ab714a27afbae1a6b5ad811f7da086c"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/wildcard_parent-leaf.pem",
+      "sha256": "e6a31fb1f987980e6d2e58263edc73d78e3a34a6b7d307cc6b70819c8cd452f1"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/wildcard_subdomain-leaf.pem",
+      "sha256": "32e4d89d699a669963b7f431da48de88c003a744955b25d475d8d1df6176f48a"
+    },
+    {
+      "path": "archives/feasibility/20261018T064123479907Z-certificate-scope-offline/wrong_host-leaf.pem",
+      "sha256": "cc0c69e2193866d45acbe47f47ed57b96b16bcbfee80772d7eb9a8ac09f90945"
+    }
+  ],
+  "next": {
+    "proposal": "docs/installed-anchor-experiment.md",
+    "system_authorization_received": false,
+    "implemented": false,
+    "started": false
+  },
+  "delivery_checks": {
+    "markdown_files": 13,
+    "local_links": 281,
+    "python_ast_files": 38,
+    "artifact_hashes": 21,
+    "result": "passed",
+    "scope": "Static documents/artifact/source checks, not installed trust or WeChat verification"
+  },
+  "delivery_documents": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "365777aeb0892ac28f719b25c3f7c82b27b1f877ee06e8df4db1325d2e5ce911"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d380331957d8a5b362f8c47e80bc449c4daed88efcb041b3729b0e07b2bbc5da"
+    },
+    {
+      "path": "PRODUCT_DESIGN.md",
+      "sha256": "f913e6db9bffcd684bfc99a596bf93c8ff3473fec2fa3ee8ad5db5024a972c2b"
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "f47405d2e81c66e682947d25523bdd596d75fae4af55a5f9e9d015cbe8e5bf18"
+    },
+    {
+      "path": "goals/20261016-2359-feasibility.md",
+      "sha256": "d13ce150c806a05bf72a7bb4ac8e55d874dbc1fe5fcc386ada588a4a21c0c19f"
+    },
+    {
+      "path": "goals/20261017-1606-wechat-session-validation.md",
+      "sha256": "7eea4872e3d3f18222336973290eeb8508c45af7e63bcfe31d935067774ecef7"
+    },
+    {
+      "path": "docs/wechat-profile-route-review.md",
+      "sha256": "483ef25854bde24668fb67745a65f728774509d67df16b97f49384d6f35f7599"
+    },
+    {
+      "path": "docs/certificate-scope-offline.md",
+      "sha256": "be969e3e3f3f02ee6abdf9f3a96e6e0fe336719948b5d461a0562a1d8c1f278d"
+    },
+    {
+      "path": "docs/installed-anchor-experiment.md",
+      "sha256": "7fd762b26d88139f0a1f0fc881620ae64f0b21a8d45a7c41bcd695d27a3027fa"
+    },
+    {
+      "path": "docs/http-route.md",
+      "sha256": "840ce80d35b2f71cd3d4a1793dfea0666275328ff39e6ad12dd71f1d0348b854"
+    },
+    {
+      "path": "docs/wechat-session-validation.md",
+      "sha256": "af3f50711acd9d7c3a856f16f54508d1a7cb9be46d0ef86cf16b6367e00db6ed"
+    },
+    {
+      "path": "docs/wechat-session-operations.md",
+      "sha256": "04229012f2b8317d5215f20bb94926d0f2de000f90f7fd0c5757547c1ec9c039"
+    },
+    {
+      "path": "docs/feasibility.md",
+      "sha256": "9e708ca1aa8772b39825ff786fc8e80e2dc60ee71eb7aee3f6edd3ec1b2c5d70"
+    }
+  ]
+}

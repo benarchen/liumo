@@ -1,0 +1,57 @@
+{
+  "evidence_level": "two_live_public_RSS_snapshots_plus_local_ingestion_replay",
+  "activation_clock": "constructed_acceptance_boundary_not_formal_activation",
+  "initial_feed_items": 20,
+  "current_feed_items": 20,
+  "first_ingestion": {
+    "discovered": 1,
+    "feed_issues": [],
+    "feed_items": 20
+  },
+  "duplicate_ingestion": {
+    "discovered": 0,
+    "feed_issues": [],
+    "feed_items": 20
+  },
+  "pending_after_reopen": [
+    {
+      "key": "459504270a472c63f9ef17f1",
+      "title": "撒钱100亿",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzE5ODk2NjUwOA%3D%3D&mid=2247498667&idx=1&sn=158c28427ab2d4b41a86de0d43c73c17",
+      "status": "pending"
+    }
+  ],
+  "state_directory": "/Users/chenge/project/liumo/state/mvp-acceptance-20261019",
+  "original_publication_time_verified": false,
+  "original_article_requests": 0,
+  "articles_archived": 0,
+  "formal_subscription_enabled": false,
+  "ledger_summary": {
+    "start_at": "2026-10-19T22:09:00+08:00",
+    "last_feed_success": "2026-10-19T15:42:11.485205+00:00",
+    "last_attempt": "2026-10-19T22:09:00+08:00",
+    "last_outcome": null,
+    "next_retry_at": null,
+    "feed_issues": [],
+    "source_changed_keys": [],
+    "article_access_paused": false,
+    "source_access_paused": null,
+    "needs_manual_retry": 0,
+    "counts": {
+      "baseline": 20,
+      "pending": 1
+    },
+    "recent": [
+      {
+        "key": "459504270a472c63f9ef17f1",
+        "status": "pending",
+        "attempts": 0,
+        "reason": null,
+        "output": null,
+        "published_at": null
+      }
+    ],
+    "comments_status": "not_requested",
+    "background_installation": "not_managed_by_cli"
+  }
+}

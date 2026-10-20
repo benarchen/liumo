@@ -1,0 +1,133 @@
+{
+  "at": "2026-10-18T08:18:39.298986+08:00",
+  "status": "prepared_UI_unavailable_no_new_system_experiment",
+  "goal_service_status_last_observed": "blocked",
+  "new_goal_created": false,
+  "authorization": {
+    "received": true,
+    "user_message": "我给你授权，你自己操作电脑，方便你收集和记录数据，行吗",
+    "scope": "Agent operates only right-side 猫笔刀 homepage; one proposed improved 120 second credential-free diagnostic, prior host/proxy boundaries retained",
+    "scope_expanded_to_chats_or_credentials": false
+  },
+  "C9_user_feedback_supplement": {
+    "earliest_window_used": "left account message window",
+    "later_action": "opened and refreshed right account profile after reporting command run",
+    "right_refresh_timestamp_known": false,
+    "right_refresh_within_C9_window_verified": false,
+    "C9_window_beijing": [
+      "2026-10-18 07:51:56",
+      "2026-10-18 07:53:56"
+    ],
+    "cannot_attribute_TLS_events_to_right_refresh": true,
+    "normal_right_profile_and_article_cards_visible_in_user_image": true,
+    "unrelated_chat_content_extracted_or_stored": false
+  },
+  "UI_attempt": {
+    "tool": "mcp__cua_repl.js",
+    "entry": "cua.getApp(\"WeChat\")",
+    "observed_error": "Sky Computer Use native pipe startup failed",
+    "attempts": 1,
+    "UI_access_established": false,
+    "click_or_refresh_performed": false,
+    "retries_or_app_switching": false
+  },
+  "implementation": {
+    "existing_modules": [
+      "validation/transport_diagnostic.py",
+      "validation/mitm_addon.py"
+    ],
+    "new_system_experiment_entry_added": false,
+    "TLS_classification": "target only; fixed bounded in-memory message categories; generic trust hint remains other, ambiguous and unavailable preserved",
+    "snapshot": "private plan/state/capture; finite valid 120 second window; open/live and control gate; fixed phase and white-listed integer counters; UTC timestamp; no writes and no UI success claim"
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 185,
+    "passed": 181,
+    "skipped": 4,
+    "failures": 0,
+    "log": {
+      "path": ".tmp/wechat-session-validation/ui-diagnostic-tests.log",
+      "sha256": "69551201c447323e84f41540cea1faa247cf56e3b3ae71f663b9d704d835a04b"
+    },
+    "skip_reasons": [
+      "3 browser integration tests not enabled",
+      "1 loopback bind permission denied"
+    ],
+    "scope": "Constructed messages and private local files; previous component integration retained, no real network or system trust"
+  },
+  "closed_prior_experiment_check": {
+    "snapshot_rejected_reason": "diagnostic_observation_window_closed",
+    "recorded_recovery_verified": true,
+    "recorded_process_stopped": true,
+    "current_system_settings_rechecked": false
+  },
+  "primary_component_source": {
+    "path": ".venv-capture/lib/python3.14/site-packages/mitmproxy/proxy/layers/tls.py",
+    "version": "12.2.3",
+    "sha256": "76e315d8e64355a757183d3f4dbace43550ce4092d1907547ed9ddf40c6a2c39",
+    "lines": "400-406, 637-674",
+    "evidence": "Connection.error set before failed-client hook; several specific and generic message forms"
+  },
+  "not_verified": [
+    "working Computer Use connection",
+    "live fixed reason classification",
+    "timestamp-correlated right-profile refresh",
+    "fourth experiment control and recovery",
+    "functional multi-article source, comments and original full screenshot"
+  ],
+  "actions_this_turn": {
+    "proxy_or_trust_changes": false,
+    "new_WeChat_requests": 0,
+    "new_experiment_directory": false,
+    "credentials_read_or_modified": false,
+    "global_or_project_dependency_install": false,
+    "Git_commit_or_push": false
+  },
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "306934b31680b7e05f916103e3f8020e7e7c43c52e8d71723542616e88b48df6",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "7e1414d9c39f7b026ad2a78b0935e812dcacf0dc50ec76793c2731e5cc36e20e",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "8cfda3b96a91c6a14caf2986c6092a75bb14f1460bccc9580c28efd1a722401c",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "77e6aed2e7f55e79728f209fec77d26765c3505d01b5db02d260eb89110c80ab",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "validation/transport_diagnostic.py": "0fe3b453cc325a5a7e6b42cb1ff10eadf9d4fa0238aa555cd332eab9cfddeead",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "a354bf7d0c0dd7709d59abb4cd7ad157b541a571f0f237a1c380f512346a8d63",
+    "tests/test_capture_observation.py": "5411b9f41d9931a048faad24827ea1471d2df89fee186d3eb7bab436c96d08a1",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_transport_diagnostic.py": "31d7561d32dce368b9dc483864af414c566649e631ae522d0429c84a42ae2169",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "next_prerequisite": "Normal Computer Use native connection available; then prepare a separate non-reusable system experiment entry and verify all boundaries before starting; no user repeat command now",
+  "delivery_checks": {
+    "markdown_files": 10,
+    "local_links": 207,
+    "python_AST_files": 36,
+    "result": "passed",
+    "scope": "Static documentation/AST only; not UI or live TLS"
+  }
+}

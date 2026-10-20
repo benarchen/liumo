@@ -1,0 +1,16 @@
+{
+  "images": [
+    {
+      "index": 0,
+      "path": "images/18bbea7399815efb900d00ed.png",
+      "sha256": "18bbea7399815efb900d00ed25262fdb630cfbaee00f97d6b21bb96d4469b6e2",
+      "bytes": 68
+    }
+  ],
+  "image_failures": [],
+  "body_sha256": "fc06780834a074a41129e08b2353098f7ae0867ea29545d4e4ef73662f1edd0d",
+  "evidence": "constructed_html_conversion_not_browser_render",
+  "network_used": false,
+  "screenshot_verified": false,
+  "output": "/Users/chenge/project/liumo/archives/feasibility/20261016T161359977486Z-constructed-markdown"
+}

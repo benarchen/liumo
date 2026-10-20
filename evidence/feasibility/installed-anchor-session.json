@@ -1,0 +1,289 @@
+{
+  "recorded_at": "2026-10-18T14:58:10.213356+08:00",
+  "status": "authorized_implementation_and_tests_passed_agent_readonly_preflight_failed_normal_terminal_pending",
+  "goal_service_status_last_observed": "blocked",
+  "new_goal_created": false,
+  "authorization": {
+    "received": true,
+    "scope": "C15 offline temporary user SSL trust, no old policy-string, <=120 seconds; no proxy, network or WeChat"
+  },
+  "actual_agent_preflight": {
+    "at": "2026-10-18T06:56:20.915665+00:00",
+    "status": "blocked",
+    "reason": "anchor_explicit_preflight_failed",
+    "control": {
+      "outcome": "not_verified",
+      "exit_code": 1,
+      "CT_diagnostic_present": true,
+      "OSStatus_codes": [
+        -26276
+      ],
+      "trust_result": 0,
+      "reason": "native_security_framework_error"
+    },
+    "signing_child_exited": true,
+    "private_keys_written": false,
+    "experiment_created": false,
+    "system_trust_changed": false,
+    "network_or_proxy_used": false,
+    "WeChat_verified": false
+  },
+  "fixed_session_directory_exists": false,
+  "previous_sessions": {
+    "session": {
+      "finished": true,
+      "recovery_verified": true,
+      "process_stopped": true,
+      "state_sha256": "823ac21508e47af22af079e85d3d5951622353937434b7fe52bec140c0a5b81e"
+    },
+    "profile-session": {
+      "finished": true,
+      "recovery_verified": true,
+      "process_stopped": true,
+      "state_sha256": "0a26a1d88f132f127fb93ed5703f78c19cbfae9070b026e6a98b4e448df700f6"
+    },
+    "diagnostic-session": {
+      "finished": true,
+      "recovery_verified": true,
+      "process_stopped": true,
+      "state_sha256": "349aa3d8468631f2c4cbfe898143ba9ba03cd7d6cf9cda253514f2978d4eb47d"
+    },
+    "ui-diagnostic-session": {
+      "finished": true,
+      "recovery_verified": true,
+      "process_stopped": true,
+      "state_sha256": "a4ca98f7c0ab671438079b9f17c244c234f5bbc0f4787fd362a838d0b7da6c8e"
+    },
+    "article-diagnostic-session": {
+      "finished": true,
+      "recovery_verified": true,
+      "process_stopped": true,
+      "state_sha256": "24a533780e0516454502d2683c84b94f27c0a0a52a2c386f73c2bc37117aa08c"
+    }
+  },
+  "no_claim_about_internal_error_cause": true,
+  "normal_terminal_command": "cd /Users/chenge/project/liumo && .venv-capture/bin/python -m validation anchor-scope-session",
+  "authorization_again_required": false,
+  "recovery_command": "cd /Users/chenge/project/liumo && .venv-capture/bin/python -m validation anchor-scope-recover",
+  "tests": {
+    "total": 215,
+    "passed": 211,
+    "skipped": 4,
+    "failures": 0,
+    "new_tests": 15,
+    "log": ".tmp/wechat-session-validation/anchor-scope-tests.log",
+    "sha256": "90b30d1fc0f44008e01a569ed27cc3f77dbea6dca53257221dc6638b395bc323",
+    "skipped_reasons": [
+      "3 browser integrations not enabled",
+      "1 loopback bind permission denied"
+    ],
+    "real_signing_not_system_trust": true,
+    "system_mutations_constructed_only": true
+  },
+  "local_public_error_header": {
+    "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk/System/Library/Frameworks/Security.framework/Versions/A/Headers/SecBase.h",
+    "sha256": "02982c827dd8045f652350d48411e5f1ce98f17c4cacc3502e6bf4cbdd27006d",
+    "definitions": {
+      "errSecCreateChainFailed": -25318,
+      "errSecNotTrusted": -67843
+    }
+  },
+  "not_verified": [
+    "actual installed-anchor matrix and revocation",
+    "actual interruption/abnormal system recovery",
+    "WeChat compatibility",
+    "discovery/pagination/identity/publication time",
+    "real comment/reply original single full screenshot",
+    "unattended credential renewal and device wake"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "ff575aeb1bc4c4333f215f9d08146ef7078338f9aedae37b5a6c99e22d812873",
+    "validation/anchor_scope.py": "6fb6fc19d098cef1520bfcc0dc7e2932b3d0ab07bc8a0ac457539b75e990fc2c",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "d45ca5c76a0701cb42bf5bb09f06ced20d6ec4fdad7b3a9f5063620bcd1b30ae",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "bb510484fef67e18813da907a3c6eb901bde59a047c8a5cb6eec534b9fcce200",
+    "validation/certificate_scope.py": "cb7fac5d22d6b94198560ee9c483affdcae6c8a18fbf0870a18dd207aac407a4",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "ba94c1e7844199738bf92c923afe3fc78aef78ec8d9115b4cb3eceaacbee4417",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "validation/transport_diagnostic.py": "b56514b8084db4c1d21669ee022a18450d4f45258e56ee089cc5cb18b7fe809b",
+    "tests/test_anchor_scope.py": "ca536117e5e9f36099eddd0953d4f3c3adcea073d46c573aa54cb4bbe9e1a7e7",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "e8ad74c65b47035fbac07aa4f80b474ed9ec32e77f701622eeafd94e2f6422ad",
+    "tests/test_capture_observation.py": "5411b9f41d9931a048faad24827ea1471d2df89fee186d3eb7bab436c96d08a1",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_certificate_scope.py": "73a1ed0f439823689bb554074a4db79330d7237071180398be377174854fbbe4",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_transport_diagnostic.py": "8c0c732d797da2057674e9c70b1a16ccc5bcfb9fc4659b6bab76af77eb317f0f",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "artifacts": [
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/preflight.json",
+      "sha256": "157237690c68038bf835fc3aa974d3ced854c216615cbf77adfbe765e7ede4f9"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/bad_signature-leaf.pem",
+      "sha256": "e4b8b340369ad356214e3bd22ba9ed51c6cf8392ba7cb598555bd02ba0e2c54d"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/dns_only-root.pem",
+      "sha256": "2927a5cb1cb862ebdaad977ae35e3f779af312d2c8b2733bbd320acd3706fba8"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/exact_dns_no_ip-root.pem",
+      "sha256": "88ea68b80c2fe9f1abdb5a99e16bba312e522f018ff9d210065cc2682aeefcba"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/expired-leaf.pem",
+      "sha256": "90197526489a6aedb6a4d3ed05f582d3aa37e94010c87892567c4174b84639ac"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/ipv4-leaf.pem",
+      "sha256": "9220c4d326fc0b57d1d8a62c2eb6cfdd607e7a35d462f07beacf6fb546111e71"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/ipv6-leaf.pem",
+      "sha256": "7736a437cbd30d7b422d652a1ddfb650f7fd6b4a36303e3064d75ff9e262e570"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/mixed_ipv4-leaf.pem",
+      "sha256": "ea149cb6b7d2530ab79d42ffc316d7ae938e2baa2f64b9ebcf716487f9f4f414"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/mixed_ipv6-leaf.pem",
+      "sha256": "666358d3b68272e0d2ebb525caa16fa4971fc12d432eeb1268f59d66cd1d08c6"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/mixed_other-leaf.pem",
+      "sha256": "0cfe79a82416c2771466ecbae0b4ee65784abebca4bcbcec95809c4416b506a6"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/mixed_subdomain-leaf.pem",
+      "sha256": "2d4d7d837f4ef9e8f546fdddd733ff21e6602a5df3afc9c67af2da37b257d949"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/other-leaf.pem",
+      "sha256": "87d31b1036594a5162807d3ea42faac453097563edae944279d35fad29fb06ba"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/prefix-leaf.pem",
+      "sha256": "a9c4f58fa546e211c519f06afccdd56c87b581c5c4e261ff8f1f80611ae0be76"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/subdomain-leaf.pem",
+      "sha256": "6773ca89033904428e164afdb78b1e09452a5ee81fa3a52829a24c22fb1c1580"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/suffix-leaf.pem",
+      "sha256": "1646d6d0cfcfa2854563e2baccd079ca0bee67febc8c729cd63768609674f7a0"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/target-leaf.pem",
+      "sha256": "51263dce4a6c4a612bdfe99f2d19f776f529b0abd8696a6237df7bfcd4c98bca"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/unconstrained-root.pem",
+      "sha256": "453505c6c30e4b0cfc94576881791b6dc632959cddb5d863853609bb3c06eca6"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/uppercase_target-leaf.pem",
+      "sha256": "f23476cbe8b5b0d3d134938e434fd474725e836a9b012da1b42d195f032ae227"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/wildcard_parent-leaf.pem",
+      "sha256": "7c67e8362f679ebd717cc18910e5a460bbedb577d4dbb1fed62f92511e4fe9e3"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/wildcard_subdomain-leaf.pem",
+      "sha256": "308d2ecfca00fb9c92484af342ac95e0bb822c8be215d1e3855d8c35fe7ff979"
+    },
+    {
+      "path": "archives/feasibility/20261018T065620912814Z-anchor-scope-preflight/public/wrong_host-leaf.pem",
+      "sha256": "2e9eace94c65bca3fa162fb281c909a010ba69ce4f6da051fe124021879feb0a"
+    }
+  ],
+  "delivery_checks": {
+    "markdown_files": 13,
+    "local_links": 293,
+    "python_ast_files": 40,
+    "public_certificates": 20,
+    "artifacts": 21,
+    "result": "passed"
+  },
+  "delivery_documents": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "99ce94dccb290130617b9de51d9edf2307bf421c495fe5d1050962442bdce25d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a51c5ba6162c70e33d68bd021421958dbb7f5000c72c9db78c6f5ba0683451b4"
+    },
+    {
+      "path": "PRODUCT_DESIGN.md",
+      "sha256": "2db6a06b3b9010d44363782579441d56459ecad785bdc9552cc56dd932d6cbcd"
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "a94fca21e4e9d350232738d947a431147c7d467a902a74d8998e600b590615c8"
+    },
+    {
+      "path": "goals/20261016-2359-feasibility.md",
+      "sha256": "ae7d2428e444f6c8926f6a9a72a2077b8c57fa94b2f99c25e8e95a7e57308015"
+    },
+    {
+      "path": "goals/20261017-1606-wechat-session-validation.md",
+      "sha256": "68c638918241e9d7842ad370d811705f93489f4bfdbfa3b3af028512de4335ad"
+    },
+    {
+      "path": "docs/wechat-profile-route-review.md",
+      "sha256": "3bc4d73f225c1ab077a99b11882cba8843284bd62072bb579bb0965fdcf327e9"
+    },
+    {
+      "path": "docs/certificate-scope-offline.md",
+      "sha256": "85d092c777ab508b3f7b576114986bbb40a202e2cc77a428e581a44cbecc41d3"
+    },
+    {
+      "path": "docs/installed-anchor-experiment.md",
+      "sha256": "f3e9dda567aa3b4bfce095b0c4552a5acb034a31117fa2ccce02085dc0008c6c"
+    },
+    {
+      "path": "docs/http-route.md",
+      "sha256": "840ce80d35b2f71cd3d4a1793dfea0666275328ff39e6ad12dd71f1d0348b854"
+    },
+    {
+      "path": "docs/wechat-session-validation.md",
+      "sha256": "5a2d3eadba3d0dba84b2ef519978b80d5f719c289dec22f3cef8371edeb06aef"
+    },
+    {
+      "path": "docs/wechat-session-operations.md",
+      "sha256": "04229012f2b8317d5215f20bb94926d0f2de000f90f7fd0c5757547c1ec9c039"
+    },
+    {
+      "path": "docs/feasibility.md",
+      "sha256": "ad87e844052627ba73105289a8ffb6bb7eb13b6747a7ab673502a11749e23f71"
+    }
+  ]
+}

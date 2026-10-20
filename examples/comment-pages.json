@@ -1,0 +1,24 @@
+{
+  "evidence": "constructed_protocol_payloads_not_real_comments",
+  "comments": {
+    "": {
+      "base_resp": {"ret": 0}, "enabled": 1, "buffer": "page-2", "continue_flag": 1,
+      "elected_comment_total_cnt": 2,
+      "elected_comment": [{"content_id": "c1", "content": "构造留言一", "nick_name": "测试读者",
+        "reply_new": {"max_reply_id": 10, "reply_total_cnt": 3,
+          "reply_list": [{"reply_id": 10, "content": "已内嵌的构造回复"}]}}]
+    },
+    "page-2": {
+      "base_resp": {"ret": 0}, "enabled": 1, "buffer": "", "continue_flag": 0,
+      "elected_comment_total_cnt": 2,
+      "elected_comment": [{"content_id": "c2", "content": "构造留言二",
+        "reply_new": {"max_reply_id": 0, "reply_total_cnt": 0, "reply_list": []}}]
+    }
+  },
+  "replies": {
+    "10": {"base_resp": {"ret": 0}, "buffer": "r2",
+      "reply_list": {"max_reply_id": 9, "reply_list": [{"reply_id": 9, "content": "第二条构造回复"}]}},
+    "9": {"base_resp": {"ret": 0}, "buffer": "",
+      "reply_list": {"max_reply_id": 8, "reply_list": [{"reply_id": 8, "content": "第三条构造回复"}]}}
+  }
+}

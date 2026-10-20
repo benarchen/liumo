@@ -1,0 +1,151 @@
+{
+  "recorded_at": "2026-10-18T11:58:38.298810+08:00",
+  "status": "read_only_review_complete_current_Mac_profile_route_not_established",
+  "goal_status_last_observed": "blocked",
+  "new_goal_created": false,
+  "application": {
+    "CFBundleIdentifier": "com.tencent.xinWeChat",
+    "CFBundleShortVersionString": "4.1.15",
+    "CFBundleVersion": "270100"
+  },
+  "scope": {
+    "search_rounds": 2,
+    "deep_review": "existing wxdown/exporter plus Tencent transport documentation",
+    "new_system_experiment": false,
+    "new_WeChat_requests": 0,
+    "native_account_data_read": false,
+    "upstream_code_executed": false,
+    "code_changed": false
+  },
+  "sources": [
+    {
+      "id": "wxdown-guide",
+      "url": "https://docs.mptext.top/advanced/wxdown-service",
+      "level": "maintainer_documentation",
+      "finding": "Article page workflow; HTTP and HTTPS proxies and system keychain trust; not a current Mac profile-route proof",
+      "access_date_beijing": "2026-10-18"
+    },
+    {
+      "id": "wxdown-repo",
+      "url": "https://github.com/wechat-article/wxdown-service",
+      "level": "maintainer_documentation",
+      "finding": "Article-visit credential helper; no current Mac profile implementation established",
+      "access_date_beijing": "2026-10-18"
+    },
+    {
+      "id": "wxdown-history",
+      "url": "https://github.com/wechat-article/wxdown-service/commits/master",
+      "level": "rendered_commit_history",
+      "finding": "Pinned v0.27.1 visible; latest HEAD not API-verified",
+      "access_date_beijing": "2026-10-18"
+    },
+    {
+      "id": "wxdown-credential",
+      "url": "https://github.com/wechat-article/wxdown-service/blob/28feff2095359acb158f856c40b357e77b686d2c/resources/credential.py",
+      "level": "pinned_source_web_and_prior_cache",
+      "finding": "/s plus query beginning __biz=; response Set-Cookie extraction; no profile_ext list capture",
+      "access_date_beijing": "2026-10-18"
+    },
+    {
+      "id": "exporter-maintainer",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/issues/200",
+      "level": "maintainer_report",
+      "finding": "Upstream closure and maintenance stop reported; not a blanket platform test",
+      "access_date_beijing": "2026-10-18"
+    },
+    {
+      "id": "tencent-mars",
+      "url": "https://github.com/Tencent/mars",
+      "level": "Tencent_documentation",
+      "finding": "STN long/short network links; no proof of target Mac page transport",
+      "access_date_beijing": "2026-10-18"
+    }
+  ],
+  "pinned_cache_checks": [
+    {
+      "repository": "wechat-article/wechat-article-exporter",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "path": "server/api/web/mp/appmsgpublish.get.ts",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/server/api/web/mp/appmsgpublish.get.ts",
+      "sha256": "5a5a78c03d905f8667ca8a498244f9fd0da3147b9d25dff56b0cd267f8eb904b",
+      "temporary_cache": ".tmp/feasibility/research-solutions/exporter__server__api__web__mp__appmsgpublish.get.ts"
+    },
+    {
+      "repository": "wechat-article/wechat-article-exporter",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "path": "server/api/web/mp/profile_ext_getmsg.get.ts",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/server/api/web/mp/profile_ext_getmsg.get.ts",
+      "sha256": "cf6c27e0c727eb325ab49c5eb96ee247af93dbe271e700af479e2b8ad8fb8494",
+      "temporary_cache": ".tmp/feasibility/research-solutions/exporter__server__api__web__mp__profile_ext_getmsg.get.ts"
+    },
+    {
+      "repository": "wechat-article/wxdown-service",
+      "commit": "28feff2095359acb158f856c40b357e77b686d2c",
+      "path": "resources/credential.py",
+      "url": "https://github.com/wechat-article/wxdown-service/blob/28feff2095359acb158f856c40b357e77b686d2c/resources/credential.py",
+      "sha256": "f486fd2b9f2094b427fcd5dba2c5b2e1cb1aa6ecb6da25b1ad37f233d92cd15b",
+      "temporary_cache": ".tmp/feasibility/research-solutions/helper__resources__credential.py"
+    }
+  ],
+  "remote_limitations": {
+    "GitHub_API_commit_requests": 3,
+    "HTTP_status": 403,
+    "curl_exit_code": 56,
+    "exporter_profile_source_fresh_web_fetch": "tool failed; reused prior pinned cache, not evidence link invalid",
+    "latest_HEAD_verified": false
+  },
+  "findings": [
+    {
+      "id": "workflow",
+      "level": "pinned_source",
+      "result": "Upstream helper captures article requests; native profile list route not supplied"
+    },
+    {
+      "id": "conditions",
+      "level": "source_and_local_configuration_comparison",
+      "result": "Upstream HTTP+HTTPS proxy/system trust differs from local HTTPS-only/user-host-scoped trust; not a root cause proof",
+      "local_references": [
+        "validation/capture_session.py:126",
+        "validation/capture_session.py:148",
+        "validation/capture_session.py:182",
+        "validation/capture_plan.py:68"
+      ]
+    },
+    {
+      "id": "transport",
+      "level": "unknown",
+      "result": "No direct evidence of current Mac homepage endpoint, host, Mars/MMTLS, caching or pinning"
+    }
+  ],
+  "live_evidence_reused": "evidence/feasibility/wechat-ui-diagnostic-live.json",
+  "tests": {
+    "run_this_review": false,
+    "prior_total": 188,
+    "prior_passed": 184,
+    "prior_skipped": 4,
+    "unchanged_hashes_checked": 36,
+    "baseline": "evidence/feasibility/wechat-ui-diagnostic-session.json"
+  },
+  "next_actions": {
+    "immediate_user_action": "none",
+    "same_profile_experiment_repeat": false,
+    "possible_native_followup": "Prepare separate article-page control experiment; obtain per-experiment system authorization before starting",
+    "alternative": "Backend list route has different account/login prerequisite; not selected or tested"
+  },
+  "not_verified": [
+    "native profile route",
+    "functional list/pagination/identity/timestamps",
+    "comments/replies and original single full screenshot",
+    "automatic credential renewal",
+    "real sleep/wake recovery"
+  ],
+  "delivery_checks": {
+    "result": "passed",
+    "markdown_files": 11,
+    "local_links": 230,
+    "source_cache_hashes": 3,
+    "unchanged_program_and_test_hashes": 36,
+    "runtime_tests_run": false,
+    "scope": "Document structure, existing paths, bounded records, and evidence consistency only; not live WeChat verification"
+  }
+}

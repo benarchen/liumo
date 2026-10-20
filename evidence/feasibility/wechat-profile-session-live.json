@@ -1,0 +1,282 @@
+{
+  "at": "2026-10-17T14:43:48.026566+00:00",
+  "stage": "ended_functionality_not_verified",
+  "goal_service_status_observed": "blocked",
+  "new_goal_created": false,
+  "preparation_evidence": "evidence/feasibility/wechat-profile-session.json",
+  "tested_program_hashes_match": true,
+  "state": {
+    "status": "restored",
+    "reason": "session_window_expired",
+    "finished": true,
+    "capture_disabled": true,
+    "trust_scope_verified": true,
+    "proxy_roundtrip_verified": true,
+    "recovery": {
+      "proxy": "restored_and_read_back",
+      "trust": "revoked_and_checked",
+      "safe_to_stop_proxy": true,
+      "verified": true
+    },
+    "proxy_process_stopped": true,
+    "profile_probe_results": {}
+  },
+  "capture": {
+    "running": false,
+    "passthrough_only": true,
+    "diagnostics": {
+      "tls_client_failures_seen": 19
+    },
+    "status": "closed",
+    "saved_actions_by_account": {},
+    "events": {},
+    "authentication_verified": false,
+    "automatic_renewal_verified": false
+  },
+  "interpretation": {
+    "host_scope_and_roundtrip_verified": true,
+    "new_functional_session_verified": false,
+    "this_experiment_recovery_verified": true,
+    "TLS_failure_event_cause_known": false,
+    "proxy_process_stop_verified": true,
+    "target_profile_fields_saved": false
+  },
+  "pending": [
+    "real usable profile session, lists and pagination",
+    "comments and original full screenshot",
+    "automatic renewal and device recovery"
+  ],
+  "boundaries": {
+    "no_extra_probe_from_agent": true,
+    "no_capture_extension_or_restart": true,
+    "no_code_change_during_live_capture": true
+  },
+  "observations": [
+    {
+      "at": "2026-10-17T14:33:10.358673+00:00",
+      "state": {
+        "status": "ready_open_two_profiles_in_mac_wechat",
+        "finished": false,
+        "capture_disabled": false,
+        "trust_scope_verified": true,
+        "proxy_roundtrip_verified": true,
+        "profile_probe_results": {}
+      },
+      "capture": {
+        "running": true,
+        "passthrough_only": false,
+        "diagnostics": {
+          "tls_client_failures_seen": 17
+        },
+        "status": "open",
+        "saved_actions_by_account": {},
+        "events": {},
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      }
+    },
+    {
+      "at": "2026-10-17T14:37:03.488406+00:00",
+      "state": {
+        "status": "ready_open_two_profiles_in_mac_wechat",
+        "finished": false,
+        "capture_disabled": false,
+        "trust_scope_verified": true,
+        "proxy_roundtrip_verified": true,
+        "profile_probe_results": {}
+      },
+      "capture": {
+        "running": true,
+        "passthrough_only": false,
+        "diagnostics": {
+          "tls_client_failures_seen": 18
+        },
+        "status": "open",
+        "saved_actions_by_account": {},
+        "events": {},
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      },
+      "state_file_age_seconds": 0.0
+    },
+    {
+      "at": "2026-10-17T14:38:10.454933+00:00",
+      "state": {
+        "status": "ready_open_two_profiles_in_mac_wechat",
+        "finished": false,
+        "capture_disabled": false,
+        "trust_scope_verified": true,
+        "proxy_roundtrip_verified": true,
+        "profile_probe_results": {}
+      },
+      "capture": {
+        "running": true,
+        "passthrough_only": false,
+        "diagnostics": {
+          "tls_client_failures_seen": 18
+        },
+        "status": "open",
+        "saved_actions_by_account": {},
+        "events": {},
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      },
+      "state_file_age_seconds": 0.1
+    },
+    {
+      "at": "2026-10-17T14:39:17.695533+00:00",
+      "state": {
+        "status": "ready_open_two_profiles_in_mac_wechat",
+        "finished": false,
+        "capture_disabled": false,
+        "trust_scope_verified": true,
+        "proxy_roundtrip_verified": true,
+        "profile_probe_results": {}
+      },
+      "capture": {
+        "running": true,
+        "passthrough_only": false,
+        "diagnostics": {
+          "tls_client_failures_seen": 18
+        },
+        "status": "open",
+        "saved_actions_by_account": {},
+        "events": {},
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      },
+      "state_file_age_seconds": 0.5
+    },
+    {
+      "at": "2026-10-17T14:40:27.281403+00:00",
+      "state": {
+        "status": "ready_open_two_profiles_in_mac_wechat",
+        "finished": false,
+        "capture_disabled": false,
+        "trust_scope_verified": true,
+        "proxy_roundtrip_verified": true,
+        "profile_probe_results": {}
+      },
+      "capture": {
+        "running": true,
+        "passthrough_only": false,
+        "diagnostics": {
+          "tls_client_failures_seen": 19
+        },
+        "status": "open",
+        "saved_actions_by_account": {},
+        "events": {},
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      },
+      "state_file_age_seconds": 0.1
+    },
+    {
+      "at": "2026-10-17T14:41:23.105603+00:00",
+      "state": {
+        "status": "ready_open_two_profiles_in_mac_wechat",
+        "finished": false,
+        "capture_disabled": false,
+        "trust_scope_verified": true,
+        "proxy_roundtrip_verified": true,
+        "profile_probe_results": {}
+      },
+      "capture": {
+        "running": true,
+        "passthrough_only": false,
+        "diagnostics": {
+          "tls_client_failures_seen": 19
+        },
+        "status": "open",
+        "saved_actions_by_account": {},
+        "events": {},
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      },
+      "state_file_age_seconds": 0.3
+    },
+    {
+      "at": "2026-10-17T14:42:00.688877+00:00",
+      "state": {
+        "status": "restored",
+        "reason": "session_window_expired",
+        "finished": true,
+        "capture_disabled": true,
+        "trust_scope_verified": true,
+        "proxy_roundtrip_verified": true,
+        "recovery": {
+          "proxy": "restored_and_read_back",
+          "trust": "revoked_and_checked",
+          "safe_to_stop_proxy": true,
+          "verified": true
+        },
+        "proxy_process_stopped": true,
+        "profile_probe_results": {}
+      },
+      "capture": {
+        "running": false,
+        "passthrough_only": true,
+        "diagnostics": {
+          "tls_client_failures_seen": 19
+        },
+        "status": "closed",
+        "saved_actions_by_account": {},
+        "events": {},
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      },
+      "state_file_age_seconds": 5.8
+    },
+    {
+      "at": "2026-10-17T14:43:48.026566+00:00",
+      "state": {
+        "status": "restored",
+        "reason": "session_window_expired",
+        "finished": true,
+        "capture_disabled": true,
+        "trust_scope_verified": true,
+        "proxy_roundtrip_verified": true,
+        "recovery": {
+          "proxy": "restored_and_read_back",
+          "trust": "revoked_and_checked",
+          "safe_to_stop_proxy": true,
+          "verified": true
+        },
+        "proxy_process_stopped": true,
+        "profile_probe_results": {}
+      },
+      "capture": {
+        "running": false,
+        "passthrough_only": true,
+        "diagnostics": {
+          "tls_client_failures_seen": 19
+        },
+        "status": "closed",
+        "saved_actions_by_account": {},
+        "events": {},
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      },
+      "state_file_age_seconds": 113.2
+    }
+  ],
+  "no_target_response_observed": true,
+  "no_functional_probe_attempted": true,
+  "reason_not_inferred_from_TLS_counts": true,
+  "original_goal_completed": false,
+  "final_archive_summaries": [
+    {
+      "path": "archives/feasibility/20261017T144155139415Z-profile-capture-session/session-summary.json",
+      "sha256": "3b8fb6880689b15707abb144cfa85047637b1921a5f13e17eedca7e4cb84a0eb"
+    }
+  ],
+  "new_private_request_file_count": 0,
+  "test_rerun_this_turn": false,
+  "delivery_checks": {
+    "markdown_files": 10,
+    "local_links": 174,
+    "python_ast_files": 33,
+    "result": "passed",
+    "scope": "Static only; no new browser/source functional validation"
+  }
+}

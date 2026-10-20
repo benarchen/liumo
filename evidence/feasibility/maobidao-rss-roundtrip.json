@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-19T15:54:28.194139+00:00",
+  "evidence": "live_public_feed_plus_real_RSS_archive_in_isolated_technical_ledger",
+  "activation_clock": "historical_acceptance_boundary_not_formal_activation",
+  "first": {
+    "discovered": 1,
+    "feed_issues": [],
+    "feed_items": 20,
+    "status": "complete",
+    "results": [
+      {
+        "key": "459504270a472c63f9ef17f1",
+        "status": "complete",
+        "output": "/Users/chenge/project/liumo/archives/mvp-acceptance/459504270a472c63f9ef17f1/20261019T155427-00040a05",
+        "reasons": []
+      }
+    ],
+    "pending_or_failed": 0,
+    "feed_read": true,
+    "notification": {
+      "notification": "not_sent_technical_acceptance"
+    }
+  },
+  "repeat": {
+    "discovered": 0,
+    "feed_issues": [],
+    "feed_items": 20,
+    "status": "complete",
+    "results": [],
+    "pending_or_failed": 0,
+    "feed_read": true,
+    "notification": {
+      "notification": "not_needed",
+      "event": "no_new_articles"
+    }
+  },
+  "reopened_ledger": {
+    "start_at": "2026-10-19T22:09:00+08:00",
+    "last_feed_success": "2026-10-19T15:54:28.187726+00:00",
+    "last_attempt": "2026-10-19T15:54:28.187726+00:00",
+    "last_outcome": {
+      "status": "complete",
+      "feed_items": 20,
+      "discovered": 0,
+      "pending_or_failed": 0
+    },
+    "next_retry_at": null,
+    "feed_issues": [],
+    "source_changed_keys": [],
+    "article_access_paused": false,
+    "source_access_paused": null,
+    "needs_manual_retry": 0,
+    "counts": {
+      "baseline": 20,
+      "complete": 1
+    },
+    "recent": [
+      {
+        "key": "459504270a472c63f9ef17f1",
+        "status": "complete",
+        "attempts": 1,
+        "reason": "",
+        "output": "/Users/chenge/project/liumo/archives/mvp-acceptance/459504270a472c63f9ef17f1/20261019T155427-00040a05",
+        "published_at": null
+      }
+    ],
+    "comments_status": "not_requested",
+    "background_installation": "not_managed_by_cli"
+  },
+  "wechat_article_requests": 0,
+  "browser_profiles_read": false,
+  "formal_ledger_changed": false
+}

@@ -1,0 +1,174 @@
+{
+  "at": "2026-10-17T22:52:10.186899+08:00",
+  "status": "local_diagnostics_verified_live_root_cause_unresolved",
+  "goal_service_status_observed": "blocked",
+  "new_goal_created": false,
+  "user_observation": {
+    "evidence": "user report plus direct image observation",
+    "account_profile_visible": "猫笔刀",
+    "article_cards_visible_at_least": 2,
+    "other_tab_visible": "stormzhang",
+    "other_tab_list_content_visible": false,
+    "URL_visible": false,
+    "image_capture_time_known": false,
+    "transport_or_credentials_verified": false,
+    "local_summary": {
+      "path": "archives/feasibility/20261017T144818646860Z-profile-home-user-observation/observation.json",
+      "sha256": "8bb1201443e8f802b72b60a5eeb8ea45e26ca4025c3999289993d161703a8ea7"
+    },
+    "local_image": {
+      "path": "archives/feasibility/20261017T144818646860Z-profile-home-user-observation/user-profile.png",
+      "sha256": "2f9474a798c69d9ec1b127f8c3423d8c6a553cd94bc00fb310490546b5c87562"
+    },
+    "personal_follower_or_friend_details_in_public_summary": false,
+    "repeat_user_navigation_proof_pending": false
+  },
+  "prior_live_evidence_preserved": {
+    "path": "evidence/feasibility/wechat-profile-session-live.json",
+    "sha256": "4e673ae00e10c4e2ebe8d3a6cef4f2614cd1dd4430ad7b115509f07639d70f26"
+  },
+  "local_findings": [
+    {
+      "observation": "Target-host response counter ran before the old path filter; no target response was recorded",
+      "conclusion": "Path filtering alone is insufficient to explain this run; relaxing it is not a verified fix"
+    },
+    {
+      "observation": "Prior TLS failure counter did not record host category, and there was no request-stage counter",
+      "conclusion": "Cannot distinguish traffic entry, request/response phase or target TLS failure from old evidence"
+    },
+    {
+      "observation": "Screenshot confirms visible page content but no URL/timestamp/requests",
+      "conclusion": "Accept normal navigation feedback; do not infer live route, cache or interception compatibility"
+    }
+  ],
+  "change": {
+    "files": [
+      "validation/mitm_addon.py",
+      "tests/test_capture_observation.py",
+      "tests/test_capture_component.py"
+    ],
+    "request_and_response_counts_separate": true,
+    "path_categories": [
+      "profile_path",
+      "article_like",
+      "other_target_path"
+    ],
+    "TLS_failure_host_categories": [
+      "target",
+      "other",
+      "unknown"
+    ],
+    "raw_host_path_query_error_or_ClientHello_saved": false,
+    "off_stopped_expired_do_not_add_observations": true,
+    "capture_matching_scope_changed": false,
+    "applied_after_prior_capture_ended": true,
+    "live_diagnostics_verified": false,
+    "old_TLS_failures_reclassified": false
+  },
+  "component_primary_source": {
+    "version": "mitmproxy 12.2.3",
+    "kind": "installed pinned upstream source, locally read",
+    "files": [
+      {
+        "path": ".venv-capture/lib/python3.14/site-packages/mitmproxy/tls.py",
+        "sha256": "4617dbe3e535ea96906771a854fea1c17daeef166145930a8c97211924ea682f",
+        "lines": "135-150",
+        "field": "TlsData.conn"
+      },
+      {
+        "path": ".venv-capture/lib/python3.14/site-packages/mitmproxy/connection.py",
+        "sha256": "e8e7f3a695e17cd134be6728258a98bdcbda52304655532595b31564732ca726",
+        "lines": "118-122",
+        "field": "Connection.sni"
+      }
+    ]
+  },
+  "narrow_web_research": {
+    "date": "2026-10-17",
+    "queries": [
+      "site:github.com \"微信\" \"Mac\" \"profile_ext\"",
+      "site:github.com \"微信公众号\" \"主页\" \"4.1\" \"mac\""
+    ],
+    "usable_current_Mac_route_primary_evidence_obtained": false,
+    "old_unrelated_examples_adopted": false
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 168,
+    "passed": 164,
+    "skipped": 4,
+    "failures": 0,
+    "log": {
+      "path": ".tmp/wechat-session-validation/observation-gap-tests.log",
+      "sha256": "46410d1f76301b4bd2c7f4c994483c49925162aa5d258ed12d9774a276c2885f"
+    },
+    "evidence": [
+      "constructed events",
+      "actual installed Connection/TlsData objects in isolated process",
+      "existing component/file/process regressions; no network capture"
+    ],
+    "skip_reasons": [
+      "3 browser integration tests not enabled",
+      "1 loopback listener permission denied"
+    ]
+  },
+  "actions_this_turn": {
+    "new_system_experiment": false,
+    "CA_or_proxy_changes": false,
+    "WeChat_requests": 0,
+    "credentials_read_or_changed": false,
+    "new_dependencies": [],
+    "upstream_business_tool_installed_or_executed": false
+  },
+  "next_dependency": "Observable public page address/request phase evidence within existing permissions; no blind repeat capture",
+  "not_verified": [
+    "live request route and target TLS diagnosis",
+    "new usable credential session",
+    "two-account source coverage/pagination/time",
+    "comments and original full screenshot",
+    "automatic refresh and sleep/wake recovery"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "8118e99aa989c8cb49065672b69bbe51dae315a6858efe752a0c697d9f55d615",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "d3841e6d34db26153acd210d4af22b1f5bac414126f27f97e74fda0003edbe89",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "6be3970522295fb43b35d5bdd50c88752500a81136d1753c43e3a9ecb0b37bb3",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "d2da5d590b1cd955c0d2b074fd63e202e8ac423d6dd3402b4b0c60df877122f7",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "43d8fe7937c73f5d96857e42f307bac4592aed3247794ddc3646c5265f2448c8",
+    "tests/test_capture_observation.py": "135087bce812ccf715fcb94adeda2828ab7d3cfcdb35c9060f88d59793a4a7c7",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "delivery_checks": {
+    "markdown_files": 10,
+    "local_links": 179,
+    "python_ast_files": 34,
+    "result": "passed",
+    "scope": "Static only; not live protocol or device verification"
+  }
+}

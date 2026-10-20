@@ -1,0 +1,114 @@
+{
+  "recorded_at_beijing": "2026-10-19 21:25",
+  "scope": "public research and document updates only",
+  "live_wechat_requests": 0,
+  "credentials_read": false,
+  "system_changes": false,
+  "dependencies_installed": false,
+  "code_changed": false,
+  "new_goal_created": false,
+  "existing_goal_status_observed": "blocked",
+  "sources": [
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "maintainer_report",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/issues/200",
+      "observed": "Core upstream closure reported by maintainer; not a diagnosis of liumo profile_ext/getcomment failures."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "pinned_source",
+      "sha": "c0e7d5377004296e68edd60fc11b6584a88bedd7",
+      "display_url": "https://github.com/rachelos/we-mp-rss/blob/d94db01372105bc479db81a0ac91829dac7f43e4/core/wx/model/weread_mp.py",
+      "commit": "d94db01372105bc479db81a0ac91829dac7f43e4",
+      "observed": "List branch advances by top-level group count; cover fallback; plain-text body fallback can lose images."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "pinned_document",
+      "sha": "5c942db137dd76138e297243c8b6684a2181d19f",
+      "display_url": "https://github.com/rachelos/we-mp-rss/blob/d94db01372105bc479db81a0ac91829dac7f43e4/docs/weread-mp.md",
+      "commit": "d94db01372105bc479db81a0ac91829dac7f43e4",
+      "observed": "Still claims deprecated list endpoint and latest-only cover; conflicts with source."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "pinned_source",
+      "sha": "ba3a8b5544ef6c9774e82acc3a79bb62374aa518",
+      "display_url": "https://github.com/steptian/weread-mp/blob/2bde705a8346844fab6c4ec53b43708497881594/weread_mp.py",
+      "commit": "2bde705a8346844fab6c4ec53b43708497881594",
+      "observed": "get_articles uses minimum createTime; fetch_mp_content defaults to 1048576-byte prefix."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "commit_report",
+      "url": "https://github.com/rachelos/we-mp-rss/commit/c0dc66e9aba002353bd1c578a96ef30865277dea",
+      "commit": "c0dc66e9aba002353bd1c578a96ef30865277dea",
+      "observed": "2026-09-04 restores multi-article list primary branch; does not establish current account coverage."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "commit_report",
+      "url": "https://github.com/rachelos/we-mp-rss/commit/0023a0edb3e775c42a164904bf8678a4fe689181",
+      "commit": "0023a0edb3e775c42a164904bf8678a4fe689181",
+      "observed": "-2012 reported for quota and expiry; cannot uniquely diagnose from numeric code."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "official_document",
+      "url": "https://pymupdf.readthedocs.io/en/latest/document.html",
+      "observed": "Document constructor describes reflowable HTML; support does not establish original page fidelity."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "official_document",
+      "url": "https://pymupdf.readthedocs.io/en/latest/story-class.html",
+      "observed": "HTML layout and external resource archive requirements; not browser screenshot equivalence."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "official_document",
+      "url": "https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/ScheduledJobs.html",
+      "observed": "Calendar wake behavior distinguishes sleep from power off; not network recovery guarantee."
+    },
+    {
+      "accessed_on": "2026-10-19",
+      "kind": "vendor_document",
+      "url": "https://wechat2rss.xlab.app/deploy/",
+      "observed": "150 CNY/year software license, self-deployment; average 6-hour and best effort 24-hour collection claims."
+    }
+  ],
+  "unverified": [
+    "Both target accounts current list availability and pagination",
+    "WeRead content completeness and original screenshot under V1",
+    "Workbuddy album sample: external self-report only, referenced code not delivered",
+    "Official community reply: homepage link only, specific post not identified"
+  ],
+  "product_decision": {
+    "comments_v1": "not_requested",
+    "original_non_comment_screenshot": "retained",
+    "runtime_implementation": "not_started_this_turn"
+  },
+  "input_assessment": {
+    "path": "/Users/chenge/Downloads/liumo-技术方案评估(1).md",
+    "sha256": "44641b2c58324a74ae120e5701ddee460349f51f52944495ebab79cccdb05071"
+  },
+  "verification": {
+    "at_beijing": "2026-10-19T21:28:53.038875+08:00",
+    "status": "passed",
+    "scope": "Markdown structure, absolute local link targets, Roadmap order/count, plan requirements, source index JSON",
+    "markdown_files": 6,
+    "local_links": 140,
+    "roadmap_records": {
+      "最近完成": 20,
+      "最近验证": 20
+    },
+    "code_tests_rerun": false,
+    "reason": "Documentation-only changes; no runtime modification or live probe.",
+    "base64_example": {
+      "input": "MzA3NTQ0NjU3Mw==",
+      "decoded": "3075446573",
+      "workbuddy_example_incorrect": true
+    }
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "recorded_at": "2026-10-18T12:26:17.045902+08:00",
+  "status": "ended_article_browser_certificate_authority_error_control_and_recovery_passed",
+  "goal_service_status_last_observed": "blocked",
+  "new_goal_created": false,
+  "authorization_received": true,
+  "preparation": "evidence/feasibility/wechat-article-diagnostic-preparation.json",
+  "experiment": {
+    "mode": "article_diagnostic",
+    "duration_seconds": 120,
+    "window_ends_at_UTC": "2026-10-18T04:23:35.720478+00:00",
+    "directory": ".auth/wechat-capture/article-diagnostic-session",
+    "requests_directory_exists": false,
+    "saved_credentials": false,
+    "list_or_comment_probes": 0,
+    "HTTP_proxy_or_system_trust_expanded": false,
+    "window_starts_at_UTC": "2026-10-18T04:21:35.720478+00:00"
+  },
+  "UI": {
+    "target": "猫笔刀／上个月最值的一笔消费",
+    "action": "super+r",
+    "started_at": "2026-10-18T04:22:02.688Z",
+    "completed_at": "2026-10-18T04:22:02.725Z",
+    "tool_action_completed": true,
+    "visual_observation": "Loading spinner replaced article tab icon after key; full article had been confirmed before key",
+    "screenshot_storage": "CUA tool output only; not a local image",
+    "chat_read": false,
+    "number_of_successful_refreshes": 1,
+    "browser_error": "NET::ERR_CERT_AUTHORITY_INVALID",
+    "warning_bypassed": false,
+    "full_original_page_archived": false,
+    "article_reloaded_after_restoration": false
+  },
+  "samples": {
+    "before": {
+      "phase": "before_refresh",
+      "at": "2026-10-18T04:21:49.319039+00:00",
+      "seconds_remaining": 106.401,
+      "counters": {
+        "article_like_requests_seen": 0,
+        "article_like_responses_seen": 0,
+        "control_target_requests_seen": 1,
+        "control_target_responses_seen": 1,
+        "other_target_path_requests_seen": 0,
+        "other_target_path_responses_seen": 0,
+        "profile_path_requests_seen": 0,
+        "profile_path_responses_seen": 0,
+        "target_host_requests_seen": 0,
+        "target_host_responses_seen": 0,
+        "tls_client_failures_other": 0,
+        "tls_client_failures_seen": 0,
+        "tls_client_failures_target": 0,
+        "tls_client_failures_unknown": 0,
+        "tls_client_target_reason_ambiguous": 0,
+        "tls_client_target_reason_certificate_alert": 0,
+        "tls_client_target_reason_certificate_verification": 0,
+        "tls_client_target_reason_connection_closed": 0,
+        "tls_client_target_reason_other": 0,
+        "tls_client_target_reason_protocol_error": 0,
+        "tls_client_target_reason_unavailable": 0,
+        "tls_server_failures_other": 0,
+        "tls_server_failures_seen": 0,
+        "tls_server_failures_target": 0,
+        "tls_server_failures_unknown": 0,
+        "tls_server_target_reason_ambiguous": 0,
+        "tls_server_target_reason_certificate_alert": 0,
+        "tls_server_target_reason_certificate_verification": 0,
+        "tls_server_target_reason_connection_closed": 0,
+        "tls_server_target_reason_other": 0,
+        "tls_server_target_reason_protocol_error": 0,
+        "tls_server_target_reason_unavailable": 0
+      },
+      "UI_refresh_verified_by_snapshot": false
+    },
+    "after": {
+      "phase": "after_refresh",
+      "at": "2026-10-18T04:22:10.882190+00:00",
+      "seconds_remaining": 84.838,
+      "counters": {
+        "article_like_requests_seen": 0,
+        "article_like_responses_seen": 0,
+        "control_target_requests_seen": 1,
+        "control_target_responses_seen": 1,
+        "other_target_path_requests_seen": 0,
+        "other_target_path_responses_seen": 0,
+        "profile_path_requests_seen": 0,
+        "profile_path_responses_seen": 0,
+        "target_host_requests_seen": 0,
+        "target_host_responses_seen": 0,
+        "tls_client_failures_other": 0,
+        "tls_client_failures_seen": 15,
+        "tls_client_failures_target": 15,
+        "tls_client_failures_unknown": 0,
+        "tls_client_target_reason_ambiguous": 0,
+        "tls_client_target_reason_certificate_alert": 15,
+        "tls_client_target_reason_certificate_verification": 0,
+        "tls_client_target_reason_connection_closed": 0,
+        "tls_client_target_reason_other": 0,
+        "tls_client_target_reason_protocol_error": 0,
+        "tls_client_target_reason_unavailable": 0,
+        "tls_server_failures_other": 0,
+        "tls_server_failures_seen": 0,
+        "tls_server_failures_target": 0,
+        "tls_server_failures_unknown": 0,
+        "tls_server_target_reason_ambiguous": 0,
+        "tls_server_target_reason_certificate_alert": 0,
+        "tls_server_target_reason_certificate_verification": 0,
+        "tls_server_target_reason_connection_closed": 0,
+        "tls_server_target_reason_other": 0,
+        "tls_server_target_reason_protocol_error": 0,
+        "tls_server_target_reason_unavailable": 0
+      },
+      "UI_refresh_verified_by_snapshot": false
+    },
+    "followup": {
+      "phase": "after_refresh",
+      "at": "2026-10-18T04:22:32.858932+00:00",
+      "seconds_remaining": 62.862,
+      "counters": {
+        "article_like_requests_seen": 0,
+        "article_like_responses_seen": 0,
+        "control_target_requests_seen": 1,
+        "control_target_responses_seen": 1,
+        "other_target_path_requests_seen": 0,
+        "other_target_path_responses_seen": 0,
+        "profile_path_requests_seen": 0,
+        "profile_path_responses_seen": 0,
+        "target_host_requests_seen": 0,
+        "target_host_responses_seen": 0,
+        "tls_client_failures_other": 0,
+        "tls_client_failures_seen": 15,
+        "tls_client_failures_target": 15,
+        "tls_client_failures_unknown": 0,
+        "tls_client_target_reason_ambiguous": 0,
+        "tls_client_target_reason_certificate_alert": 15,
+        "tls_client_target_reason_certificate_verification": 0,
+        "tls_client_target_reason_connection_closed": 0,
+        "tls_client_target_reason_other": 0,
+        "tls_client_target_reason_protocol_error": 0,
+        "tls_client_target_reason_unavailable": 0,
+        "tls_server_failures_other": 0,
+        "tls_server_failures_seen": 0,
+        "tls_server_failures_target": 0,
+        "tls_server_failures_unknown": 0,
+        "tls_server_target_reason_ambiguous": 0,
+        "tls_server_target_reason_certificate_alert": 0,
+        "tls_server_target_reason_certificate_verification": 0,
+        "tls_server_target_reason_connection_closed": 0,
+        "tls_server_target_reason_other": 0,
+        "tls_server_target_reason_protocol_error": 0,
+        "tls_server_target_reason_unavailable": 0
+      },
+      "UI_refresh_verified_by_snapshot": false
+    }
+  },
+  "control": {
+    "status": "https_response_observed",
+    "request_attempted": true,
+    "cookies_or_tokens_sent": false,
+    "proxy_response_observed": true,
+    "account_access_verified": false,
+    "curl_exit_code": 0,
+    "http_status": 200,
+    "counters_at_control_end": {
+      "control_target_requests_seen": 1,
+      "control_target_responses_seen": 1
+    }
+  },
+  "final": {
+    "status": "restored",
+    "reason": "session_window_expired",
+    "finished": true,
+    "capture_disabled": true,
+    "recovery": {
+      "proxy": "restored_and_read_back",
+      "trust": "revoked_and_checked",
+      "safe_to_stop_proxy": true,
+      "verified": true
+    },
+    "proxy_process_stopped": true,
+    "capture_status": "closed",
+    "capture_running": false,
+    "passthrough_only": true,
+    "saved_by_account": {},
+    "counters": {
+      "article_like_requests_seen": 0,
+      "article_like_responses_seen": 0,
+      "control_target_requests_seen": 1,
+      "control_target_responses_seen": 1,
+      "other_target_path_requests_seen": 0,
+      "other_target_path_responses_seen": 0,
+      "profile_path_requests_seen": 0,
+      "profile_path_responses_seen": 0,
+      "target_host_requests_seen": 0,
+      "target_host_responses_seen": 0,
+      "tls_client_failures_other": 0,
+      "tls_client_failures_seen": 15,
+      "tls_client_failures_target": 15,
+      "tls_client_failures_unknown": 0,
+      "tls_client_target_reason_ambiguous": 0,
+      "tls_client_target_reason_certificate_alert": 15,
+      "tls_client_target_reason_certificate_verification": 0,
+      "tls_client_target_reason_connection_closed": 0,
+      "tls_client_target_reason_other": 0,
+      "tls_client_target_reason_protocol_error": 0,
+      "tls_client_target_reason_unavailable": 0,
+      "tls_server_failures_other": 0,
+      "tls_server_failures_seen": 0,
+      "tls_server_failures_target": 0,
+      "tls_server_failures_unknown": 0,
+      "tls_server_target_reason_ambiguous": 0,
+      "tls_server_target_reason_certificate_alert": 0,
+      "tls_server_target_reason_certificate_verification": 0,
+      "tls_server_target_reason_connection_closed": 0,
+      "tls_server_target_reason_other": 0,
+      "tls_server_target_reason_protocol_error": 0,
+      "tls_server_target_reason_unavailable": 0
+    }
+  },
+  "artifacts": [
+    {
+      "path": "archives/feasibility/20261018T042149319117Z-article-refresh-observation/UI-error-observation.json",
+      "sha256": "a399351a1c7e8580f7f19e37089ee29d894c723b70ab6372ad6e9cd21e2d845a"
+    },
+    {
+      "path": "archives/feasibility/20261018T042149319117Z-article-refresh-observation/UI-refresh.json",
+      "sha256": "d70fc8513ac4e17cf60f649f9c485344652de7bdb273749d9f7e4de07921e185"
+    },
+    {
+      "path": "archives/feasibility/20261018T042149319117Z-article-refresh-observation/after-refresh.json",
+      "sha256": "110bfa92ac9ca9185796bde9f7b6c6e7095a8776767297f929f9bc01ddbad8b2"
+    },
+    {
+      "path": "archives/feasibility/20261018T042149319117Z-article-refresh-observation/before-refresh.json",
+      "sha256": "e2ee8eecd41d815dc444affc4e36362d7a7f47150530130baf83377eb4e92901"
+    },
+    {
+      "path": "archives/feasibility/20261018T042149319117Z-article-refresh-observation/followup-after-refresh.json",
+      "sha256": "e4743657b5eab9ee9ddb2b49e76981f05971b4146f706880d374aaf147302416"
+    },
+    {
+      "path": "archives/feasibility/20261018T042343823859Z-article-transport-diagnostic-session/session-summary.json",
+      "sha256": "dfd379b8e3b7dab49068e20cd7a36e0eb35ce7461c8868e06df24be0913eb603"
+    }
+  ],
+  "finding": {
+    "live_proven": "Article browser shows certificate authority invalid after one refresh under this experiment configuration; no article HTTP observed",
+    "possible_mechanism": "Host-scoped policy string may be unsupported by browser trust implementation",
+    "mechanism_proven_in_current_WeChat": false,
+    "not_inferred": [
+      "certificate pinning",
+      "login expired",
+      "server business refusal",
+      "actual homepage transport",
+      "broader trust necessarily fixes this"
+    ]
+  },
+  "public_sources": [
+    {
+      "url": "https://chromium.googlesource.com/chromium/src/+/8efc7fd74724da62278f01e46e60432fd868f1ab/net/cert/internal/trust_store_mac.cc#78",
+      "access_date": "2026-10-18",
+      "commit": "8efc7fd74724da62278f01e46e60432fd868f1ab",
+      "blob": "bf099d3cd4fbd826bec414ea7d1bc0eb3e4e775b",
+      "finding": "Policy-string scoped trust returns unspecified; possible compatibility explanation, not WeChat build proof"
+    },
+    {
+      "url": "https://chromium.googlesource.com/chromium/src/+/main/net/cert/internal/trust_store_mac.cc",
+      "access_date": "2026-10-18",
+      "blob": "5bb8181f318983f7108bcfca5b911a1fed1ce582",
+      "finding": "Same policy-string check visible; no successful fixed-current-commit file crosscheck"
+    },
+    {
+      "url": "https://docs.mptext.top/advanced/wxdown-service",
+      "access_date": "2026-10-18",
+      "finding": "Maintainer Mac setup uses system trust; not adopted or live-tested"
+    }
+  ],
+  "local_read_only_reference": {
+    "command": "/usr/bin/security help add-trusted-cert",
+    "finding": "-s specifies policy-specific string; -d switches from user default to admin store",
+    "settings_changed": false
+  },
+  "tests": {
+    "total": 193,
+    "passed": 189,
+    "skipped": 4,
+    "runtime_tests_repeated_this_live_turn": false,
+    "unchanged_program_and_test_hashes": 36
+  },
+  "user_action_needed_now": "None; experiment ended and restoration verified. Do not rerun the fixed directory.",
+  "next_action": "Offline assess certificate scope compatibility before any further live proposal; no trust expansion or app restart authorized by this result",
+  "not_verified": [
+    "same-article HTTP content/identity",
+    "profile/list/pagination/publication time",
+    "comments/replies and original single screenshot",
+    "automatic renewal",
+    "abnormal termination/sleep/wake recovery"
+  ],
+  "delivery_checks": {
+    "result": "passed",
+    "markdown_files": 11,
+    "local_links": 246,
+    "unchanged_program_and_test_hashes": 36,
+    "artifact_hashes": 6,
+    "scope": "Documents, evidence and recorded restoration; not source/comments/full-page acceptance"
+  }
+}

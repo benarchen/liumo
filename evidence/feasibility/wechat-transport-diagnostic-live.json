@@ -1,0 +1,165 @@
+{
+  "at": "2026-10-18T07:54:46.609953+08:00",
+  "status": "ended_control_passed_target_client_TLS_failures_no_page_HTTP",
+  "goal_status_last_observed": "blocked",
+  "new_goal_created": false,
+  "authorization": {
+    "received": true,
+    "user_message": "授权",
+    "recorded_beijing": "2026-10-18 07:28",
+    "duration_seconds": 120,
+    "experiments_max": 1,
+    "temporary_user_CA_trust": "mp.weixin.qq.com only",
+    "proxy": "current service HTTPS, retain original upstream and restore",
+    "credentials_collected_or_read": false,
+    "scope": "One public credential-free control; prompt one normal homepage refresh only after control and proxy observations pass"
+  },
+  "agent_attempt": {
+    "command": ".venv/bin/python -m validation transport-diagnostic-session",
+    "tty": true,
+    "exit_code": 2,
+    "reason": "preflight_system_authorization_unavailable",
+    "stage": "read-only fresh system baseline query",
+    "experiment_created": false,
+    "CA_generated_or_trusted": false,
+    "proxy_changed": false,
+    "control_requests": 0
+  },
+  "prior_recovery_records": [
+    {
+      "directory": ".auth/wechat-capture/session",
+      "recorded_recovery_verified": true,
+      "recorded_process_stopped": true,
+      "current_system_state_rechecked": false
+    },
+    {
+      "directory": ".auth/wechat-capture/profile-session",
+      "recorded_recovery_verified": true,
+      "recorded_process_stopped": true,
+      "current_system_state_rechecked": false
+    }
+  ],
+  "current_diagnostic_directory_exists": true,
+  "prepared_evidence": "evidence/feasibility/wechat-transport-diagnostic.json",
+  "implementation_hashes_match_prepared_evidence": true,
+  "previous_tests": {
+    "total": 179,
+    "passed": 175,
+    "skipped": 4,
+    "failures": 0,
+    "rerun_this_turn": false,
+    "basis": "All 36 program/test hashes still match tested preparation index; only documentation changed"
+  },
+  "user_action": {
+    "command": "cd /Users/chenge/project/liumo && .venv/bin/python -m validation transport-diagnostic-session",
+    "authentication": "User completes macOS prompt if shown",
+    "refresh_gate": "Control HTTPS response AND separate proxy control request/response observations pass",
+    "refresh": "猫笔刀 homepage once, only when program prompts",
+    "wait_for_exit": true,
+    "authorization_again_required": false,
+    "status": "experiment ended; do not run again or refresh for this experiment"
+  },
+  "not_verified": [
+    "cause of target-host client TLS failures",
+    "client/account identity and temporal association with user refresh",
+    "functional session and source/pagination/time",
+    "comments/replies and original single full-page screenshot",
+    "automatic renewal, abnormal termination and device sleep/wake"
+  ],
+  "user_feedback": {
+    "command_run_confirmed": true,
+    "homepage_refreshed": null,
+    "page_behavior_during_window": null,
+    "refresh_request_now": "none; experiment ended, do not repeat"
+  },
+  "live_result": {
+    "started_at_UTC": "2026-10-17T23:51:56.854826+00:00",
+    "planned_window_seconds": 120,
+    "control": {
+      "status": "https_response_observed",
+      "request_attempted": true,
+      "cookies_or_tokens_sent": false,
+      "proxy_response_observed": true,
+      "account_access_verified": false,
+      "curl_exit_code": 0,
+      "http_status": 200,
+      "counters_at_control_end": {
+        "control_target_requests_seen": 1,
+        "control_target_responses_seen": 1
+      }
+    },
+    "final_status": "restored",
+    "reason": "session_window_expired",
+    "finished": true,
+    "capture_disabled": true,
+    "trust_scope_verified": true,
+    "proxy_roundtrip_verified": true,
+    "recovery": {
+      "proxy": "restored_and_read_back",
+      "trust": "revoked_and_checked",
+      "safe_to_stop_proxy": true,
+      "verified": true
+    },
+    "proxy_process_stopped": true,
+    "capture": {
+      "running": false,
+      "passthrough_only": true,
+      "diagnostics": {
+        "control_target_requests_seen": 1,
+        "control_target_responses_seen": 1,
+        "tls_client_failures_seen": 91,
+        "tls_client_failures_target": 91
+      },
+      "status": "closed",
+      "saved_by_account": {},
+      "events": {},
+      "authentication_verified": false,
+      "automatic_renewal_verified": false
+    },
+    "no_credential_requests_directory": true,
+    "archive": {
+      "path": "archives/feasibility/20261017T235403904759Z-transport-diagnostic-session/session-summary.json",
+      "sha256": "83e003598827c898d543bf16887343af8497a97fe3e83166afafb4aaa5d0622f"
+    }
+  },
+  "source_interpretation": {
+    "type": "installed primary component source, not root-cause test",
+    "component_version": "mitmproxy 12.2.3",
+    "path": ".venv-capture/lib/python3.14/site-packages/mitmproxy/proxy/layers/tls.py",
+    "sha256": "76e315d8e64355a757183d3f4dbace43550ce4092d1907547ed9ddf40c6a2c39",
+    "lines": "225-239, 637-674",
+    "supports": "tls_failed_client means TLS handshake with client failed; handler covers multiple errors",
+    "not_supported": [
+      "certificate pinning established",
+      "which application/account initiated each event",
+      "91 distinct users, articles or manual refreshes",
+      "credentials invalid or source endpoint unavailable"
+    ]
+  },
+  "conclusion": {
+    "passed": [
+      "fixed credential-free control HTTP 200 plus separate proxy request/response observations",
+      "host-scoped trust, proxy roundtrip and final recovery/process-stop records"
+    ],
+    "failed_or_not_established": [
+      "ordinary target-host HTTP request/response observations",
+      "functional session, article list or archive"
+    ],
+    "next": "No repeated experiment; preserve evidence, review normal supported access conditions; refresh/page feedback remains useful but cannot recover missing TLS reasons"
+  },
+  "actions_this_turn": {
+    "read_only_local_evidence_and_primary_component_source": true,
+    "new_network_requests": 0,
+    "system_changes": false,
+    "credentials_read_or_changed": false,
+    "new_dependencies": false,
+    "Git_changes": false
+  },
+  "delivery_checks": {
+    "markdown_files": 10,
+    "local_links": 198,
+    "python_AST_files": 36,
+    "result": "passed",
+    "scope": "Static documentation/AST only; no rerun of unchanged program tests"
+  }
+}

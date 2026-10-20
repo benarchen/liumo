@@ -1,0 +1,163 @@
+{
+  "at": "2026-10-17T17:15:49.427071+08:00",
+  "stage": "baseline_received_single_use_terminal_driver_ready_for_live_attempt",
+  "goal_status_observed": "blocked",
+  "new_goal_created": false,
+  "authorization": "Previously granted one bounded experiment; not requested again",
+  "baseline": {
+    "evidence_level": "user_normal_terminal_program_output_then_agent_review",
+    "preflight_path": "archives/feasibility/20261017T084553678867Z-capture-preflight/preflight.json",
+    "preflight_sha256": "033e2664e4e4f75e15a64aeb5773c9f667461c6d4c8e6476d18d85f8bb5d4166",
+    "private_path": "/Users/chenge/project/liumo/.auth/wechat-capture/baselines/202610170845537727700000-proxy.json",
+    "private_file_sha256": "2156360ae52e73f3d623b575451d89201b2d48ccbedd2d20c777c0a3d86e6653",
+    "private_permissions_checked": true,
+    "loopback_bind_check_passed_in_user_terminal": true,
+    "enabled_existing_loopback_proxy": true,
+    "http_and_https_same": true,
+    "authenticated": false,
+    "PAC_enabled": false,
+    "autodiscovery_enabled": false,
+    "original_values_not_exported": true,
+    "mode_selected": "upstream_to_original_loopback_proxy",
+    "live_upstream_tunnel_verified": false
+  },
+  "driver": {
+    "module": "validation/capture_session.py",
+    "entry": ".venv/bin/python -m validation capture-session --baseline PRIVATE_BASELINE_PATH",
+    "recovery_entry": ".venv/bin/python -m validation capture-recover",
+    "single_use": true,
+    "session_directory_created": false,
+    "max_capture_seconds": 600,
+    "non_terminal_gate_smoke": {
+      "result": {
+        "status": "failed",
+        "error": "ProbeError",
+        "reason": "session_requires_normal_terminal"
+      },
+      "path": ".tmp/wechat-session-validation/session-terminal-guard.json",
+      "sha256": "c64daa9110406e4ff10480816270a99bc970615d54fa1714666024f5fba5612d"
+    },
+    "wall_and_monotonic_deadlines": true,
+    "parent_pipe_EOF_stops": true,
+    "independent_transient_worker_not_installed_service": true,
+    "live_gates": [
+      "unchanged original configuration",
+      "private recovery plan before trust",
+      "new CA previously absent and untrusted",
+      "target positive and alternate SAN negative local trust checks",
+      "verified proxy options and listening",
+      "exact proxy roundtrip and full readback"
+    ],
+    "recovery": [
+      "stop capture even when journal cannot be written",
+      "compare before restoring only own endpoint",
+      "preserve external changes",
+      "verify own CA fingerprint before certificate removal",
+      "delete only newly generated CA user trust and keychain item",
+      "new connections tunnel without interception on stop or expiry",
+      "stop listener only once safe; otherwise report manual recovery required"
+    ],
+    "post_recovery_source_probe": "at most one max-3-page probe per captured account; no anonymous body retry",
+    "limitations": [
+      "native OS gates not yet executed",
+      "non-atomic compare/write race remains",
+      "worker SIGKILL or power loss requires recovery entry",
+      "sleep/wake unverified",
+      "existing TLS connections may finish before closing; no additional headers retained after stop"
+    ]
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 112,
+    "passed": 108,
+    "skipped": 4,
+    "failures": 0,
+    "log": ".tmp/wechat-session-validation/session-tests.log",
+    "log_sha256": "bd9054c35d2a319a7e0228a7d250a10bfacbeb5a2cdf1fabd61fbaaa16b8a828",
+    "skips": [
+      "3 browser integration tests not enabled",
+      "1 actual loopback HTTP bind PermissionError"
+    ],
+    "levels": {
+      "OS_operations": "constructed execution only; no system mutation",
+      "files_locks_pipes": "real local kernel objects",
+      "mitmproxy_initialization": "installed fixed component, server=False, temporary untrusted test CA",
+      "TLS_trust_and_proxy_roundtrip": "not verified"
+    },
+    "temporary_test_CA_generated_and_cleaned": true,
+    "real_component_upstream_options_and_tunnel_transition_checked": true
+  },
+  "actions_this_stage": {
+    "system_CA_trust_changed": false,
+    "system_proxy_changed": false,
+    "real_experiment_CA_generated": false,
+    "real_proxy_listener_started": false,
+    "real_credentials_captured": 0,
+    "WeChat_requests": 0,
+    "system_background_task_installed": false,
+    "unrelated_app_sessions_read": false
+  },
+  "primary_sources": [
+    {
+      "url": "https://docs.mitmproxy.org/stable/concepts/modes/#upstream-proxy",
+      "access_date": "2026-10-17"
+    },
+    {
+      "url": "https://docs.mitmproxy.org/stable/howto/ignore-domains/",
+      "access_date": "2026-10-17"
+    },
+    {
+      "url": "https://github.com/mitmproxy/mitmproxy/blob/6c09d56e4c29a92f5ad01b03199977584b8ea14f/mitmproxy/certs.py",
+      "access_date": "2026-10-17",
+      "evidence": "fixed installed component methods also inspected locally"
+    },
+    {
+      "evidence": "local macOS security help queried for add-trusted-cert, verify-cert, remove-trusted-cert, delete-certificate, find-certificate",
+      "access_date": "2026-10-17"
+    }
+  ],
+  "remaining": [
+    "user normal-terminal single-use experiment",
+    "actual hostname constraints and system restoration",
+    "real credential capture and use",
+    "real list coverage and source identity/time",
+    "body/images/comment/reply evidence",
+    "original full-page screenshot",
+    "automatic reacquisition and natural expiry",
+    "real network and sleep/wake"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "f51202622f000ad48c596b82f1a65710f8332ea97353deaa5d8e9c0a6077fa29",
+    "validation/archive.py": "f88120e3c62fbb4a450bd05889b306ec3e0c6cff194ad3f1917ca1f68c0debce",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "bee296d119f7a895874bfc1cd75c15affde766dd97709486b5b1dfad2538a7ef",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "53a415cd885014ef48c8df9a85396b20c4acf4eaf92a4d3b8d107f9ca956b089",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "fed13fc91f33070e0f453aa7a9213a74ff688fb9d84112f0a78ff9997edf7c7d",
+    "validation/credentials.py": "d8b05e59fcda9efbb39917706b80b1385361f19826091c52260c30106d45af59",
+    "validation/http.py": "5418a8a0fc9c86ca6c28f5e44dc1a44e97e5c50a79d0f09af051683ee78deac5",
+    "validation/http_archive.py": "fe055bf8ab0d158f9cc1eba78065a14802e373f356af1660ed14ac6fd65582b3",
+    "validation/mitm_addon.py": "cca832bf8fedb0b0701dd980876404da5e4541f24a5a422c2211153fba6effb7",
+    "validation/mp_source.py": "8376c9128ad8e9cab6816a8fefed92db1eab31d98404726942fdb4aea467c663",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "6ba8ac1ab578cccf547e50239cee94bf496039a06154dbe4029a376f369d82ee",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "delivery_checks": {
+    "at": "2026-10-17T17:15:49.427071+08:00",
+    "markdown_files": 9,
+    "local_links": 119,
+    "python_AST_files": 24,
+    "roadmap_records_max_20_and_descending": true,
+    "result": "passed_static_only"
+  }
+}

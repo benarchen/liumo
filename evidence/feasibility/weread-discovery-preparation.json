@@ -1,0 +1,115 @@
+{
+  "at_beijing": "2026-10-19 21:54",
+  "status": "source_preparation_passed_live_gate_blocked",
+  "goal_service_status_observed": "blocked",
+  "goal_status_changed": false,
+  "new_goal_created": false,
+  "live_source_requests": 0,
+  "credentials_read": false,
+  "old_capture_experiments_started": false,
+  "system_or_user_config_changed": false,
+  "git_repository": false,
+  "request_plan": {
+    "status": "planned",
+    "live_requests": 0,
+    "credentials_read": false,
+    "targets": [
+      {
+        "account": "猫笔刀",
+        "biz": "MzE5ODk2NjUwOA==",
+        "book_id": "MP_WXS_3198966508",
+        "sample_url": "https://mp.weixin.qq.com/s/ihaxygZIbs2HwXMNiMaqEg",
+        "mapping_basis": "existing_public_sample_identity",
+        "live_identity_verified": false
+      },
+      {
+        "account": "stormzhang",
+        "biz": "MzA4NTQwNDcyMA==",
+        "book_id": "MP_WXS_3085404720",
+        "sample_url": "https://mp.weixin.qq.com/s/4ihER5266aHuAwNzX8cDgw",
+        "mapping_basis": "existing_public_sample_identity",
+        "live_identity_verified": false
+      }
+    ],
+    "endpoint": "https://weread.qq.com/web/mp/articles",
+    "method": "GET",
+    "query_fields": [
+      "bookId",
+      "offset"
+    ],
+    "headers": [
+      "Accept",
+      "Accept-Language",
+      "User-Agent",
+      "Origin",
+      "Referer"
+    ],
+    "credential_origin": "project_isolated_weread_profile",
+    "credential_destination": "https://weread.qq.com",
+    "cross_origin_cookies": false,
+    "max_pages_per_account": 3,
+    "max_list_response_bytes": 2097152,
+    "pagination_candidate": "top_level_group_count_not_live_verified",
+    "alternative_source_commit": "2bde705a8346844fab6c4ec53b43708497881594",
+    "reference_commit": "d94db01372105bc479db81a0ac91829dac7f43e4",
+    "comments_requested": false,
+    "required_next_evidence": [
+      "account_identity",
+      "multiple_articles",
+      "real_pagination",
+      "canonical_article_links",
+      "publication_times",
+      "coverage_range"
+    ]
+  },
+  "changes": [
+    "Source IDs no longer fabricated into article shortlinks",
+    "Repeated pages and invalid structures stop a bounded scan",
+    "Observed terminal signal is not verified coverage",
+    "Live target selection constrained to two public candidates"
+  ],
+  "tests": {
+    "kind": "offline_constructed_and_existing_local_regression",
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 368,
+    "passed": 364,
+    "skipped": 4,
+    "failures": 0,
+    "seconds": 11.485,
+    "log": ".tmp/v1-auto-follow/tests.log",
+    "log_sha256": "95ed0bdcb2ef3ad086c3ce690fc53dd7291aca3419174ac49ee8651072f50072",
+    "skip_lines": [
+      "test_real_loopback_transport_redirect_and_size_guard (test_http_route.TransportTests.test_real_loopback_transport_redirect_and_size_guard) ... skipped 'environment cannot bind loopback; not transport validation passed'",
+      "test_comment_failure_cannot_be_complete (test_validation.BrowserIntegrationTests.test_comment_failure_cannot_be_complete) ... skipped 'browser process permission required; not counted as verified'",
+      "test_fixture_full_page_and_reply_expansion (test_validation.BrowserIntegrationTests.test_fixture_full_page_and_reply_expansion) ... skipped 'browser process permission required; not counted as verified'",
+      "test_hidden_body_ui_removed_from_copy_and_visible_override_kept (test_validation.BrowserIntegrationTests.test_hidden_body_ui_removed_from_copy_and_visible_override_kept) ... skipped 'browser process permission required; not counted as verified'"
+    ]
+  },
+  "code_sha256": {
+    "validation/source.py": "7337453093c9ad11392c26ee31ed8e0d363cba8bfd4bd3ceedb014f4f088f835",
+    "validation/__main__.py": "f2d07721ea999493059e5e898b24f1fdda984d35c8cbbe0c4a4bdf2b0c7546d0",
+    "tests/test_validation.py": "759a84363f0f092ba1c3061f3dff89bbe9c6261340b54df6df7dd47f18991ab3",
+    "tests/test_weread_discovery.py": "3b1b2e1d3ea6ef91d855811d3133bb7988291d443c60b778fca8efda9415ed2d"
+  },
+  "permission_attempt": {
+    "action": "One public HTTPS HEAD via standard elevated exec",
+    "executed": false,
+    "denial": "Platform granular policy has sandbox_approval=false",
+    "ordinary_terminal_workaround": false
+  },
+  "unverified": [
+    "Two-account current identity and list availability",
+    "Real pagination semantics and coverage range",
+    "Canonical links and publication times",
+    "Full V1 archives and screenshots",
+    "Actual network/browser permissions"
+  ],
+  "delivery_checks": {
+    "markdown_files": 7,
+    "absolute_local_links": 145,
+    "roadmap_order_and_counts": "passed",
+    "code_matches_tested_sha256": true,
+    "changed_python_syntax": "passed",
+    "live_gate": "not_passed"
+  }
+}

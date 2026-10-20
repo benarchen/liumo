@@ -1,0 +1,13 @@
+{
+  "evidence": "constructed_fixture_not_wechat",
+  "pages": [
+    {
+      "cursor": "0",
+      "has_more": false,
+      "items": [
+        {"account": "synthetic-account", "id": "group-1-item-1", "title": "构造文章一", "url": "https://mp.weixin.qq.com/s/synthetic-one", "published_at": "2026-10-16T22:00:00+08:00", "time_verified": true},
+        {"account": "synthetic-account", "id": "group-1-item-2", "title": "构造文章二", "url": "https://mp.weixin.qq.com/s/synthetic-two", "published_at": "2026-10-16T22:00:00+08:00", "time_verified": true}
+      ]
+    }
+  ]
+}

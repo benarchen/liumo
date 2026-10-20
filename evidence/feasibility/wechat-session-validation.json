@@ -1,0 +1,188 @@
+{
+  "at": "2026-10-17T16:29:29.392516+08:00",
+  "status": "C0_baseline_C1_preparation_only_not_live_verified",
+  "goal_service_status_observed": "blocked",
+  "new_goal_created": false,
+  "baseline": {
+    "prior_code_hashes_matched_at_start": true,
+    "prior_evidence": "evidence/feasibility/self-http-route.json",
+    "git_repository": false,
+    "macos": {
+      "version": "27.0.1",
+      "build": "26A434"
+    },
+    "python": "3.14.5",
+    "wechat": {
+      "version": "4.1.15",
+      "build": "270100",
+      "bundle_id": "com.tencent.xinWeChat",
+      "method": "Info.plist public application metadata only"
+    },
+    "proxy_baseline_complete": false,
+    "scutil_proxy": "No complete restorable snapshot; not proof of proxy disabled",
+    "networksetup_help": "AuthorizationCreate() failed: -60008; help text also returned; no mutation",
+    "normal_article_entry": "Prior user screenshots only; no new programmatic native access verified"
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 88,
+    "passed": 84,
+    "skipped": 4,
+    "failures": 0,
+    "log": ".tmp/wechat-session-validation/tests.log",
+    "log_sha256": "e94792078c672be3c303d56cc5005d18d26c6ea965dff416d2dec29261fe78cd",
+    "skip_reasons": [
+      "3 browser integration tests not enabled",
+      "1 real loopback HTTP transport test: bind PermissionError"
+    ],
+    "new_evidence_levels": [
+      "constructed header events",
+      "real local private files and locks",
+      "real isolated subprocess import; no proxy installed"
+    ]
+  },
+  "fixture": {
+    "path": "archives/feasibility/20261017T082629485832Z-capture-fixture/capture-fixture.json",
+    "sha256": "000ff1e113c74913ce31413dc894b8a762c0e72dd137b4f0f34ec9e5d7566f2f",
+    "result": {
+      "at": "2026-10-17T08:26:29.486035+00:00",
+      "evidence": "constructed_capture_events_no_network",
+      "status": "constructed_passed_live_not_verified",
+      "live_capture": false,
+      "capture": {
+        "status": "closed",
+        "saved_by_account": {
+          "猫笔刀": 1
+        },
+        "events": {
+          "capture_saved_not_authentication_verified": 1
+        },
+        "authentication_verified": false,
+        "automatic_renewal_verified": false
+      },
+      "private_file_mode": "0600",
+      "unknown_cookie_saved": false,
+      "fake_credentials_retained": false
+    }
+  },
+  "public_identity_observations": [
+    {
+      "account": "猫笔刀",
+      "path": "archives/feasibility/20261017T021042329739Z-article/page-observation.json",
+      "sha256": "f3ba51273d934aaa9200aae1d8479eb30234b0d838484571b5fa55260e925281",
+      "fresh_authentication_or_identity_verified": false
+    },
+    {
+      "account": "stormzhang",
+      "path": "archives/feasibility/20261017T021319885699Z-article/page-observation.json",
+      "sha256": "a9fac97b23414516e26c030370cb5d581ef1d4f39aeda568f6bd84df9c2dd937",
+      "fresh_authentication_or_identity_verified": false
+    }
+  ],
+  "candidate": {
+    "name": "mitmproxy",
+    "version": "12.2.3",
+    "commit": "6c09d56e4c29a92f5ad01b03199977584b8ea14f",
+    "declared_python": ">=3.12; classifier includes 3.14",
+    "installed_this_round": false,
+    "live_integration_verified": false,
+    "maintenance_scope": "Observed recent upstream PR activity only; no comprehensive audit"
+  },
+  "primary_sources": [
+    {
+      "url": "https://docs.mitmproxy.org/stable/concepts/certificates/",
+      "access_date": "2026-10-17",
+      "level": "official_documentation_or_upstream_source_not_local_live_validation"
+    },
+    {
+      "url": "https://docs.mitmproxy.org/stable/concepts/modes/",
+      "access_date": "2026-10-17",
+      "level": "official_documentation_or_upstream_source_not_local_live_validation"
+    },
+    {
+      "url": "https://docs.mitmproxy.org/stable/howto/ignore-domains/",
+      "access_date": "2026-10-17",
+      "level": "official_documentation_or_upstream_source_not_local_live_validation"
+    },
+    {
+      "url": "https://docs.mitmproxy.org/stable/concepts/options/",
+      "access_date": "2026-10-17",
+      "level": "official_documentation_or_upstream_source_not_local_live_validation"
+    },
+    {
+      "url": "https://docs.mitmproxy.org/stable/api/events.html",
+      "access_date": "2026-10-17",
+      "level": "official_documentation_or_upstream_source_not_local_live_validation"
+    },
+    {
+      "url": "https://github.com/mitmproxy/mitmproxy/blob/6c09d56e4c29a92f5ad01b03199977584b8ea14f/pyproject.toml",
+      "access_date": "2026-10-17",
+      "level": "official_documentation_or_upstream_source_not_local_live_validation"
+    },
+    {
+      "url": "https://github.com/mitmproxy/mitmproxy/pulls",
+      "access_date": "2026-10-17",
+      "level": "official_documentation_or_upstream_source_not_local_live_validation"
+    }
+  ],
+  "authorization": {
+    "temporary_CA_trust_and_HTTPS_proxy": "requested_no_reply_yet",
+    "credential_capture": "requested_no_reply_yet",
+    "preconditions": [
+      "complete restorable baseline",
+      "validated recovery and supervision",
+      "component options and output protection",
+      "permitted loopback listener"
+    ]
+  },
+  "actions_this_round": {
+    "live_wechat_requests": 0,
+    "real_credentials_captured": 0,
+    "CA_generated": false,
+    "CA_trusted": false,
+    "proxy_started": false,
+    "system_settings_changed": false,
+    "background_task_installed": false,
+    "unrelated_account_data_read": false,
+    "dependencies_installed": []
+  },
+  "not_verified": [
+    "actual component integration",
+    "complete proxy baseline and real rollback",
+    "native WeChat proxy/TLS compatibility and credential field availability",
+    "real credentials authentication and automatic reacquisition",
+    "natural expiry and renewal",
+    "real multi-article coverage and source time",
+    "real comment/reply API pagination",
+    "original single screenshot with comments",
+    "actual network recovery and device sleep/wake"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "4f6537315f544b80c82b8cef2171d6bd53207b7e4cb0a25e878334a96694f0f2",
+    "validation/archive.py": "f88120e3c62fbb4a450bd05889b306ec3e0c6cff194ad3f1917ca1f68c0debce",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "50ed06e9dd6077cdce801fb0ff6e116787d24b65160f55507c44898ff1106d6f",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "fed13fc91f33070e0f453aa7a9213a74ff688fb9d84112f0a78ff9997edf7c7d",
+    "validation/credentials.py": "d8b05e59fcda9efbb39917706b80b1385361f19826091c52260c30106d45af59",
+    "validation/http.py": "5418a8a0fc9c86ca6c28f5e44dc1a44e97e5c50a79d0f09af051683ee78deac5",
+    "validation/http_archive.py": "fe055bf8ab0d158f9cc1eba78065a14802e373f356af1660ed14ac6fd65582b3",
+    "validation/mitm_addon.py": "38104c85ee6af39df6e61902a419fdec2692e885004eda47b92fdc3c53b8cb2e",
+    "validation/mp_source.py": "8376c9128ad8e9cab6816a8fefed92db1eab31d98404726942fdb4aea467c663",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "tests/test_capture.py": "7ec36dc1999778e14c3506c07f8a5a7c36285eb7aa5dc506d57dc5c27da6ab24",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "delivery_checks": {
+    "markdown_files": 9,
+    "local_links": 107,
+    "python_ast_files": 19,
+    "result": "passed",
+    "scope": "static checks only; not rendered pages or live proxy recovery"
+  }
+}

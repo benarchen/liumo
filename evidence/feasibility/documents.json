@@ -1,0 +1,13 @@
+{
+  "at_beijing": "2026-10-17 10:39",
+  "markdown_files": 6,
+  "checks": [
+    "fences",
+    "table_boundaries",
+    "absolute_local_link_targets",
+    "no_full_width_long_dash"
+  ],
+  "problems": [],
+  "external_link_verification": "only actually retrieved sources; real page scope tracked separately",
+  "mermaid_rendering": "not_verified"
+}

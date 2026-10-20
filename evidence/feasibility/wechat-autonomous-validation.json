@@ -1,0 +1,263 @@
+{
+  "at": "2026-10-17T22:04:53.901816+08:00",
+  "status": "not_verified",
+  "goal_service_status_observed": "blocked",
+  "new_goal_created": false,
+  "scope": "Two fixed account/sample checks with existing project credentials; no subscriptions",
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 147,
+    "passed": 143,
+    "skipped": 4,
+    "failures": 0,
+    "path": ".tmp/wechat-session-validation/native-bridge-tests.log",
+    "sha256": "5888a37440c55276877f2696763b84cd432e3fcebc8b95284a700661491cf823",
+    "skip_reasons": [
+      "3 browser integration tests not enabled",
+      "1 loopback bind permission denied"
+    ],
+    "levels": [
+      "constructed protocols/gates",
+      "real private files and FIFO race regression",
+      "isolated local process tests; not device sleep/wake"
+    ]
+  },
+  "observations": {
+    "user_schema": {
+      "path": "archives/feasibility/20261017T094519358085Z-mp-diagnostic-pair/diagnostic-pair.json",
+      "sha256": "cf824ca6cd793eca560af4559b6dd92f0721fdd04c178a7996311e4139acc6bb"
+    },
+    "body_initial": {
+      "path": "archives/feasibility/20261017T134238846175Z-credentialed-samples/samples.json",
+      "sha256": "c09ff50a6d1d0864e3b6745a665ce2fbb62a45b34a3790318309e892615c723d"
+    },
+    "body_strict": {
+      "path": "archives/feasibility/20261017T134520681348Z-credentialed-samples/samples.json",
+      "sha256": "d31cedc7ae9998cc79cc08b4f287590a8bad74ce3803475fe014f0ab44582a1d"
+    },
+    "body_transport": {
+      "path": "archives/feasibility/20261017T134520681348Z-credentialed-samples/transport.json",
+      "sha256": "ab9efc6ac187ca83ad3aa6376b67ae1a0f89fa3648476649a1bdfb47c32d44b5"
+    },
+    "aligned_source": {
+      "path": "archives/feasibility/20261017T134844660526Z-reference-source-pair/source-pair.json",
+      "sha256": "12245078fc08d74f0eec4e68ca820986f318a87dade909a6908f4b4be0208c6b"
+    },
+    "source_transport": {
+      "path": "archives/feasibility/20261017T134844660526Z-reference-source-pair/transport.json",
+      "sha256": "9c3b639c452c2671f1a1a799de1e4dcb25e0fc2f50f4d59605f74a28fb04e61d"
+    },
+    "profile_context": {
+      "path": "archives/feasibility/20261017T135440966010Z-profile-context-pair/contexts.json",
+      "sha256": "3ffeffba774c5a1a325002421e962da18e6755e13a0ca21bc194af6e9e11b41d"
+    },
+    "context_transport": {
+      "path": "archives/feasibility/20261017T135440966010Z-profile-context-pair/transport.json",
+      "sha256": "e98aac635ef58c06cc5fbb710ee60796816e8ae80d8e6d800c131d2052a6831d"
+    },
+    "public_fifo_transport": {
+      "path": ".tmp/wechat-session-validation/network-boundary/public-bridge-fixed/status.json",
+      "sha256": "cef1a7e2c813248be1844561db5b6df3f6f1fe610f181c86f8c3a207f78241a0"
+    }
+  },
+  "live_results": {
+    "user_schema": {
+      "each_account": {
+        "ret": 0,
+        "can_msg_continue": 0,
+        "list_present": false,
+        "next_offset_present": false
+      },
+      "current_classification": "source_list_missing_not_empty_success"
+    },
+    "body_strict": {
+      "each_sample": {
+        "http": 302,
+        "redirect_followed": false,
+        "article_identity_confirmed": false,
+        "images": 0,
+        "comment_api": 0,
+        "browser_attempted": false
+      }
+    },
+    "aligned_source": {
+      "each_account": {
+        "http": 200,
+        "business_code": -3,
+        "list_present": false,
+        "authentication_verified": false
+      }
+    },
+    "profile_context": {
+      "each_account": {
+        "http": 200,
+        "identity_observed": false,
+        "poc_token_observed": false,
+        "poc_sid_observed": false,
+        "followup_lists": 0
+      },
+      "interpretation": "Current static parser did not establish context; raw page not retained"
+    },
+    "public_fifo_transport": {
+      "http": 200,
+      "response_bytes_in_memory_only": 61247
+    }
+  },
+  "local_failures_separate_from_server": [
+    {
+      "attempt": "20261017T133342524770Z-credentialed-samples",
+      "observation": "First native curl observed 302 but controller receipt mode 0644 rejected locally; not credential-file rejection"
+    },
+    {
+      "bridge": "ba5ae2c2c03b4e19a4f904feb2e42b1f",
+      "observation": "Controller interrupted without complete HTTP receipt; server receipt of request unknown"
+    },
+    {
+      "observation": "Nonblocking FIFO EAGAIN race reproduced and fixed; real FIFO regression and public 200 followed"
+    },
+    {
+      "observation": "Process inventory unavailable (sysmond); unknown early controller child absence not independently verified; owned expired pipes drained/closed"
+    }
+  ],
+  "primary_sources": [
+    {
+      "path": ".tmp/feasibility/profile-session-research/provider.py",
+      "sha256": "680209f2b7f63bd4424015e365c5d9a4dd7f8da64a966589bc194b4808efd030",
+      "url": "https://github.com/tingaidehua/wechat-article-downloader-skill/blob/d97c255419e9a6de1c32bb5a9cf0f747630499bd/skills/wechat-article-downloader/scripts/wechat_article_downloader/provider.py",
+      "commit": "d97c255419e9a6de1c32bb5a9cf0f747630499bd",
+      "git_blob": "0fafa5fe6f35e3836a5883be63450373dd78db40",
+      "git_blob_verified": true,
+      "access_date": "2026-10-17",
+      "level": "source_only_Windows_not_Mac_validation",
+      "executed_or_installed": false
+    },
+    {
+      "path": ".tmp/feasibility/profile-session-research/capture.py",
+      "sha256": "614acea050b8304b7d096e69f3a074634d5f1d707b6383d4f0e0a541af4900e6",
+      "url": "https://github.com/tingaidehua/wechat-article-downloader-skill/blob/d97c255419e9a6de1c32bb5a9cf0f747630499bd/skills/wechat-article-downloader/scripts/wechat_article_downloader/capture.py",
+      "commit": "d97c255419e9a6de1c32bb5a9cf0f747630499bd",
+      "git_blob": "ec64428ade89ecadecab3e118e72e32e01bbb46d",
+      "git_blob_verified": true,
+      "access_date": "2026-10-17",
+      "level": "source_only_Windows_not_Mac_validation",
+      "executed_or_installed": false
+    },
+    {
+      "path": ".tmp/feasibility/profile-session-research/credentials.py",
+      "sha256": "08848a0f3dfe4a97f227df7cc07f2557c9d798d30976933006a0b07117e36e49",
+      "url": "https://github.com/tingaidehua/wechat-article-downloader-skill/blob/d97c255419e9a6de1c32bb5a9cf0f747630499bd/skills/wechat-article-downloader/scripts/wechat_article_downloader/credentials.py",
+      "commit": "d97c255419e9a6de1c32bb5a9cf0f747630499bd",
+      "git_blob": "8cc8bd10b95b01fc687c878bac980cce55e32cf2",
+      "git_blob_verified": true,
+      "access_date": "2026-10-17",
+      "level": "source_only_Windows_not_Mac_validation",
+      "executed_or_installed": false
+    },
+    {
+      "path": ".tmp/feasibility/profile-session-research/protocol-principles.md",
+      "sha256": "b10724e6327d5a4a016ebd92d34d5c759ca6884487ad03958ee1dd29981a4361",
+      "url": "https://github.com/tingaidehua/wechat-article-downloader-skill/blob/d97c255419e9a6de1c32bb5a9cf0f747630499bd/docs/protocol-principles.md",
+      "commit": "d97c255419e9a6de1c32bb5a9cf0f747630499bd",
+      "git_blob": "836a47398746995de13ef38319fb0cf0a2553504",
+      "git_blob_verified": true,
+      "access_date": "2026-10-17",
+      "level": "source_only_Windows_not_Mac_validation",
+      "executed_or_installed": false
+    },
+    {
+      "url": "https://curl.se/docs/manpage.html",
+      "access_date": "2026-10-17",
+      "level": "official_options_documentation_not_authentication_evidence"
+    },
+    {
+      "url": "https://github.com/wechat-article/wechat-article-exporter/issues/200",
+      "access_date": "2026-10-17",
+      "level": "maintainer_report_not_all_WeChat_APIs_closure_proof"
+    },
+    {
+      "url": "https://github.com/wechat-article/wechat-article-exporter/tree/152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "access_date": "2026-10-17",
+      "level": "fixed_source_protocol_reference",
+      "earlier_index": "evidence/feasibility/exporter-mechanism.json"
+    }
+  ],
+  "boundaries": {
+    "new_credentials_captured_or_saved": false,
+    "credential_hashes_saved": false,
+    "raw_headers_or_responses_saved": false,
+    "system_changes_made": false,
+    "CA_trust_or_proxy_restarted": false,
+    "formal_subscription_enabled": false,
+    "browser_executed_this_stage": false,
+    "new_dependencies_installed": [],
+    "upstream_business_source_executed_or_copied": false,
+    "TLS_verification_disabled": false
+  },
+  "not_verified": [
+    "usable account list and pagination/coverage",
+    "source publication time semantics",
+    "credentialed body and real comment/reply access",
+    "original single-page screenshot including comments",
+    "automatic credential reacquisition and natural expiry",
+    "real incremental discovery",
+    "actual network recovery and device sleep/wake",
+    "abnormal system recovery"
+  ],
+  "next_dependency": {
+    "required": "Normal homepage/list request context and immediate functional check",
+    "current_sample_only_capture_insufficient": true,
+    "old_one_shot_system_authorization_consumed": true,
+    "sequence": [
+      "design and self-test a new narrowly scoped session experiment",
+      "obtain explicit new system experiment authorization before executing",
+      "check accepted context immediately, stop on refusal"
+    ],
+    "no_repeat_needed": [
+      "WeRead QR",
+      "old sample opening",
+      "old mp-diagnose",
+      "manual token copying"
+    ],
+    "fresh_capture_guarantees_success": false
+  },
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "3ff5923f6c06dba9d8462bd79b5ec8b45599d154c4bd9018684b1a480f20cf65",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "bee296d119f7a895874bfc1cd75c15affde766dd97709486b5b1dfad2538a7ef",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "53a415cd885014ef48c8df9a85396b20c4acf4eaf92a4d3b8d107f9ca956b089",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "cca832bf8fedb0b0701dd980876404da5e4541f24a5a422c2211153fba6effb7",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "6ba8ac1ab578cccf547e50239cee94bf496039a06154dbe4029a376f369d82ee",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "delivery_checks": {
+    "markdown_files": 10,
+    "local_links": 156,
+    "python_ast_files": 31,
+    "result": "passed",
+    "scope": "Static docs and AST; not rendered/live browser validation"
+  }
+}

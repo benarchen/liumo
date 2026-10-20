@@ -1,0 +1,71 @@
+{
+  "observed_at": "2026-10-19T14:22:20.295274+00:00",
+  "checked_at_beijing": "2026-10-19 22:22",
+  "scope": "normal_website_search_only",
+  "site": "https://weread.qq.com/",
+  "method": "project_owned_persistent_chrome_profile_normal_ui",
+  "observations": {
+    "猫笔刀": {
+      "visible_categories": [
+        "电子书"
+      ],
+      "visible_search_summary": [
+        "全文中提到 猫笔刀 的书 · 1210"
+      ],
+      "mp_wxs_href_count": 0,
+      "account_article_list_reached": false,
+      "multiple_target_articles_verified": false,
+      "pagination_verified": false
+    },
+    "stormzhang": {
+      "visible_categories": [],
+      "visible_search_summary": [
+        "全文中提到 stormzhang 的书 · 2"
+      ],
+      "mp_wxs_href_count": 0,
+      "account_article_list_reached": false,
+      "multiple_target_articles_verified": false,
+      "pagination_verified": false
+    }
+  },
+  "count_semantics": "UI book search matches, not public-account article counts",
+  "conclusion": "normal_search_usable_target_account_lists_not_reached",
+  "limitations": [
+    "Only current website search entry checked; not all routes or native App",
+    "MP_WXS selector absence does not prove all target links absent",
+    "Authentication not independently verified",
+    "No cause established for earlier -2012/-2041 API results",
+    "No account identity, publication time, coverage or pagination evidence"
+  ],
+  "safety": {
+    "manual_api_replays": 0,
+    "shelf_or_follow_mutations": 0,
+    "other_application_sessions_read": false,
+    "credentials_exported": false,
+    "system_configuration_changed": false,
+    "project_browser_closed": true
+  },
+  "artifacts": [
+    {
+      "path": "/Users/chenge/project/liumo/archives/feasibility/20261019T142220213596Z-weread-normal-pages/summary.json",
+      "sha256": "1569795e4c0e7517df50c8c43d32902a2057646556ac567025793c3eb2705a10"
+    },
+    {
+      "path": "/Users/chenge/project/liumo/archives/feasibility/20261019T142220213596Z-weread-normal-pages/stormzhang-search-summary.png",
+      "sha256": "4bebbde67e2943104a31c7665d0abb75f2427939df4e84f30119069897ae3827"
+    }
+  ],
+  "screenshot_scope": "Only stormzhang public search summary, visually inspected; cat DOM only",
+  "reproduction": [
+    "Open https://weread.qq.com/ in the project dedicated browser",
+    "Search each target name with the visible right-side search icon",
+    "Check target account identity and article list separately from book-name mentions"
+  ],
+  "discovery_gate": "not_passed",
+  "next_evidence": "normal_app_target_share_entry_or_other_two_account_source",
+  "validation": {
+    "product_code_changed": false,
+    "full_regression_rerun": false,
+    "prior_tests": "372 total; 368 passed; 4 skipped; unchanged product code"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "reviewed_at_beijing": "2026-10-17 10:15",
+  "evidence": "real_article_via_user_terminal",
+  "artifact_directory": "/Users/chenge/project/liumo/archives/feasibility/20261017T021319885699Z-article",
+  "source_url": "https://mp.weixin.qq.com/s/4ihER5266aHuAwNzX8cDgw",
+  "resolved_source_url": "https://mp.weixin.qq.com/s/4ihER5266aHuAwNzX8cDgw",
+  "title": "Linux 之父都开始用 AI 写代码了",
+  "status": "partial",
+  "account_label": {
+    "automated_visible_name": "",
+    "visually_seen_in_screenshot": "stormzhang",
+    "selector_scope_verified": false
+  },
+  "metadata_sha256": "0d4a4704e33399c141304ec6b80904013bc009374fc9979ab0b8886eb0136ccf",
+  "observation_sha256": "a9fac97b23414516e26c030370cb5d581ef1d4f39aeda568f6bd84df9c2dd937",
+  "screenshot": {
+    "sha256": "f340339d151ab600d066685e37788b3c84e8f0bfb1ab56734e997cb4591a5e87",
+    "dimensions": {
+      "width": 1100,
+      "height": 1318
+    },
+    "visual_review": "Full PNG inspected. The action strip overlaps article text around the product-design paragraph and following paragraph; comments absent. Its CSS positioning cause was not captured. Full-page dimensions do not prove unobscured content."
+  },
+  "markdown": {
+    "nonempty_visible_source_lines": 20,
+    "matched_without_whitespace": 20,
+    "quality_failures": [
+      "duplicate article heading",
+      "hidden donation form labels and numeric keypad included",
+      "missing donation QR image marker included"
+    ],
+    "conclusion": "Visible source text is present, but body-only Markdown extraction has not passed."
+  },
+  "images": {
+    "downloaded": 0,
+    "failures": [
+      {
+        "index": 0,
+        "reason": "missing_image_source",
+        "source_host": null
+      }
+    ],
+    "nodes": [
+      {
+        "index": 0,
+        "source_host": null,
+        "has_source": false,
+        "complete": true,
+        "natural_width": 0,
+        "natural_height": 0,
+        "visible": false,
+        "rendered_width": 110,
+        "rendered_height": 110,
+        "parent_tag": "span",
+        "id": "",
+        "alt": "赞赏二维码"
+      }
+    ],
+    "classification": "Only observed image is a hidden source-less donation QR node with a nonzero box; it does not match the narrow empty-avatar exclusion. No general image exclusion added."
+  },
+  "comments": {
+    "status": "failed",
+    "reason": "comment_request_failed_no_retry",
+    "expanded": 0,
+    "failed_comment_requests": 4,
+    "request_failures": [
+      {
+        "reason": "business_rejected",
+        "host": "mp.weixin.qq.com",
+        "path": "/mp/appmsg_comment",
+        "http_status": 200,
+        "business_code": -3
+      },
+      {
+        "reason": "business_rejected",
+        "host": "mp.weixin.qq.com",
+        "path": "/mp/appmsg_comment",
+        "http_status": 200,
+        "business_code": -3
+      },
+      {
+        "reason": "business_rejected",
+        "host": "mp.weixin.qq.com",
+        "path": "/mp/appmsg_comment",
+        "http_status": 200,
+        "business_code": -3
+      },
+      {
+        "reason": "business_rejected",
+        "host": "mp.weixin.qq.com",
+        "path": "/mp/appmsg_comment",
+        "http_status": 200,
+        "business_code": -3
+      }
+    ]
+  },
+  "publication_time": {
+    "visible_text": "16小时前",
+    "browser_time_zone": "America/Los_Angeles",
+    "epoch_candidate": "1792142515",
+    "converted_beijing_candidate": "2026-10-16T17:21:55+08:00",
+    "source_time_semantics_verified": false
+  },
+  "not_passed": [
+    "clean body Markdown",
+    "unobscured full-page screenshot",
+    "comments and replies",
+    "ancillary area completeness",
+    "source-list discovery"
+  ],
+  "handling": "Preserve raw archive. No automatic retries, no CSS changes, no screenshot splitting or truncation. Capture failure is not proof that a single complete image is impossible.",
+  "next_step": "WeRead login by user for independent article discovery checkpoint; normal-page comment availability needs user observation.",
+  "user_page_observation": {
+    "reported_at_beijing": "2026-10-17 10:18",
+    "evidence": "user_report_not_automated_check",
+    "statement": "两个公众号的验证页面都没有看到评论，文章最下面什么也没有",
+    "interpretation": "Current validation pages did not display comments. Combined with business rejection -3, this is not confirmed absence of comments; no platform-wide or login-cause conclusion."
+  },
+  "user_comment_existence_confirmation": {
+    "reported_at_beijing": "2026-10-17 10:20",
+    "evidence": "user_report_not_direct_agent_inspection",
+    "statement": "两篇文章下面都有几十条留言的",
+    "exact_count_verified": false,
+    "validation_browser_displayed_comments": false,
+    "comment_capture_validation": "failed_existing_comments_not_obtained",
+    "business_code_meaning": "unverified",
+    "next_distinguishing_check": "whether same articles show comments in current Mac WeChat; no credential extraction"
+  },
+  "user_screenshot_comparison": {
+    "reviewed_at_beijing": "2026-10-17 10:22",
+    "evidence": "user_supplied_image_visually_reviewed_by_agent",
+    "local_image": "/Users/chenge/project/liumo/archives/feasibility/20261017T022229326032Z-user-comment-reference/stormzhang.png",
+    "sha256": "9ee414088d52351b67be7f411bf14eea79547616e02580ab8eaa5c38a54ec448",
+    "header_displayed_comment_count": 15,
+    "count_scope": "visible header only, not verified total including replies",
+    "visible_comment_text": true,
+    "visible_author_reply": true,
+    "advertisement_visible": true,
+    "full_article_or_all_replies_captured": false,
+    "capture_time": "unknown",
+    "client_context": "supplied in response to current Mac WeChat visibility check; exact app and session not programmatically verified",
+    "conclusion": "Normal reading window can display comments/replies. Dedicated validation browser failed to load them. Cause and reproducible automated capture remain unverified."
+  }
+}

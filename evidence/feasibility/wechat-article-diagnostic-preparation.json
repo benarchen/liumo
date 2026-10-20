@@ -1,0 +1,165 @@
+{
+  "at": "2026-10-18T12:07:43.613550+08:00",
+  "status": "prepared_authorized_target_and_normal_terminal_pending",
+  "goal_service_status_last_observed": "blocked",
+  "new_goal_created": false,
+  "authorization": {
+    "received": true,
+    "scope": "One new <=120 second article-page control experiment",
+    "article": "https://mp.weixin.qq.com/s/ihaxygZIbs2HwXMNiMaqEg",
+    "temporary_trust": "User-level mp.weixin.qq.com only",
+    "proxy": "Active service HTTPS only; original upstream retained; exact restore/readback",
+    "credentials_collected": false,
+    "list_or_comment_probes": false,
+    "HTTP_proxy_or_system_trust_expanded": false
+  },
+  "preflight": {
+    "system_queries": "preflight_system_authorization_unavailable",
+    "system_settings_changed": false,
+    "new_experiment_created": false,
+    "new_CA_generated": false,
+    "control_or_WeChat_requests": 0,
+    "UI": "Connected; window menu initially showed main window only; no screenshot of chats; target article not confirmed",
+    "UI_followup_action": "Escape blocked because user changed app; no retry"
+  },
+  "implementation": {
+    "entry": "article-transport-diagnostic-session",
+    "recover": "article-transport-diagnostic-recover",
+    "experiment": "article_diagnostic",
+    "private_directory": ".auth/wechat-capture/article-diagnostic-session",
+    "worker_argument": "--article-diagnostic-worker",
+    "duration_seconds": 120,
+    "prior_experiments_required_closed": 4,
+    "credential_operations_disabled": true,
+    "article_UI_ready_state_required": true,
+    "new_dependencies": false
+  },
+  "prior_records": [
+    {
+      "directory": ".auth/wechat-capture/session",
+      "recorded_recovery_verified": true,
+      "recorded_proxy_process_stopped": true,
+      "current_system_state_rechecked": false
+    },
+    {
+      "directory": ".auth/wechat-capture/profile-session",
+      "recorded_recovery_verified": true,
+      "recorded_proxy_process_stopped": true,
+      "current_system_state_rechecked": false
+    },
+    {
+      "directory": ".auth/wechat-capture/diagnostic-session",
+      "recorded_recovery_verified": true,
+      "recorded_proxy_process_stopped": true,
+      "current_system_state_rechecked": false
+    },
+    {
+      "directory": ".auth/wechat-capture/ui-diagnostic-session",
+      "recorded_recovery_verified": true,
+      "recorded_proxy_process_stopped": true,
+      "current_system_state_rechecked": false
+    }
+  ],
+  "commands": {
+    "start": "cd /Users/chenge/project/liumo && .venv/bin/python -m validation article-transport-diagnostic-session",
+    "recover_if_needed": "cd /Users/chenge/project/liumo && .venv/bin/python -m validation article-transport-diagnostic-recover",
+    "tests": ".venv/bin/python -m unittest discover -s tests -v"
+  },
+  "user_action_needed": [
+    "Place fixed sample article alone in front and hide chats; do not refresh",
+    "After Agent confirms target, run the new entry once in a normal terminal; keep it running"
+  ],
+  "user_authorization_again_required": false,
+  "agent_actions_after_ready": [
+    "Confirm target article, control and remaining window",
+    "Save before counters/time, perform one refresh, verify visible outcome, save after counters/time",
+    "Audit final independent restoration and process-stop records"
+  ],
+  "tests": {
+    "total": 193,
+    "passed": 189,
+    "skipped": 4,
+    "failures": 0,
+    "log": ".tmp/wechat-session-validation/article-diagnostic-tests.log",
+    "sha256": "ec49f1c7f3e3cf6c7dce39526b504dba09da5920f3dc912183766c77c58847e2",
+    "skip_reasons": [
+      "3 browser tests not enabled",
+      "1 loopback bind permission denied"
+    ],
+    "new_tests": [
+      "All four prior recovery/stop gates and one-use directory",
+      "Separate parent/worker/output/recovery paths with no source probes",
+      "Conflicting session and proxy modes rejected",
+      "Credential-free addon routing and plan mismatch rejection",
+      "Article observation rejects homepage ready state"
+    ]
+  },
+  "component": {
+    "status": "passed",
+    "component": "mitmproxy 12.2.3",
+    "article_diagnostic_option": true,
+    "credentials_disabled": true,
+    "listener_started": false,
+    "system_trust_changed": false,
+    "network_requests": 0,
+    "article_counter_evidence": "constructed URL only",
+    "log": ".tmp/wechat-session-validation/article-diagnostic-component.log",
+    "sha256": "4e82010f9412ba54015d0dc90be2f2a69e93c9ce2c2fa6c589f2dd61b9f0d006"
+  },
+  "not_verified": [
+    "Live article-page HTTP increment",
+    "Same-article identity from network observation",
+    "Actual C12 trust/proxy restoration",
+    "List/pagination/time coverage",
+    "Comments/replies and original single full screenshot",
+    "Automatic renewal",
+    "Abnormal termination and sleep/wake recovery"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "7699e6f69d9a7194463c06c688a7a803ab08811498e2e36b09fe99cb6d7aa89b",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "d45ca5c76a0701cb42bf5bb09f06ced20d6ec4fdad7b3a9f5063620bcd1b30ae",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "bb510484fef67e18813da907a3c6eb901bde59a047c8a5cb6eec534b9fcce200",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "ba94c1e7844199738bf92c923afe3fc78aef78ec8d9115b4cb3eceaacbee4417",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "validation/transport_diagnostic.py": "b56514b8084db4c1d21669ee022a18450d4f45258e56ee089cc5cb18b7fe809b",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "e8ad74c65b47035fbac07aa4f80b474ed9ec32e77f701622eeafd94e2f6422ad",
+    "tests/test_capture_observation.py": "5411b9f41d9931a048faad24827ea1471d2df89fee186d3eb7bab436c96d08a1",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_transport_diagnostic.py": "8c0c732d797da2057674e9c70b1a16ccc5bcfb9fc4659b6bab76af77eb317f0f",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "python_AST_files": 36,
+  "delivery_checks": {
+    "result": "passed",
+    "markdown_files": 11,
+    "local_links": 239,
+    "python_AST_files": 36,
+    "program_and_test_hashes": 36,
+    "live_experiment_verified": false
+  }
+}

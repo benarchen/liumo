@@ -1,0 +1,26 @@
+{
+  "reviewed_at_beijing": "2026-10-17 09:43",
+  "execution": "user_terminal",
+  "evidence": "constructed_browser_page",
+  "artifact_directory": "/Users/chenge/project/liumo/archives/feasibility/20261017T013653450001Z-fixture",
+  "snapshot_at": "2026-10-17T01:36:56.496498+00:00",
+  "dimensions": {
+    "width": 1100,
+    "height": 2103
+  },
+  "files_sha256": {
+    "metadata.json": "06e413589cbabbe2c0c24b2dfdd0e0424bda2c7600f7763330e02094eefdcd4e",
+    "article.md": "080f82dc5ae2759f8c0d2c515065e762f5371d8eae33045ea3dd18b4640caa11",
+    "article.png": "31bff08311f00047bcbcd35445c22dd4d0bd3ea2eed76ea8173ef3a76393a24a"
+  },
+  "checks": {
+    "body_end_present": true,
+    "comments_and_expanded_reply_visible": true,
+    "ancillary_area_and_page_end_visible": true,
+    "visual_review": "assistant inspected full PNG in prior result-review turn",
+    "relative_image_files_exist": true,
+    "image_hashes_match": true
+  },
+  "scope": "only this constructed sample; not real WeChat articles, offline browser display or fault-path browser tests",
+  "agent_browser_execution": "not_revalidated"
+}

@@ -1,0 +1,462 @@
+{
+  "at": "2026-10-17T16:42:28.926946+08:00",
+  "stage": "authorized_preflight_and_isolated_component",
+  "goal_status_observed": "blocked",
+  "new_goal_created": false,
+  "authorization": {
+    "user_reply": "同意授权",
+    "state": "granted",
+    "max_live_experiment_seconds": 600,
+    "scope": [
+      "temporary user-level hostname-constrained CA trust for mp.weixin.qq.com",
+      "active network service HTTPS proxy to 127.0.0.1:8899",
+      "two previously specified article requests and minimum local credentials"
+    ],
+    "conditions_still_required": [
+      "full original configuration",
+      "validated recovery control",
+      "safe logging",
+      "permitted loopback and native API access"
+    ]
+  },
+  "previous_evidence": "evidence/feasibility/wechat-session-validation.json",
+  "preflight": {
+    "command": ".venv/bin/python -m validation capture-preflight",
+    "path": "archives/feasibility/20261017T083516832750Z-capture-preflight/preflight.json",
+    "sha256": "4f253887a7e4e7b8b80a864e8e1b78d67040ea8690de13d4b687440f1e1b56da",
+    "result": {
+      "at": "2026-10-17T08:35:16.832958+00:00",
+      "status": "blocked",
+      "system_changes_made": false,
+      "capture_started": false,
+      "recovery_verified": false,
+      "reason": "preflight_system_authorization_unavailable"
+    },
+    "baseline_saved": false,
+    "user_terminal_run_requested": true,
+    "permission_observation": "networksetup returned exit 0 plus AuthorizationCreate() failed: -60008",
+    "automatic_approval_review_rejection": false
+  },
+  "component": {
+    "name": "mitmproxy",
+    "version": "12.2.3",
+    "directory": ".venv-capture",
+    "python": "3.14.5",
+    "openssl_cli_observation": "OpenSSL 3.5.5 27 Jan 2026",
+    "source_commit": "6c09d56e4c29a92f5ad01b03199977584b8ea14f",
+    "installation": "43 hash-verified runtime wheels; pip --no-index --require-hashes",
+    "requirements": "requirements-capture.txt",
+    "pip_check": "No broken requirements found",
+    "version_command_passed": true,
+    "option_names_checked": true,
+    "effective_live_configuration_verified": false,
+    "real_HTTP_header_objects_replayed": true,
+    "real_TLS_interception_verified": false,
+    "platform_capture_activated": false,
+    "system_extension_activated": false,
+    "python_PyPI_resolution": "NameResolutionError; no TLS downgrade",
+    "sources": [
+      "https://pypi.org/project/mitmproxy/12.2.3/",
+      "https://github.com/mitmproxy/mitmproxy/blob/6c09d56e4c29a92f5ad01b03199977584b8ea14f/uv.lock",
+      "https://github.com/mitmproxy/mitmproxy/blob/6c09d56e4c29a92f5ad01b03199977584b8ea14f/pyproject.toml"
+    ],
+    "source_access_date": "2026-10-17",
+    "wheel_inventory": [
+      {
+        "name": "aioquic",
+        "version": "1.2.0",
+        "url": "https://files.pythonhosted.org/packages/6a/1f/4d1c40714db65be828e1a1e2cce7f8f4b252be67d89f2942f86a1951826c/aioquic-1.2.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "filename": "aioquic-1.2.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "sha256": "84d733332927b76218a3b246216104116f766f5a9b2308ec306cd017b3049660"
+      },
+      {
+        "name": "argon2-cffi",
+        "version": "25.1.0",
+        "url": "https://files.pythonhosted.org/packages/4f/d3/a8b22fa575b297cd6e3e3b0155c7e25db170edf1c74783d6a31a2490b8d9/argon2_cffi-25.1.0-py3-none-any.whl",
+        "filename": "argon2_cffi-25.1.0-py3-none-any.whl",
+        "sha256": "fdc8b074db390fccb6eb4a3604ae7231f219aa669a2652e0f20e16ba513d5741"
+      },
+      {
+        "name": "argon2-cffi-bindings",
+        "version": "25.1.0",
+        "url": "https://files.pythonhosted.org/packages/b6/02/d297943bcacf05e4f2a94ab6f462831dc20158614e5d067c35d4e63b9acb/argon2_cffi_bindings-25.1.0-cp39-abi3-macosx_11_0_arm64.whl",
+        "filename": "argon2_cffi_bindings-25.1.0-cp39-abi3-macosx_11_0_arm64.whl",
+        "sha256": "7aef0c91e2c0fbca6fc68e7555aa60ef7008a739cbe045541e438373bc54d2b0"
+      },
+      {
+        "name": "asgiref",
+        "version": "3.11.0",
+        "url": "https://files.pythonhosted.org/packages/91/be/317c2c55b8bbec407257d45f5c8d1b6867abc76d12043f2d3d58c538a4ea/asgiref-3.11.0-py3-none-any.whl",
+        "filename": "asgiref-3.11.0-py3-none-any.whl",
+        "sha256": "1db9021efadb0d9512ce8ffaf72fcef601c7b73a8807a1bb2ef143dc6b14846d"
+      },
+      {
+        "name": "attrs",
+        "version": "25.4.0",
+        "url": "https://files.pythonhosted.org/packages/3a/2a/7cc015f5b9f5db42b7d48157e23356022889fc354a2813c15934b7cb5c0e/attrs-25.4.0-py3-none-any.whl",
+        "filename": "attrs-25.4.0-py3-none-any.whl",
+        "sha256": "adcf7e2a1fb3b36ac48d97835bb6d8ade15b8dcce26aba8bf1d14847b57a3373"
+      },
+      {
+        "name": "bcrypt",
+        "version": "5.0.0",
+        "url": "https://files.pythonhosted.org/packages/5d/ba/2af136406e1c3839aea9ecadc2f6be2bcd1eff255bd451dd39bcf302c47a/bcrypt-5.0.0-cp39-abi3-macosx_10_12_universal2.whl",
+        "filename": "bcrypt-5.0.0-cp39-abi3-macosx_10_12_universal2.whl",
+        "sha256": "0c418ca99fd47e9c59a301744d63328f17798b5947b0f791e9af3c1c499c2d0a"
+      },
+      {
+        "name": "blinker",
+        "version": "1.9.0",
+        "url": "https://files.pythonhosted.org/packages/10/cb/f2ad4230dc2eb1a74edf38f1a38b9b52277f75bef262d8908e60d957e13c/blinker-1.9.0-py3-none-any.whl",
+        "filename": "blinker-1.9.0-py3-none-any.whl",
+        "sha256": "ba0efaa9080b619ff2f3459d1d500c57bddea4a6b424b60a91141db6fd2f08bc"
+      },
+      {
+        "name": "brotli",
+        "version": "1.2.0",
+        "url": "https://files.pythonhosted.org/packages/17/e1/298c2ddf786bb7347a1cd71d63a347a79e5712a7c0cba9e3c3458ebd976f/brotli-1.2.0-cp314-cp314-macosx_10_15_universal2.whl",
+        "filename": "brotli-1.2.0-cp314-cp314-macosx_10_15_universal2.whl",
+        "sha256": "6c12dad5cd04530323e723787ff762bac749a7b256a5bece32b2243dd5c27b21"
+      },
+      {
+        "name": "certifi",
+        "version": "2026.1.4",
+        "url": "https://files.pythonhosted.org/packages/e6/ad/3cc14f097111b4de0040c83a525973216457bbeeb63739ef1ed275c1c021/certifi-2026.1.4-py3-none-any.whl",
+        "filename": "certifi-2026.1.4-py3-none-any.whl",
+        "sha256": "9943707519e4add1115f44c2bc244f782c0249876bf51b6599fee1ffbedd685c"
+      },
+      {
+        "name": "cffi",
+        "version": "2.0.0",
+        "url": "https://files.pythonhosted.org/packages/59/dd/27e9fa567a23931c838c6b02d0764611c62290062a6d4e8ff7863daf9730/cffi-2.0.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "filename": "cffi-2.0.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "c654de545946e0db659b3400168c9ad31b5d29593291482c43e3564effbcee13"
+      },
+      {
+        "name": "click",
+        "version": "8.3.1",
+        "url": "https://files.pythonhosted.org/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl",
+        "filename": "click-8.3.1-py3-none-any.whl",
+        "sha256": "981153a64e25f12d547d3426c367a4857371575ee7ad18df2a6183ab0545b2a6"
+      },
+      {
+        "name": "cryptography",
+        "version": "46.0.4",
+        "url": "https://files.pythonhosted.org/packages/8d/99/157aae7949a5f30d51fcb1a9851e8ebd5c74bf99b5285d8bb4b8b9ee641e/cryptography-46.0.4-cp311-abi3-macosx_10_9_universal2.whl",
+        "filename": "cryptography-46.0.4-cp311-abi3-macosx_10_9_universal2.whl",
+        "sha256": "281526e865ed4166009e235afadf3a4c4cba6056f99336a99efba65336fd5485"
+      },
+      {
+        "name": "flask",
+        "version": "3.1.2",
+        "url": "https://files.pythonhosted.org/packages/ec/f9/7f9263c5695f4bd0023734af91bedb2ff8209e8de6ead162f35d8dc762fd/flask-3.1.2-py3-none-any.whl",
+        "filename": "flask-3.1.2-py3-none-any.whl",
+        "sha256": "ca1d8112ec8a6158cc29ea4858963350011b5c846a414cdb7a954aa9e967d03c"
+      },
+      {
+        "name": "h11",
+        "version": "0.16.0",
+        "url": "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl",
+        "filename": "h11-0.16.0-py3-none-any.whl",
+        "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
+      },
+      {
+        "name": "h2",
+        "version": "4.3.0",
+        "url": "https://files.pythonhosted.org/packages/69/b2/119f6e6dcbd96f9069ce9a2665e0146588dc9f88f29549711853645e736a/h2-4.3.0-py3-none-any.whl",
+        "filename": "h2-4.3.0-py3-none-any.whl",
+        "sha256": "c438f029a25f7945c69e0ccf0fb951dc3f73a5f6412981daee861431b70e2bdd"
+      },
+      {
+        "name": "hpack",
+        "version": "4.1.0",
+        "url": "https://files.pythonhosted.org/packages/07/c6/80c95b1b2b94682a72cbdbfb85b81ae2daffa4291fbfa1b1464502ede10d/hpack-4.1.0-py3-none-any.whl",
+        "filename": "hpack-4.1.0-py3-none-any.whl",
+        "sha256": "157ac792668d995c657d93111f46b4535ed114f0c9c8d672271bbec7eae1b496"
+      },
+      {
+        "name": "hyperframe",
+        "version": "6.1.0",
+        "url": "https://files.pythonhosted.org/packages/48/30/47d0bf6072f7252e6521f3447ccfa40b421b6824517f82854703d0f5a98b/hyperframe-6.1.0-py3-none-any.whl",
+        "filename": "hyperframe-6.1.0-py3-none-any.whl",
+        "sha256": "b03380493a519fce58ea5af42e4a42317bf9bd425596f7a0835ffce80f1a42e5"
+      },
+      {
+        "name": "itsdangerous",
+        "version": "2.2.0",
+        "url": "https://files.pythonhosted.org/packages/04/96/92447566d16df59b2a776c0fb82dbc4d9e07cd95062562af01e408583fc4/itsdangerous-2.2.0-py3-none-any.whl",
+        "filename": "itsdangerous-2.2.0-py3-none-any.whl",
+        "sha256": "c6242fc49e35958c8b15141343aa660db5fc54d4f13a1db01a3f5891b98700ef"
+      },
+      {
+        "name": "jinja2",
+        "version": "3.1.6",
+        "url": "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl",
+        "filename": "jinja2-3.1.6-py3-none-any.whl",
+        "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+      },
+      {
+        "name": "kaitaistruct",
+        "version": "0.11",
+        "url": "https://files.pythonhosted.org/packages/4a/4a/cf14bf3b1f5ffb13c69cf5f0ea78031247790558ee88984a8bdd22fae60d/kaitaistruct-0.11-py2.py3-none-any.whl",
+        "filename": "kaitaistruct-0.11-py2.py3-none-any.whl",
+        "sha256": "5c6ce79177b4e193a577ecd359e26516d1d6d000a0bffd6e1010f2a46a62a561"
+      },
+      {
+        "name": "ldap3",
+        "version": "2.9.1",
+        "url": "https://files.pythonhosted.org/packages/4e/f6/71d6ec9f18da0b2201287ce9db6afb1a1f637dedb3f0703409558981c723/ldap3-2.9.1-py2.py3-none-any.whl",
+        "filename": "ldap3-2.9.1-py2.py3-none-any.whl",
+        "sha256": "5869596fc4948797020d3f03b7939da938778a0f9e2009f7a072ccf92b8e8d70"
+      },
+      {
+        "name": "markupsafe",
+        "version": "3.0.3",
+        "url": "https://files.pythonhosted.org/packages/b5/64/7660f8a4a8e53c924d0fa05dc3a55c9cee10bbd82b11c5afb27d44b096ce/markupsafe-3.0.3-cp314-cp314-macosx_11_0_arm64.whl",
+        "filename": "markupsafe-3.0.3-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "c47a551199eb8eb2121d4f0f15ae0f923d31350ab9280078d1e5f12b249e0026"
+      },
+      {
+        "name": "mitmproxy-macos",
+        "version": "0.12.9",
+        "url": "https://files.pythonhosted.org/packages/76/71/d5899c5d1593403bccdd4b56306d03a200e14483318f86b882a144f79a32/mitmproxy_macos-0.12.9-py3-none-any.whl",
+        "filename": "mitmproxy_macos-0.12.9-py3-none-any.whl",
+        "sha256": "20e024fbfeeecbdb4ee2a1e8361d18782146777fdc1e00dcfecd52c22a3219bf"
+      },
+      {
+        "name": "mitmproxy-rs",
+        "version": "0.12.9",
+        "url": "https://files.pythonhosted.org/packages/f6/78/dc9f4b4ef894709853407291ab281e478cb122b993633125b858eea523ba/mitmproxy_rs-0.12.9-cp312-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl",
+        "filename": "mitmproxy_rs-0.12.9-cp312-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl",
+        "sha256": "afeb3a2da2bc26474e1a2febaea4432430c5fde890dfce33bc4c1e65e6baef1b"
+      },
+      {
+        "name": "msgpack",
+        "version": "1.1.2",
+        "url": "https://files.pythonhosted.org/packages/1b/9f/38ff9e57a2eade7bf9dfee5eae17f39fc0e998658050279cbb14d97d36d9/msgpack-1.1.2-cp314-cp314-macosx_11_0_arm64.whl",
+        "filename": "msgpack-1.1.2-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "6c15b7d74c939ebe620dd8e559384be806204d73b4f9356320632d783d1f7939"
+      },
+      {
+        "name": "publicsuffix2",
+        "version": "2.20191221",
+        "url": "https://files.pythonhosted.org/packages/9d/16/053c2945c5e3aebeefb4ccd5c5e7639e38bc30ad1bdc7ce86c6d01707726/publicsuffix2-2.20191221-py2.py3-none-any.whl",
+        "filename": "publicsuffix2-2.20191221-py2.py3-none-any.whl",
+        "sha256": "786b5e36205b88758bd3518725ec8cfe7a8173f5269354641f581c6b80a99893"
+      },
+      {
+        "name": "pyasn1",
+        "version": "0.6.2",
+        "url": "https://files.pythonhosted.org/packages/44/b5/a96872e5184f354da9c84ae119971a0a4c221fe9b27a4d94bd43f2596727/pyasn1-0.6.2-py3-none-any.whl",
+        "filename": "pyasn1-0.6.2-py3-none-any.whl",
+        "sha256": "1eb26d860996a18e9b6ed05e7aae0e9fc21619fcee6af91cca9bad4fbea224bf"
+      },
+      {
+        "name": "pyasn1-modules",
+        "version": "0.4.2",
+        "url": "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl",
+        "filename": "pyasn1_modules-0.4.2-py3-none-any.whl",
+        "sha256": "29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a"
+      },
+      {
+        "name": "pycparser",
+        "version": "3.0",
+        "url": "https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl",
+        "filename": "pycparser-3.0-py3-none-any.whl",
+        "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992"
+      },
+      {
+        "name": "pylsqpack",
+        "version": "0.3.23",
+        "url": "https://files.pythonhosted.org/packages/38/9a/3472903fd88dfa87ac683e7113e0ac9df47b70924db9410b275c6e16b25f/pylsqpack-0.3.23-cp310-abi3-macosx_11_0_arm64.whl",
+        "filename": "pylsqpack-0.3.23-cp310-abi3-macosx_11_0_arm64.whl",
+        "sha256": "8a9e25c5a98a0959c6511aaf7d1a6ac0d6146be349a8c3c09fec2e5250cb2901"
+      },
+      {
+        "name": "pyopenssl",
+        "version": "26.2.0",
+        "url": "https://files.pythonhosted.org/packages/73/b8/a0e2790ae249d6f38c9f66de7a211621a7ab2650217bcd04e1262f578a56/pyopenssl-26.2.0-py3-none-any.whl",
+        "filename": "pyopenssl-26.2.0-py3-none-any.whl",
+        "sha256": "4f9d971bc5298b8bc1fab282803da04bf000c755d4ad9d99b52de2569ca19a70"
+      },
+      {
+        "name": "pyparsing",
+        "version": "3.3.1",
+        "url": "https://files.pythonhosted.org/packages/8b/40/2614036cdd416452f5bf98ec037f38a1afb17f327cb8e6b652d4729e0af8/pyparsing-3.3.1-py3-none-any.whl",
+        "filename": "pyparsing-3.3.1-py3-none-any.whl",
+        "sha256": "023b5e7e5520ad96642e2c6db4cb683d3970bd640cdf7115049a6e9c3682df82"
+      },
+      {
+        "name": "pyperclip",
+        "version": "1.11.0",
+        "url": "https://files.pythonhosted.org/packages/df/80/fc9d01d5ed37ba4c42ca2b55b4339ae6e200b456be3a1aaddf4a9fa99b8c/pyperclip-1.11.0-py3-none-any.whl",
+        "filename": "pyperclip-1.11.0-py3-none-any.whl",
+        "sha256": "299403e9ff44581cb9ba2ffeed69c7aa96a008622ad0c46cb575ca75b5b84273"
+      },
+      {
+        "name": "ruamel-yaml",
+        "version": "0.19.1",
+        "url": "https://files.pythonhosted.org/packages/b8/0c/51f6841f1d84f404f92463fc2b1ba0da357ca1e3db6b7fbda26956c3b82a/ruamel_yaml-0.19.1-py3-none-any.whl",
+        "filename": "ruamel_yaml-0.19.1-py3-none-any.whl",
+        "sha256": "27592957fedf6e0b62f281e96effd28043345e0e66001f97683aa9a40c667c93"
+      },
+      {
+        "name": "service-identity",
+        "version": "24.2.0",
+        "url": "https://files.pythonhosted.org/packages/08/2c/ca6dd598b384bc1ce581e24aaae0f2bed4ccac57749d5c3befbb5e742081/service_identity-24.2.0-py3-none-any.whl",
+        "filename": "service_identity-24.2.0-py3-none-any.whl",
+        "sha256": "6b047fbd8a84fd0bb0d55ebce4031e400562b9196e1e0d3e0fe2b8a59f6d4a85"
+      },
+      {
+        "name": "sortedcontainers",
+        "version": "2.4.0",
+        "url": "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+        "filename": "sortedcontainers-2.4.0-py2.py3-none-any.whl",
+        "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0"
+      },
+      {
+        "name": "tornado",
+        "version": "6.5.4",
+        "url": "https://files.pythonhosted.org/packages/ab/a9/e94a9d5224107d7ce3cc1fab8d5dc97f5ea351ccc6322ee4fb661da94e35/tornado-6.5.4-cp39-abi3-macosx_10_9_universal2.whl",
+        "filename": "tornado-6.5.4-cp39-abi3-macosx_10_9_universal2.whl",
+        "sha256": "d6241c1a16b1c9e4cc28148b1cda97dd1c6cb4fb7068ac1bedc610768dff0ba9"
+      },
+      {
+        "name": "urwid",
+        "version": "3.0.3",
+        "url": "https://files.pythonhosted.org/packages/c0/50/a35894423102d76b9b9ae011ab643d8102120c6dc420e86b16caa7441117/urwid-3.0.3-py3-none-any.whl",
+        "filename": "urwid-3.0.3-py3-none-any.whl",
+        "sha256": "ede36ecc99a293bbb4b5e5072c7b7bb943eb3bed17decf89b808209ed2dead15"
+      },
+      {
+        "name": "wcwidth",
+        "version": "0.5.3",
+        "url": "https://files.pythonhosted.org/packages/3c/c1/d73f12f8cdb1891334a2ccf7389eed244d3941e74d80dd220badb937f3fb/wcwidth-0.5.3-py3-none-any.whl",
+        "filename": "wcwidth-0.5.3-py3-none-any.whl",
+        "sha256": "d584eff31cd4753e1e5ff6c12e1edfdb324c995713f75d26c29807bb84bf649e"
+      },
+      {
+        "name": "werkzeug",
+        "version": "3.1.5",
+        "url": "https://files.pythonhosted.org/packages/ad/e4/8d97cca767bcc1be76d16fb76951608305561c6e056811587f36cb1316a8/werkzeug-3.1.5-py3-none-any.whl",
+        "filename": "werkzeug-3.1.5-py3-none-any.whl",
+        "sha256": "5111e36e91086ece91f93268bb39b4a35c1e6f1feac762c9c822ded0a4e322dc"
+      },
+      {
+        "name": "wsproto",
+        "version": "1.3.2",
+        "url": "https://files.pythonhosted.org/packages/a4/f5/10b68b7b1544245097b2a1b8238f66f2fc6dcaeb24ba5d917f52bd2eed4f/wsproto-1.3.2-py3-none-any.whl",
+        "filename": "wsproto-1.3.2-py3-none-any.whl",
+        "sha256": "61eea322cdf56e8cc904bd3ad7573359a242ba65688716b0710a5eb12beab584"
+      },
+      {
+        "name": "zstandard",
+        "version": "0.25.0",
+        "url": "https://files.pythonhosted.org/packages/8d/09/d0a2a14fc3439c5f874042dca72a79c70a532090b7ba0003be73fee37ae2/zstandard-0.25.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "filename": "zstandard-0.25.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "05df5136bc5a011f33cd25bc9f506e7426c0c9b3f9954f056831ce68f3b6689f"
+      },
+      {
+        "name": "mitmproxy",
+        "version": "12.2.3",
+        "url": "https://files.pythonhosted.org/packages/e0/56/0df365a56624472c397b45788b64a5c10ecabf0de3858bf538b42875a268/mitmproxy-12.2.3-py3-none-any.whl",
+        "filename": "mitmproxy-12.2.3-py3-none-any.whl",
+        "sha256": "df75ccd15ccb39ab55ce9dd4130312270e8ba208eb927a7cbe50cb52678ec722"
+      }
+    ]
+  },
+  "security_review": {
+    "access_date": "2026-10-17",
+    "scope": "listed upstream advisories only, not comprehensive",
+    "upstream_activity": "PR activity previously observed through 2026-10-16",
+    "maintenance_response_example": "LDAP report confirmed next day; patch released about four months later",
+    "advisories": [
+      {
+        "url": "https://github.com/mitmproxy/mitmproxy/security/advisories/GHSA-527g-3w9m-29hv",
+        "patched": "12.2.2"
+      },
+      {
+        "url": "https://github.com/mitmproxy/mitmproxy/security/advisories/GHSA-63cx-g855-hvv4",
+        "patched": "12.1.2"
+      },
+      {
+        "url": "https://github.com/mitmproxy/mitmproxy/security/advisories/GHSA-wg33-5h85-7q5p",
+        "applicability": "mitmweb only; upstream says mitmdump unaffected"
+      }
+    ],
+    "comprehensive_dependency_vulnerability_audit": false
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 97,
+    "passed": 93,
+    "skipped": 4,
+    "failures": 0,
+    "log": ".tmp/wechat-session-validation/authorized-tests.log",
+    "log_sha256": "8258276b042da98e37e56016eb0fdad176854cfbdda26c7c4a29e71255c47bf3",
+    "skips": [
+      "3 browser integration tests not enabled",
+      "1 real loopback transport: bind PermissionError"
+    ],
+    "evidence_levels": [
+      "constructed native command output",
+      "real private local files and locks",
+      "real isolated component header objects without network"
+    ]
+  },
+  "actions_this_stage": {
+    "live_WeChat_requests": 0,
+    "real_credentials_captured": 0,
+    "CA_generated": false,
+    "CA_trusted": false,
+    "proxy_started": false,
+    "system_settings_changed": false,
+    "system_background_task_installed": false,
+    "unrelated_account_data_read": false
+  },
+  "remaining": [
+    "normal-terminal baseline result",
+    "exact rollback and independent supervisor",
+    "effective proxy options and output protection",
+    "native WeChat compatibility and necessary fields",
+    "real credential use and automatic reacquisition",
+    "natural expiry and renewal",
+    "real multi-article coverage and verified publication time",
+    "real comments and replies",
+    "original single full-page screenshot",
+    "actual network recovery and sleep/wake"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "d376635f3dd756412cc8f1b317f0e6c27b87413720c6e8f20acb35bf9b234ca4",
+    "validation/archive.py": "f88120e3c62fbb4a450bd05889b306ec3e0c6cff194ad3f1917ca1f68c0debce",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "e6fa7377c59be8e15a2587fb3fe2e0f30707cd55423ffcd79b4dcd6952db663e",
+    "validation/capture_preflight.py": "013deb0d503c3001620b63c6cc107b2d8d21f67b8994117e615c60b6be01257f",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "fed13fc91f33070e0f453aa7a9213a74ff688fb9d84112f0a78ff9997edf7c7d",
+    "validation/credentials.py": "d8b05e59fcda9efbb39917706b80b1385361f19826091c52260c30106d45af59",
+    "validation/http.py": "5418a8a0fc9c86ca6c28f5e44dc1a44e97e5c50a79d0f09af051683ee78deac5",
+    "validation/http_archive.py": "fe055bf8ab0d158f9cc1eba78065a14802e373f356af1660ed14ac6fd65582b3",
+    "validation/mitm_addon.py": "38104c85ee6af39df6e61902a419fdec2692e885004eda47b92fdc3c53b8cb2e",
+    "validation/mp_source.py": "8376c9128ad8e9cab6816a8fefed92db1eab31d98404726942fdb4aea467c663",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "86cb03f738dd5479a8a2a00b214394296f51ea8988d63795bde001160ad6f5af",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97",
+    "requirements-capture.txt": "7ede6f7dce48e0563d946db316d3965b46e1bccb92d27853eb54809324da1a60"
+  },
+  "delivery_checks": {
+    "at": "2026-10-17T16:42:28.926946+08:00",
+    "markdown_files": 9,
+    "local_links": 114,
+    "python_AST_files": 22,
+    "roadmap_records_max_20_and_descending": true,
+    "result": "passed_static_only"
+  }
+}

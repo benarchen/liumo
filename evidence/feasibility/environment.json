@@ -1,0 +1,22 @@
+{
+  "recorded_at_beijing": "2026-10-17 00:14",
+  "macos": "27.0.1",
+  "python": "3.14.5",
+  "browser_smoke": {
+    "result": "not_verified",
+    "observed_failure": "Chrome process SIGABRT; process cleanup EPERM",
+    "evidence": "actual_process_attempt",
+    "escalation": "rejected by environment policy before execution"
+  },
+  "managed_browser_fixture": {
+    "result": "not_verified",
+    "reason": "file protocol denied by browser URL policy",
+    "workarounds_attempted": false
+  },
+  "device_sleep_wake": "not_tested",
+  "actual_network_recovery": "not_tested",
+  "system_settings_changed": false,
+  "scheduler_installed_or_loaded": false,
+  "accounts_logged_in": false,
+  "git": "not_a_repository_no_git_mutations"
+}

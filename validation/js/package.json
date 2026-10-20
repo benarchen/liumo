@@ -1,0 +1,9 @@
+{
+  "name": "liumo-static-validation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "acorn": "8.19.0"
+  }
+}

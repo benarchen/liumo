@@ -1,0 +1,60 @@
+{
+  "at_beijing": "2026-10-17 10:32",
+  "command": "LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v",
+  "tests_run": 44,
+  "passed": 44,
+  "skipped": [],
+  "failures": 0,
+  "errors": 0,
+  "evidence_levels": {
+    "incremental_and_source_parser": "constructed_input",
+    "schedule_time_and_offline": "simulated_clock_and_flags",
+    "overlap_and_repeat": "actual_local_subprocesses",
+    "markdown_and_images": "offline_constructed_html",
+    "notification": "injected_sender_not_actual_mac_notification",
+    "live_source": "not_verified",
+    "live_comment_screenshot": "not_verified",
+    "interactive_confirmation_and_cancellation": "constructed_input_and_mock_browser_no_real_session",
+    "empty_avatar_exclusion": "constructed_html_with_conditions_observed_in_real_dom; post-fix browser not run",
+    "markdown_visibility_filter": "actual Chrome constructed page: hidden UI omitted from clone, visible override retained, source DOM unchanged; actual WeChat not re-tested",
+    "title_dedup_and_image_mapping": "constructed_html_regression; duplicate title failed before fix",
+    "source_rejection_diagnostics": "mock_response; stops after one request, no actual login/source verified"
+  },
+  "source_sha256": {
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97",
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "eea909b82b2453140a68520157d23084ab1a404aab4acc475a5336cd81291b63",
+    "validation/archive.py": "f88120e3c62fbb4a450bd05889b306ec3e0c6cff194ad3f1917ca1f68c0debce",
+    "validation/common.py": "fed13fc91f33070e0f453aa7a9213a74ff688fb9d84112f0a78ff9997edf7c7d",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc"
+  },
+  "user_terminal_fixture_evidence": "evidence/feasibility/fixture-browser.json",
+  "observer_javascript_syntax": "node --check passed for 3 scripts; constructed browser behavior also passed; real WeChat selectors not validated",
+  "actual_tty_negative_cli": "passed with stdin=DEVNULL; no browser launch",
+  "user_terminal_browser_run": "evidence/feasibility/continued-validation.json",
+  "agent_default_run": {
+    "at_beijing": "2026-10-17 10:32",
+    "tests_run": 44,
+    "passed": 41,
+    "skipped": [
+      {
+        "test": "test_comment_failure_cannot_be_complete (test_validation.BrowserIntegrationTests.test_comment_failure_cannot_be_complete)",
+        "reason": "browser process permission required; not counted as verified"
+      },
+      {
+        "test": "test_fixture_full_page_and_reply_expansion (test_validation.BrowserIntegrationTests.test_fixture_full_page_and_reply_expansion)",
+        "reason": "browser process permission required; not counted as verified"
+      },
+      {
+        "test": "test_hidden_body_ui_removed_from_copy_and_visible_override_kept (test_validation.BrowserIntegrationTests.test_hidden_body_ui_removed_from_copy_and_visible_override_kept)",
+        "reason": "browser process permission required; not counted as verified"
+      }
+    ],
+    "failures": 0,
+    "errors": 0
+  },
+  "execution_origin": "user_terminal_log_reviewed_by_agent; agent browser launch capability not re-tested"
+}

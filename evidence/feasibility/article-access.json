@@ -1,0 +1,42 @@
+{
+  "evidence": "live_public_http_responses",
+  "articles": [
+    {
+      "sample": "maobidao",
+      "url": "https://mp.weixin.qq.com/s/ihaxygZIbs2HwXMNiMaqEg",
+      "observed_at": "2026-10-17T00:02:07.530798+08:00",
+      "transport": "direct_curl_https_tls_verified",
+      "http_status": "not_recorded",
+      "bytes": 18165,
+      "sha256": "150c157c8e6f0f1db3116a4857d6085ee0ccca8dd4e2032ccb6a99d38a228ec0",
+      "body_present": false,
+      "restriction_markers": [
+        "环境异常",
+        "完成验证"
+      ],
+      "result": "restricted_response_not_article",
+      "automatic_retries_after_restriction": 0,
+      "comments": "not_observed",
+      "screenshot": "not_created"
+    },
+    {
+      "sample": "stormzhang",
+      "url": "https://mp.weixin.qq.com/s/4ihER5266aHuAwNzX8cDgw",
+      "observed_at": "2026-10-17T00:02:07.648592+08:00",
+      "transport": "direct_curl_https_tls_verified",
+      "http_status": "not_recorded",
+      "bytes": 18165,
+      "sha256": "6e5cbd0d995d3f14a765e0a8309ed2b14c16ce792fce0e7d76a5c4a505a5ff03",
+      "body_present": false,
+      "restriction_markers": [
+        "环境异常",
+        "完成验证"
+      ],
+      "result": "restricted_response_not_article",
+      "automatic_retries_after_restriction": 0,
+      "comments": "not_observed",
+      "screenshot": "not_created"
+    }
+  ],
+  "interpretation": "not proof of expired links or mandatory login; no automatic access-control bypass"
+}

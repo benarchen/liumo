@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>local.liumo.maobidao</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/chenge/project/liumo/.venv/bin/python</string>
+		<string>-m</string>
+		<string>liumo</string>
+		<string>tick</string>
+		<string>--data-dir</string>
+		<string>/Users/chenge/project/liumo/state/maobidao</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/chenge/project/liumo</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartCalendarInterval</key>
+	<dict/>
+	<key>StandardOutPath</key>
+	<string>/Users/chenge/project/liumo/state/maobidao/scheduler.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/chenge/project/liumo/state/maobidao/scheduler-error.log</string>
+</dict>
+</plist>

@@ -1,0 +1,62 @@
+{
+  "recorded_at_beijing": "2026-10-17 00:14",
+  "sources": [
+    {
+      "url": "https://developers.weixin.qq.com/doc/subscription/api/public/api_freepublish_batchget.html",
+      "accessed_at": "2026-10-17T00:02:47.355023+08:00",
+      "kind": "official_document",
+      "commit": null,
+      "sha256": "ca9676c71aff7850fb4332232cf3318cee655610c5355dd019f65774bc1115e1",
+      "bytes": 79049
+    },
+    {
+      "url": "https://developers.weixin.qq.com/doc/subscription/api/base/api_getaccesstoken.html",
+      "accessed_at": "2026-10-17T00:03:37.489108+08:00",
+      "kind": "official_document",
+      "commit": null,
+      "sha256": "c717c21187e5c4192114b82ff78cac84af591b23c0775133c056505ada62e3c8",
+      "bytes": 73356
+    },
+    {
+      "url": "https://github.com/rachelos/we-mp-rss/blob/9b40351fd1913e7f74cf88f65740cd67a28baf81/core/wx/model/weread_mp.py",
+      "accessed_at": "2026-10-17T00:02:26.737223+08:00",
+      "kind": "pinned_source",
+      "commit": "9b40351fd1913e7f74cf88f65740cd67a28baf81",
+      "sha256": "29526c6c1b3ef4fb8b1a5c0c3f7e91eaae9d252cc2d4cbbdffa2a2d3822e784c",
+      "bytes": 20641
+    },
+    {
+      "url": "https://github.com/rachelos/we-mp-rss/blob/9b40351fd1913e7f74cf88f65740cd67a28baf81/core/wx/model/weread.py",
+      "accessed_at": "2026-10-17T00:03:37.232263+08:00",
+      "kind": "pinned_source",
+      "commit": "9b40351fd1913e7f74cf88f65740cd67a28baf81",
+      "sha256": "bfcc3b60a84e618772027181cb9ccc503f3597cde71ee4247c98a22c03bc091d",
+      "bytes": 29261
+    },
+    {
+      "url": "https://github.com/rachelos/we-mp-rss/blob/9b40351fd1913e7f74cf88f65740cd67a28baf81/core/wx/model/web.py",
+      "accessed_at": "2026-10-17T00:07:37.769797+08:00",
+      "kind": "pinned_source",
+      "commit": "9b40351fd1913e7f74cf88f65740cd67a28baf81",
+      "sha256": "36b3d1a430c46abcacc2a66ebbf3eb6bc7f4b2b37581d04f3c1a5b628265b56a",
+      "bytes": 8587
+    },
+    {
+      "url": "https://github.com/rachelos/we-mp-rss/blob/9b40351fd1913e7f74cf88f65740cd67a28baf81/driver/token.py",
+      "accessed_at": "2026-10-17T00:12:10.739918+08:00",
+      "kind": "pinned_source",
+      "commit": "9b40351fd1913e7f74cf88f65740cd67a28baf81",
+      "sha256": "4ba59bad51cdd5d75d05e5fe6ccb72b29fd401fada0116b9f06f4046a3cfadd6",
+      "bytes": 2961
+    },
+    {
+      "url": "https://api.github.com/repos/rachelos/we-mp-rss/issues?state=all&per_page=10",
+      "accessed_at": "2026-10-17T00:03:13.061187+08:00",
+      "kind": "repository_metadata",
+      "commit": null,
+      "sha256": "ed2dd1a8b83d55aacd5656f8dd8d05073ab84b902abcd07bc88a9869ee9f9e6c",
+      "bytes": 57813
+    }
+  ],
+  "raw_downloads": "temporary_not_required_for_reproduction"
+}

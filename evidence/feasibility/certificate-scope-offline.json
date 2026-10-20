@@ -1,0 +1,280 @@
+{
+  "recorded_at": "2026-10-18T12:38:23.213540+08:00",
+  "status": "offline_OpenSSL_candidate_matrix_passed_macOS_and_WeChat_not_verified",
+  "overall": "partial",
+  "goal_service_status_last_observed": "blocked",
+  "new_goal_created": false,
+  "scope": {
+    "construct_certificates": true,
+    "private_keys_retained": false,
+    "system_trust_changed": false,
+    "system_proxy_changed": false,
+    "network_or_listener_used": false,
+    "WeChat_or_native_account_data_read": false,
+    "new_dependencies": false,
+    "capture_code_trust_policy_changed": false
+  },
+  "implementation": {
+    "module": "validation/certificate_scope.py",
+    "CLI": "certificate-scope-fixture",
+    "environment": ".venv-capture",
+    "changed_existing_programs": [
+      "validation/__main__.py"
+    ],
+    "new_program_and_test": [
+      "validation/certificate_scope.py",
+      "tests/test_certificate_scope.py"
+    ],
+    "constraints_on": "Explicit root trust anchor; not unconstrained root plus intermediate"
+  },
+  "reproduction": {
+    "probe": "cd /Users/chenge/project/liumo && .venv-capture/bin/python -m validation certificate-scope-fixture",
+    "probe_exit_code": 2,
+    "probe_exit_meaning": "Partial; offline evaluator completed, macOS and WeChat not passed",
+    "tests": ".venv/bin/python -m unittest discover -s tests -v",
+    "fresh_test_certificates_required": true
+  },
+  "actual_run": {
+    "output": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline",
+    "python_SSL": "OpenSSL 3.6.3 9 Jun 2026",
+    "cryptography": "46.0.4",
+    "memory_TLS_handshakes": 51,
+    "native_positive_control": {
+      "outcome": "not_verified",
+      "exit_code": 1,
+      "reason": "native_CT_policy_control_failed"
+    },
+    "native_matrix_rows_not_executed": 51,
+    "summary": {
+      "python_memory_TLS": {
+        "dns_only": {
+          "status": "scope_not_preserved",
+          "unexpected_cases": [
+            "subdomain",
+            "wildcard_subdomain",
+            "mixed_subdomain",
+            "ipv4",
+            "ipv6",
+            "mixed_ipv4",
+            "mixed_ipv6"
+          ],
+          "WeChat_verified": false
+        },
+        "exact_dns_no_ip": {
+          "status": "passed_offline_matrix",
+          "unexpected_cases": [],
+          "WeChat_verified": false
+        }
+      },
+      "macOS_explicit_anchor": {
+        "dns_only": {
+          "status": "not_verified",
+          "reason": "validator_unavailable"
+        },
+        "exact_dns_no_ip": {
+          "status": "not_verified",
+          "reason": "validator_unavailable"
+        }
+      }
+    },
+    "temporary_directory_removed": true,
+    "public_certificates": 20
+  },
+  "native_limitations": {
+    "positive_control_passed": false,
+    "diagnostic_observation": "CT/SCT diagnostic present; exit 1; not proof of a unique failure cause",
+    "initial_runs": "Initial fixture plus one synthetic positive-control output inspection; final fixture after fixed diagnostic classification",
+    "no_CT_disable_or_policy_workaround_attempted": true,
+    "not_equivalent_to_WeChat_validation": true
+  },
+  "tests": {
+    "total": 198,
+    "passed": 194,
+    "skipped": 4,
+    "failures": 0,
+    "log": ".tmp/wechat-session-validation/certificate-scope-tests.log",
+    "sha256": "4704136108b1d2c608461d9081ae2c3dc479a6e2bd429d124c92e0c2fb5ae90d",
+    "skip_reasons": [
+      "3 browser integrations not enabled",
+      "1 loopback bind permission denied"
+    ],
+    "actual_test_scope": [
+      "real synthetic TLS in memory with socket creation blocked",
+      "missing/duplicate matrix and baseline control failures",
+      "scope escape detection and mixed SAN rejection",
+      "native fixed arguments and unknown/timeout/CT diagnostics fail closed",
+      "private-file cleanup on success and error, existing output preserved"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.10",
+      "version": "RFC 5280, section 4.2.1.10",
+      "finding": "DNS subtree constraint is not exact-host-only; names in SAN must be assessed",
+      "access_date_beijing": "2026-10-18"
+    },
+    {
+      "url": "https://datatracker.ietf.org/doc/html/rfc5280#section-6.2",
+      "version": "RFC 5280, section 6.2",
+      "finding": "Implementations may process or ignore extra constraints on self-signed trust anchors",
+      "access_date_beijing": "2026-10-18"
+    },
+    {
+      "url": "https://cryptography.io/en/46.0.4/x509/reference/#cryptography.x509.NameConstraints",
+      "version": "46.0.4",
+      "finding": "Existing API for constructing constraints; no new dependency",
+      "access_date_beijing": "2026-10-18"
+    },
+    {
+      "url": "https://docs.python.org/3.14/library/ssl.html#ssl.MemoryBIO",
+      "version": "Python 3.14 documentation",
+      "finding": "TLS over memory BIO without network IO",
+      "access_date_beijing": "2026-10-18"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/bad_signature-leaf.pem",
+      "sha256": "e8dd3e1af0429dafabccb68914d66f3dbf82d1ae5db82a7d28e73cafbce8780b"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/certificate-scope.json",
+      "sha256": "fcc4e885eb71933056a6f081bb2286845ba7a90789a8f820614025a48c789642"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/dns_only-root.pem",
+      "sha256": "a11e0fbfd6293076a8f0a371e2900cde0054e8729aed2c856ca49f63c00b9587"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/exact_dns_no_ip-root.pem",
+      "sha256": "18893430ba69c6b0cb5f9a301a6979ee303064c69fb243ffd1f1b87899c2efb8"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/expired-leaf.pem",
+      "sha256": "dc0fb8504a57c96d8fdbfec51054ec6cc30d4c7378f67ec61c33ebf439ca19d7"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/ipv4-leaf.pem",
+      "sha256": "617851bdbe2bcd530d1c267ade4bf97c9b9cfe860f288f47218d86e16e2f70e2"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/ipv6-leaf.pem",
+      "sha256": "93526ba26e08fe38add7a3104cee4aa0aa26231cd6b2474f4a1002ca3bad90ce"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/mixed_ipv4-leaf.pem",
+      "sha256": "cb2ef5254937bb61a0f70d758b9e182f2036ce5229bcd3abf3baaec79532d8de"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/mixed_ipv6-leaf.pem",
+      "sha256": "8919bd93e7fffe978f84baeaaef89cbc545261ecceca18b457a00da361e4e1f5"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/mixed_other-leaf.pem",
+      "sha256": "14bc7297d8cdbc87ce3b148ef1ce78a637dc38fa5356c2c4a28e4063071ffd9e"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/mixed_subdomain-leaf.pem",
+      "sha256": "14560ffc085b49ea0f42cd68cdf9abd34d23e6e06e389cfa1879e9abb932074a"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/other-leaf.pem",
+      "sha256": "31591aa54b34828a5848fb08494ee81388ffa680277f747c904836fa93442e64"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/prefix-leaf.pem",
+      "sha256": "4d005ad96b2f84e53dce8bff92ae9ef13308348a131c1debd46733e84a12edf5"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/subdomain-leaf.pem",
+      "sha256": "a66bb1d4167cdec4d98272cfd7c941009658339c0baa61ed3ec338dfcddaaa53"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/suffix-leaf.pem",
+      "sha256": "e15120e2f8d4c63649d18313c3f5a6a6df8145bb56b82350c59f931c0c6857da"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/target-leaf.pem",
+      "sha256": "a7d283a3db8a7071169cf9cd05d78c215da3aea0501ed1273368be817e4b6425"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/unconstrained-root.pem",
+      "sha256": "df0e9b22d26eae22b73b16fa44eee727e6daec1c8aee1c4ef2c273427f589cf6"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/uppercase_target-leaf.pem",
+      "sha256": "b70a54f89236593db4fa9f2078a6d79d41da898b7d3bc438e70e9b857931951f"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/wildcard_parent-leaf.pem",
+      "sha256": "2af3c05c33b6ef1e6baead7d24dbf27178bd92b22f30eb7359d8d7649b991e76"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/wildcard_subdomain-leaf.pem",
+      "sha256": "b54c016606312e8bb9b39749c1d37bd380eab3bf68d06f117f30bd0c303ff344"
+    },
+    {
+      "path": "archives/feasibility/20261018T043506479196Z-certificate-scope-offline/wrong_host-leaf.pem",
+      "sha256": "155911b175e9cfc9803256ecb2187ff410e32d1d52fdd6619932264aef831404"
+    }
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "a711f66219edc80ed2c2cd216d89e1bacadbde42a2f81d47c9ecfd1932febff9",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "d45ca5c76a0701cb42bf5bb09f06ced20d6ec4fdad7b3a9f5063620bcd1b30ae",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "bb510484fef67e18813da907a3c6eb901bde59a047c8a5cb6eec534b9fcce200",
+    "validation/certificate_scope.py": "4bd7be231e55aac09dddd91d45a60d5e7b1f5bb59b9a7f105e0c2622c750a576",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "ba94c1e7844199738bf92c923afe3fc78aef78ec8d9115b4cb3eceaacbee4417",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "validation/transport_diagnostic.py": "b56514b8084db4c1d21669ee022a18450d4f45258e56ee089cc5cb18b7fe809b",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "e8ad74c65b47035fbac07aa4f80b474ed9ec32e77f701622eeafd94e2f6422ad",
+    "tests/test_capture_observation.py": "5411b9f41d9931a048faad24827ea1471d2df89fee186d3eb7bab436c96d08a1",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_certificate_scope.py": "69062da3d0107c9ad3932a4a7f32f5c82eee7d5762cb2dc660837fb7a7ba5964",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_transport_diagnostic.py": "8c0c732d797da2057674e9c70b1a16ccc5bcfb9fc4659b6bab76af77eb317f0f",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "not_verified": [
+    "macOS constraint matrix",
+    "Current WeChat browser compatibility and enforcement",
+    "Installed trust-anchor behavior and actual capture integration",
+    "Real list/pagination/timestamps",
+    "Comments/replies and original single screenshot",
+    "Automatic credential renewal/device recovery"
+  ],
+  "user_action_needed_now": "none; do not reopen article or rerun prior capture experiments",
+  "next_action": "Establish an explainable macOS positive control and evaluate trust-anchor constraints before any new system proposal",
+  "delivery_checks": {
+    "status": "passed",
+    "markdown_files": 12,
+    "local_links": 268,
+    "python_AST_files": 38,
+    "artifact_hashes": 21,
+    "private_key_files_retained": false,
+    "scope": "Static document/code/artifact checks only; macOS and WeChat remain unverified"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "recorded_at_beijing": "2026-10-19 08:04",
+  "status": "constructed_capacity_comparison_passed_peak_RSS_unverified",
+  "real_basis": "C28 actual fixed article hit local 200000 node traversal limit; raw HTML/JS not retained",
+  "comparison": {
+    "status": "comparison_recorded",
+    "evidence": "constructed_JS_only",
+    "runtime_source_modified": false,
+    "network_requests": 0,
+    "system_settings_changed": false,
+    "parent_timeout_seconds": 10,
+    "Node_old_space_MiB": 256,
+    "results": [
+      {
+        "source_bytes": 3493944,
+        "script_count": 55,
+        "node_limit": 200000,
+        "status": "failed",
+        "reason": "node_limit",
+        "exit_code": 2,
+        "elapsed_seconds": 0.13,
+        "peak_RSS_bytes_macos": null,
+        "nodes_visited": null,
+        "scripts_parsed": null,
+        "fetch_comment_candidates": null,
+        "stdout_has_constructed_secret": false,
+        "stderr_has_constructed_secret": false
+      },
+      {
+        "source_bytes": 3493944,
+        "script_count": 55,
+        "node_limit": 8388608,
+        "status": "passed",
+        "reason": "analysis_complete",
+        "exit_code": 0,
+        "elapsed_seconds": 0.677,
+        "peak_RSS_bytes_macos": null,
+        "nodes_visited": 3491235,
+        "scripts_parsed": 55,
+        "fetch_comment_candidates": 55,
+        "stdout_has_constructed_secret": false,
+        "stderr_has_constructed_secret": false
+      },
+      {
+        "source_bytes": 4194304,
+        "script_count": 55,
+        "node_limit": 200000,
+        "status": "failed",
+        "reason": "node_limit",
+        "exit_code": 2,
+        "elapsed_seconds": 0.128,
+        "peak_RSS_bytes_macos": null,
+        "nodes_visited": null,
+        "scripts_parsed": null,
+        "fetch_comment_candidates": null,
+        "stdout_has_constructed_secret": false,
+        "stderr_has_constructed_secret": false
+      },
+      {
+        "source_bytes": 4194304,
+        "script_count": 55,
+        "node_limit": 8388608,
+        "status": "passed",
+        "reason": "analysis_complete",
+        "exit_code": 0,
+        "elapsed_seconds": 0.788,
+        "peak_RSS_bytes_macos": null,
+        "nodes_visited": 4191605,
+        "scripts_parsed": 55,
+        "fetch_comment_candidates": 55,
+        "stdout_has_constructed_secret": false,
+        "stderr_has_constructed_secret": false
+      }
+    ],
+    "peak_RSS_measured": false,
+    "real_WeChat_capacity_verified": false
+  },
+  "failed_measurement_control": {
+    "command": "/usr/bin/time -l node -e public_control",
+    "wrapper_exit_code": 1,
+    "control_output_exact": true,
+    "reason": "macos_sysctl_kern_clockrate_permission_denied",
+    "peak_RSS_verified": false
+  },
+  "failed_measurement_wrapper_exit_codes": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "limits_unchanged": [
+    "4 MiB source",
+    "9 MiB JSON",
+    "128 script maximum",
+    "10 second parent timeout",
+    "Node old-space 256 MiB"
+  ],
+  "candidate_limit_nodes": 8388608,
+  "candidate_policy": "Offline experimental copies only; runtime remains 200000. No live widening or retry authorized by this comparison.",
+  "not_verified": [
+    "peak RSS and OS process total memory",
+    "capacity of actual WeChat scripts",
+    "actual comment protocol"
+  ],
+  "reproduce": ".venv/bin/python -m validation.parser_capacity",
+  "source_files_sha256": {
+    "validation/parser_capacity.py": "a761626a98cb0bc8d73eece332bd4a6588ae9d34332d01fcd232f8ba474b859b",
+    "validation/js/analyze.mjs": "3c0d2c64f525606d57dc921ad317a8f875f132535f2c76dbd0c4364615107d57",
+    "validation/js/package-lock.json": "785f5643a3ed6cfb10b3f8aac65340072b47a208c7cd6172b183a22d6ab82a7b"
+  },
+  "new_network_requests": 0,
+  "system_settings_changed": false,
+  "delivery_checks": {
+    "markdown_files": 19,
+    "local_links": 469,
+    "python_AST_files": 69,
+    "C28_private_receipts_unchanged": true,
+    "C28_execution_sources_unchanged": 71,
+    "raw_retention_proposal_not_implemented": true,
+    "result": "passed"
+  }
+}

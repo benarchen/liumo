@@ -1,0 +1,339 @@
+{
+  "recorded_at": "2026-10-18T15:14:58.551723+08:00",
+  "status": "installed_matrix_and_later_revocation_passed_120_second_automatic_cleanup_failed",
+  "goal_status": "blocked",
+  "new_goal_created": false,
+  "original_terminal_run": "archives/feasibility/20261018T070821212385Z-anchor-scope-session",
+  "original_terminal_result": {
+    "at": "2026-10-18T07:08:01.764728+00:00",
+    "status": "manual_recovery_required",
+    "reason": "anchor_installed_matrix_finished",
+    "finished": true,
+    "trust_attempted": true,
+    "trust_started_at": "2026-10-18T07:08:02.173124+00:00",
+    "installed_matrix_passed": true,
+    "explicit_control_summary": {
+      "status": "passed_offline_matrix",
+      "unexpected_cases": [],
+      "WeChat_verified": false
+    },
+    "before_target_with_chain": {
+      "outcome": "rejected",
+      "exit_code": 1,
+      "CT_diagnostic_present": true,
+      "OSStatus_codes": [
+        -67843
+      ],
+      "trust_result": 5,
+      "reason": "native_trust_rejected"
+    },
+    "recovery": {
+      "certificate_absent": false,
+      "target_after_removal": {
+        "outcome": "accepted",
+        "exit_code": 0,
+        "CT_diagnostic_present": true,
+        "OSStatus_codes": [],
+        "trust_result": 1
+      },
+      "removal_command_issues": [
+        "native_command_unavailable",
+        "native_command_unavailable"
+      ],
+      "verified": false
+    },
+    "recovery_completed_at": "2026-10-18T07:08:21.190502+00:00",
+    "worker_elapsed_seconds": 19.427
+  },
+  "counts": {
+    "explicit_control_rows": 34,
+    "preinstall_rows": 17,
+    "installed_rows": 17,
+    "installed_accepted": 2,
+    "installed_rejected": 15
+  },
+  "automatic_revocation_within_120_seconds_verified": false,
+  "Agent_recovery_attempt": {
+    "at_recorded": "2026-10-18T15:11:32.727257+08:00",
+    "observer": "Agent",
+    "operation": "anchor-scope-recover",
+    "status": "blocked",
+    "recovery": {
+      "certificate_absent": true,
+      "target_after_removal": {
+        "outcome": "not_verified",
+        "exit_code": 1,
+        "CT_diagnostic_present": true,
+        "OSStatus_codes": [
+          -26276
+        ],
+        "trust_result": 0,
+        "reason": "native_security_framework_error"
+      },
+      "removal_command_issues": [
+        "native_nonzero_exit",
+        "native_nonzero_exit"
+      ],
+      "verified": false
+    },
+    "interpretation": "Agent-context absence report does not override failed verification or prior terminal trust evidence"
+  },
+  "Agent_absence_readback_is_proof_of_restoration": false,
+  "fix": {
+    "scope": "existing experiment recovery only, no installation or proxy changes",
+    "old_mutation_timeout": 4,
+    "independent_recovery_mutation_timeout": 30,
+    "OSError_and_timeout_differentiated": true,
+    "old_exception_specific_cause_known": false,
+    "automatic_mutation_timeout": 30,
+    "automatic_cleanup_reserve_seconds": 70
+  },
+  "normal_terminal_recovery_received": true,
+  "required_command": null,
+  "new_authorization_required": false,
+  "not_verified": [
+    "120 second automatic cleanup after budget fix",
+    "WeChat compatibility",
+    "real discovery, comments/replies and full original screenshot",
+    "unattended renewal and device wake"
+  ],
+  "tests": {
+    "total": 216,
+    "passed": 212,
+    "skipped": 4,
+    "failures": 0,
+    "log": ".tmp/wechat-session-validation/anchor-cleanup-budget-tests.log",
+    "sha256": "e0e2e3337447de3939eefc5a5ba834d188fc6073e390fd326fbf7a84e29717e2"
+  },
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "ff575aeb1bc4c4333f215f9d08146ef7078338f9aedae37b5a6c99e22d812873",
+    "validation/anchor_scope.py": "9829213425a12df4b265b7e4caca6d62792724c9199fa44d3dbfb5e35aa77937",
+    "validation/archive.py": "c638a234af40c5f4c2712c96df343b5973dfa83b2a72cb1c96ca6b22d27f802a",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "d45ca5c76a0701cb42bf5bb09f06ced20d6ec4fdad7b3a9f5063620bcd1b30ae",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "bb510484fef67e18813da907a3c6eb901bde59a047c8a5cb6eec534b9fcce200",
+    "validation/certificate_scope.py": "cb7fac5d22d6b94198560ee9c483affdcae6c8a18fbf0870a18dd207aac407a4",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "8682a85a3192b9b82819f441fbc0652043f6258d73a6024d61cc94add393ccc2",
+    "validation/credentials.py": "0f159f3dc0a5a5a5433e03a447b95acda7171fdc5c99c0a0011536a7a0c522d6",
+    "validation/curl_bridge.py": "404a32581968219cca10fecf70ec9daa1ee26c63272a2e267673c890479a5bdc",
+    "validation/http.py": "2f85fad4a9709d607f02f01bea3902ba139d35628cf43be16ceea0edbf0823c8",
+    "validation/http_archive.py": "754980c0c7ab43c269bf79fb125b061b982d5804877387e7d213a5595a2611d2",
+    "validation/mitm_addon.py": "ba94c1e7844199738bf92c923afe3fc78aef78ec8d9115b4cb3eceaacbee4417",
+    "validation/mp_source.py": "0a37db76d8cb0ae898365620df03dab3bd9ebb2b3d942d8286cfa70a8b66c141",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/profile_capture.py": "dd549247a36a61604b22264a48a50840249be691961660ff2b84a348e93b5c00",
+    "validation/profile_context.py": "93d3ffebf0ee45db7b06286dc33de0e962915cb07628981a3283c343bc371ce8",
+    "validation/sample_check.py": "f4d1b5fea70799ea9fb14c97e15a24cab81d1e74912973551ee6e5d5341c691d",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "validation/transport_diagnostic.py": "b56514b8084db4c1d21669ee022a18450d4f45258e56ee089cc5cb18b7fe809b",
+    "tests/test_anchor_scope.py": "187b80a0f744956777c6861f0638c2006d09a8ab98319be77b4784eb698be6f9",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "e8ad74c65b47035fbac07aa4f80b474ed9ec32e77f701622eeafd94e2f6422ad",
+    "tests/test_capture_observation.py": "5411b9f41d9931a048faad24827ea1471d2df89fee186d3eb7bab436c96d08a1",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_certificate_scope.py": "73a1ed0f439823689bb554074a4db79330d7237071180398be377174854fbbe4",
+    "tests/test_curl_bridge.py": "88cecffb0778987443db22ef46c7f8044cdb275a5417afdf4b26b16d68af47d2",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "fc59318edb16d9fe08c53b7778c6b0ba2fcfac847a27cb0e09413253ad56da94",
+    "tests/test_profile_capture.py": "28da3bf1effaff82313bee7ebb0541ac6fff2d08fe93f7bd50a1ede0ca86dcf3",
+    "tests/test_profile_context.py": "915baa1b99d001ad1bdf9aa1d3bf10e10c2900e53b871a57435a0bc7b844d334",
+    "tests/test_sample_check.py": "fb80b2a64b17bb326fc17c4e189deae5fcaf783158327a0f18d91d8330d9ce0c",
+    "tests/test_transport_diagnostic.py": "8c0c732d797da2057674e9c70b1a16ccc5bcfb9fc4659b6bab76af77eb317f0f",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "original_program_baseline": "evidence/feasibility/installed-anchor-session.json",
+  "artifacts": [
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/session-summary.json",
+      "sha256": "99dbf56e276c27278058ebbf3a67fd12369e8a0d52ad50bc6ac70f04a26d7894"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/bad_signature-leaf.pem",
+      "sha256": "a998c4ee143cb321c1dab583bedee480791bbbd590f7f0ae03872f217eea58fe"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/dns_only-root.pem",
+      "sha256": "4499e9bcf0d098312a006c5d1bb36146f95498a3d83d21804a936721d2e251cc"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/exact_dns_no_ip-root.pem",
+      "sha256": "fb2c1ed1ec878d76d4e16623ee8bded6e778a2d7dd9b8093255b1172d19ff45e"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/expired-leaf.pem",
+      "sha256": "f02cfa18021e96c1e3391da95fe3a3d9a96e4cf086a3cc7e9cbc26dbb49ee796"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/ipv4-leaf.pem",
+      "sha256": "492bd50877df227533336b81beaa9dc08e96192a68909e16da2a7385443c416f"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/ipv6-leaf.pem",
+      "sha256": "94c9a28871ab0ee578330cfbcd810f2e06bd2c10f50c4dfc2da52db4f4e4778a"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/mixed_ipv4-leaf.pem",
+      "sha256": "22e442877b6cd9656b4dd464d716638c2e2f845a073d914605807137c3abce64"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/mixed_ipv6-leaf.pem",
+      "sha256": "f356a523a54be029c23ff5f412e9ae442f4816b5fe4a896acf850075f0c4b65d"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/mixed_other-leaf.pem",
+      "sha256": "410e8ca1463d2302cd693edbf526404dc9fcbf653020b21cc8de5dbcb371f423"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/mixed_subdomain-leaf.pem",
+      "sha256": "e93db8b6917e116f3ee0b1ed8ec683cde2e9ce2aa160ade27dd033afc11f74a0"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/other-leaf.pem",
+      "sha256": "259317c267f907e81f7bb9ca722106e59a63fb5c01d7485ed012843ac3f65cee"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/prefix-leaf.pem",
+      "sha256": "9c302fc42c82dd7e100cd20f484aab8d420805be5290f318d0becbcef42ebb39"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/subdomain-leaf.pem",
+      "sha256": "d56fe1dae4f070da6b73cfc8b440deaead61366ded307bf702a03c47ebeab4ad"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/suffix-leaf.pem",
+      "sha256": "04f40d1abcc59d45337f784f7237757dda51088986108f53be2bab7659901a9a"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/target-leaf.pem",
+      "sha256": "5dc4b3941eb48a72ecf48259afe31b332e72a9f1dfc5a419c8ead94a57debd10"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/unconstrained-root.pem",
+      "sha256": "55a8b0d66d1a2ff3a064ef4a0340edd97f26209ebef35354821cfad0b33289ad"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/uppercase_target-leaf.pem",
+      "sha256": "83f85ed123ed880fea3b5108c677bc12ff19213fe8e67a3481bb11b46b04134e"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/wildcard_parent-leaf.pem",
+      "sha256": "13eae837478d657d9d29e45d0bd4d492423e86ee9e312d7d3e188e726261fdc4"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/wildcard_subdomain-leaf.pem",
+      "sha256": "254f6af53535b7b2f14fb2a75ba55c537c57b29cffe1598c8930ec2678faa0d0"
+    },
+    {
+      "path": "archives/feasibility/20261018T070821212385Z-anchor-scope-session/public/wrong_host-leaf.pem",
+      "sha256": "0138207eeb4b474363c7bdcb4a52398f5bbfdcd18198ef3b7396edfd8b84598c"
+    },
+    {
+      "path": "archives/feasibility/20261018T071132727317Z-anchor-agent-recovery/recovery-summary.json",
+      "sha256": "c154187fbad8340a15badf9da65c2ab5144e7271a03705680d83d53c1aa29cab"
+    },
+    {
+      "path": "archives/feasibility/20261018T071255895268Z-anchor-scope-recovered/recovery-summary.json",
+      "sha256": "17a75f045cddde3609555df65ae0985cd1e575cb0e502c66bd92174eeb6a6753"
+    }
+  ],
+  "delivery_checks": {
+    "markdown_files": 13,
+    "local_links": 295,
+    "python_ast_files": 40,
+    "artifacts": 23,
+    "result": "passed"
+  },
+  "effective_revocation_verified": true,
+  "recovery_completion_after_trust_start_seconds": 125.768551,
+  "later_recovery": {
+    "archive": "archives/feasibility/20261018T071255895268Z-anchor-scope-recovered",
+    "result": {
+      "certificate_absent": true,
+      "target_after_removal": {
+        "outcome": "rejected",
+        "exit_code": 1,
+        "CT_diagnostic_present": true,
+        "OSStatus_codes": [
+          -67843
+        ],
+        "trust_result": 5,
+        "reason": "native_trust_rejected"
+      },
+      "removal_command_issues": [
+        "native_nonzero_exit"
+      ],
+      "verified": true
+    },
+    "completed_at": "2026-10-18T07:10:07.941675+00:00",
+    "status": "closed",
+    "new_system_commands_run_to_verify": false
+  },
+  "user_action_required": false,
+  "automatic_budget_fix": {
+    "mutation_timeout_each": 30,
+    "cleanup_reserve_seconds": 70,
+    "tested_with_constructed_commands": true,
+    "actual_system_retested": false
+  },
+  "previously_requested_command": "cd /Users/chenge/project/liumo && .venv-capture/bin/python -m validation anchor-scope-recover",
+  "delivery_documents": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "99ce94dccb290130617b9de51d9edf2307bf421c495fe5d1050962442bdce25d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a51c5ba6162c70e33d68bd021421958dbb7f5000c72c9db78c6f5ba0683451b4"
+    },
+    {
+      "path": "PRODUCT_DESIGN.md",
+      "sha256": "136fc9711ffaeab8f0cfa184bdf1edb97199f0d0d2845b8ce86a88c262e23f30"
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "c89b727a27cbdbbeadfd39b44986f41e5631937a5a67b2a0f92b2fe956180307"
+    },
+    {
+      "path": "goals/20261016-2359-feasibility.md",
+      "sha256": "7dd8184a879eeae715954fdb266d511f7d8d017f8b44069afb684c04fc79b0f4"
+    },
+    {
+      "path": "goals/20261017-1606-wechat-session-validation.md",
+      "sha256": "f25717dbf7ee3bec546e3b8836e6582346617256fa84b9c2090f1dbccda83c9a"
+    },
+    {
+      "path": "docs/wechat-profile-route-review.md",
+      "sha256": "d1d2cbef27ef0996533150fb83971e501e95273a998502bc6a75004412c20df2"
+    },
+    {
+      "path": "docs/certificate-scope-offline.md",
+      "sha256": "8c6bc55731411d6eeba3989c2b84275dfb2eae3e4176074d8ef9341209b50800"
+    },
+    {
+      "path": "docs/installed-anchor-experiment.md",
+      "sha256": "90458b43166241d962a6bd32691240a2d0dc0c8181ba6c21793229b9a3287b08"
+    },
+    {
+      "path": "docs/http-route.md",
+      "sha256": "840ce80d35b2f71cd3d4a1793dfea0666275328ff39e6ad12dd71f1d0348b854"
+    },
+    {
+      "path": "docs/wechat-session-validation.md",
+      "sha256": "083a0a8d3c364ecb4fa89ca9c10b4f66197bc6c7019d8384c915fb3dedf4cef8"
+    },
+    {
+      "path": "docs/wechat-session-operations.md",
+      "sha256": "04229012f2b8317d5215f20bb94926d0f2de000f90f7fd0c5757547c1ec9c039"
+    },
+    {
+      "path": "docs/feasibility.md",
+      "sha256": "d45f906b99ca19d81b849c48d2c985e5a81f81a5bb843f4c625bb98e6244b4c5"
+    }
+  ]
+}

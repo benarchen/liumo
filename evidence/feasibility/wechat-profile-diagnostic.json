@@ -1,0 +1,176 @@
+{
+  "reviewed_at_beijing": "2026-10-17 17:34",
+  "status": "implementation_and_constructed_tests_passed_real_schema_pending",
+  "goal_service_status_observed": "blocked",
+  "new_goal_created": false,
+  "changes": [
+    "explicit system curl transport; secrets via stdin only; no redirects/proxies/retries",
+    "fixed-field source schema diagnostics and two-account first-page command",
+    "malformed nested article data classified while prior pages preserved",
+    "Python 3.14 client verification policy retained without environment keylogging"
+  ],
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "total": 123,
+    "passed": 119,
+    "skipped": 4,
+    "failures": 0,
+    "log": ".tmp/wechat-session-validation/diagnostic-tests.log",
+    "log_sha256": "659436aad39cfdbb272e6cf6e65bdc725b584f2da23247b8bd62cf43f63a01cf",
+    "evidence": "constructed requests and real local files/component initialization, not live network acceptance",
+    "skip_reasons": [
+      "3 browser tests not enabled",
+      "1 loopback listener PermissionError"
+    ]
+  },
+  "network_attempts": [
+    {
+      "path": "archives/feasibility/20261017T092717233489Z-mp-diagnostic/diagnostic.json",
+      "sha256": "431c7722911e6dc80929a9e741230364dca24ff50006316c0db67eb4546c3609",
+      "result": {
+        "at": "2026-10-17T09:27:17.233686+00:00",
+        "account": "stormzhang",
+        "status": "not_verified",
+        "evidence": "live_source_schema_attempt",
+        "transport": "curl",
+        "requests_attempted": 1,
+        "authentication_verified": false,
+        "reason": "curl_transport_failed",
+        "error_code": 6
+      }
+    },
+    {
+      "path": "archives/feasibility/20261017T092833709280Z-mp-pipe-diagnostic/diagnostic.json",
+      "sha256": "8013d96c420d67faa01a19af980d5793300193f69cf03da976ee44b4e4b52d21",
+      "result": {
+        "at": "2026-10-17T09:28:33.704155+00:00",
+        "account": "stormzhang",
+        "transport": "explicit_system_curl_pipe",
+        "evidence": "live_schema_diagnostic",
+        "requests_attempted": 1,
+        "authentication_verified": false,
+        "status": "not_verified",
+        "http_status": 0,
+        "reason": "http_or_transport_failed",
+        "error_code": 0
+      }
+    }
+  ],
+  "public_host_check": {
+    "target": "https://mp.weixin.qq.com/",
+    "credential_attached": false,
+    "direct_curl_http_status": 200,
+    "proves_authenticated_request_path": false
+  },
+  "curl": {
+    "path": "/usr/bin/curl",
+    "version": "8.7.1",
+    "official_options_reference": "https://curl.se/docs/manpage.html",
+    "access_date": "2026-10-17",
+    "tls_verification_disabled": false,
+    "automatic_transport_fallback": false
+  },
+  "protocol_reference": [
+    {
+      "repository": "wechat-article/wechat-article-exporter",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "path": "components/global/CredentialsDialog.vue",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/components/global/CredentialsDialog.vue",
+      "sha256": "9ccefb4668dc3987ac4a19f4b482b30419e271435584d0c71b4b93a5187a3065"
+    },
+    {
+      "repository": "wechat-article/wechat-article-exporter",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "path": "config/index.ts",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/config/index.ts",
+      "sha256": "1c0ae79fc273dcc4233455d24df3e37e0263e44e1b467eff45fb521794ae9d0e"
+    },
+    {
+      "repository": "wechat-article/wechat-article-exporter",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "path": "server/api/web/mp/profile_ext_getmsg.get.ts",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/server/api/web/mp/profile_ext_getmsg.get.ts",
+      "sha256": "cf6c27e0c727eb325ab49c5eb96ee247af93dbe271e700af479e2b8ad8fb8494"
+    },
+    {
+      "repository": "wechat-article/wechat-article-exporter",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "path": "server/utils/proxy-request.ts",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/server/utils/proxy-request.ts",
+      "sha256": "cf5ff4cbbdaed84b360f0e9ded6b14aa4337d10a1aaf14fec82dba0cd38da044"
+    },
+    {
+      "repository": "wechat-article/wechat-article-exporter",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "path": "utils/download/BaseDownloader.ts",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/utils/download/BaseDownloader.ts",
+      "sha256": "6a7c9c4531e5325cc37a2c62bf64e08fdb394c2f4579373c33ef133d371befdc"
+    },
+    {
+      "path": "apis/index.ts",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "sha256": "a56f735281bafcae32a1f3e08ef3ec8fb6ef191f8aafb58b9518a2231e04da6f",
+      "url": "https://github.com/wechat-article/wechat-article-exporter/blob/152f23832c7f3664b86148e84bd3f75e513e4dd2/apis/index.ts"
+    }
+  ],
+  "credential_comparison": {
+    "method": "private input read in memory, comparison booleans only, no credential value or digest persisted",
+    "both_tokens_have_percent_escape": false,
+    "both_tokens_match_raw_and_decoded_cookie": true,
+    "both_cookie_pass_ticket_and_wap_sid2_present": true,
+    "credential_files_changed": false
+  },
+  "normal_capture_recovery": "evidence/feasibility/wechat-session-live-attempt.json",
+  "system_changes_this_stage": false,
+  "capture_restarted": false,
+  "waiting_for": {
+    "action": "Run .venv/bin/python -m validation mp-diagnose --account all --transport curl in ordinary terminal",
+    "reason": "Agent credential-bearing attempts produced DNS failure or no HTTP response; actual response schema still needed",
+    "login_required": false,
+    "opening_articles_required": false,
+    "expected_result": "archives/feasibility/*-mp-diagnostic-pair/diagnostic-pair.json"
+  },
+  "remaining": [
+    "actual list response structure and corrective evidence",
+    "real list coverage, identity and publication-time semantics",
+    "body/comments with current access conditions",
+    "original full single screenshot containing comments/replies/ancillary areas",
+    "automatic reacquisition and natural expiry",
+    "device sleep/wake and abnormal system recovery"
+  ],
+  "files": {
+    "validation/__init__.py": "b4fffff5fcb92b14d8890608052f62619260157d26dd23c46cfd4ed0c595df09",
+    "validation/__main__.py": "7d430ea84aaa441e319ace5c877df2fc820568f8ccca9b68cfcc2c073d418d50",
+    "validation/archive.py": "f88120e3c62fbb4a450bd05889b306ec3e0c6cff194ad3f1917ca1f68c0debce",
+    "validation/capture.py": "13fcb2cb9725337adcc2c20411c12ea1b7025fbd2c3056f7dda77a61b562e418",
+    "validation/capture_plan.py": "bee296d119f7a895874bfc1cd75c15affde766dd97709486b5b1dfad2538a7ef",
+    "validation/capture_preflight.py": "deb21424261b9329347afd3a34b6aa7d6eafc6f0ae22ceb50cc9e404686ac81a",
+    "validation/capture_session.py": "53a415cd885014ef48c8df9a85396b20c4acf4eaf92a4d3b8d107f9ca956b089",
+    "validation/comments.py": "8477f2189b2784d2622719b50094e019a6e90c31f305a5d6ada251c475083de6",
+    "validation/common.py": "fed13fc91f33070e0f453aa7a9213a74ff688fb9d84112f0a78ff9997edf7c7d",
+    "validation/credentials.py": "d8b05e59fcda9efbb39917706b80b1385361f19826091c52260c30106d45af59",
+    "validation/http.py": "da4c76285843a93705e760259dcf7abe0ced6e94284e1feb79b6e4a2d9acb465",
+    "validation/http_archive.py": "fe055bf8ab0d158f9cc1eba78065a14802e373f356af1660ed14ac6fd65582b3",
+    "validation/mitm_addon.py": "cca832bf8fedb0b0701dd980876404da5e4541f24a5a422c2211153fba6effb7",
+    "validation/mp_source.py": "a68b049828dbee47c3cbd8dbb6318e4ea91aa7ce45fd8739a7280cff2a38eabc",
+    "validation/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "validation/schedule.py": "f7a1ba4b68777d685f6cf552dc9954ab9f80a4ec8a5d2f67c29a32871a133b57",
+    "validation/source.py": "f6c9aa0c9859841f2f24faa9dc66d32bd233e51f6b916870db0701f50c8788b3",
+    "validation/state.py": "b2ac731c62f648c7bd9c9d4936faeaa227636c1b93bc923b368dbe2db5943ffc",
+    "tests/test_capture.py": "900b0e49694c8e7ad1f2ecc8eb54b5004ca545047504a06ae429152d01ddee48",
+    "tests/test_capture_component.py": "6ba8ac1ab578cccf547e50239cee94bf496039a06154dbe4029a376f369d82ee",
+    "tests/test_capture_preflight.py": "cad05b730876ca350ba7e8e78fcc5391f45098a748c89bb9730d49af4494eff6",
+    "tests/test_capture_session.py": "bbf3ca54bb91f271bda0292cf3696e839ddb6e63af35575273563d57e965ca35",
+    "tests/test_http_route.py": "34e33f6bf81cb1518104407844bc40790ea05d5e5d7655b4b6f3fb1bdda634e6",
+    "tests/test_mp_diagnostic.py": "3285bc5b8f4d5be96ee1c43efab1d438ca56967faa107d4f52ace1854872d243",
+    "tests/test_validation.py": "2fbe5b2323663d90d157579c8d7a8c814c558b877d960b983a0972cff2e09c97"
+  },
+  "delivery_checks": {
+    "markdown_files": 9,
+    "local_links": 127,
+    "python_ast_files": 25,
+    "program_test_hashes_match": true,
+    "result": "passed",
+    "temporary_pipe_scripts_removed": true
+  }
+}

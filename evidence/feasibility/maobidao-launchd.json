@@ -1,0 +1,208 @@
+{
+  "recorded_at": "2026-10-20T13:05:57.036107+00:00",
+  "phase": "background_enabled_actual_scheduled_RSS_check_passed",
+  "authorization": "User confirmed next step after proposal to install the prepared Liumo scheduler",
+  "preflight": {
+    "uid": 501,
+    "domain": "gui/501",
+    "loaded_before": false,
+    "target_exists": false,
+    "target_symlink": false,
+    "parent_symlink": false,
+    "user_disabled": false,
+    "existing_identical": null,
+    "source_sha256": "76f6ae70e669fd638a14a1aab4b395a02b69c482360cae52d61528888c0fd78e",
+    "target_path": "/Users/chenge/Library/LaunchAgents/local.liumo.maobidao.plist",
+    "plist_validated": true
+  },
+  "installation": {
+    "target": "/Users/chenge/Library/LaunchAgents/local.liumo.maobidao.plist",
+    "label": "local.liumo.maobidao",
+    "file_created": true,
+    "file_sha256": "76f6ae70e669fd638a14a1aab4b395a02b69c482360cae52d61528888c0fd78e",
+    "bootstrap_exit": 0,
+    "loaded": true,
+    "other_jobs_modified": false,
+    "timezone_changed": false,
+    "runs": 1,
+    "last_exit_code": 0,
+    "state": "not running"
+  },
+  "stop_and_restore": {
+    "bootout_exit": 0,
+    "stopped_verified": true,
+    "bootstrap_exit": 0,
+    "config_preserved": true,
+    "archive_or_ledger_files_deleted": false,
+    "restored_loaded": true,
+    "last_exit_code": 0
+  },
+  "observations": [
+    {
+      "at": "2026-10-20T12:56:14.222424+00:00",
+      "loaded": true,
+      "print_exit": 0,
+      "runs": 3,
+      "last_exit_code": 0,
+      "log_entries": 3,
+      "log_bytes": 294,
+      "last_output": {
+        "status": "idle",
+        "reason": "failure_backoff",
+        "next_slot": "2026-10-20T14:00:00+00:00"
+      },
+      "stderr_bytes": 0
+    },
+    {
+      "at": "2026-10-20T13:00:41.471235+00:00",
+      "loaded": true,
+      "print_exit": 0,
+      "runs": 5,
+      "last_exit_code": 0,
+      "log_entries": 8,
+      "log_bytes": 784,
+      "last_output": {
+        "status": "idle",
+        "reason": "failure_backoff",
+        "next_slot": "2026-10-20T14:00:00+00:00"
+      },
+      "stderr_bytes": 0
+    },
+    {
+      "at": "2026-10-20T13:03:39.726790+00:00",
+      "loaded": true,
+      "print_exit": 0,
+      "runs": 8,
+      "last_exit_code": 0,
+      "log_entries": 11,
+      "log_bytes": 1221,
+      "last_output": {
+        "discovered": 0,
+        "feed_issues": [],
+        "feed_items": 20,
+        "status": "complete",
+        "results": [],
+        "pending_or_failed": 0,
+        "feed_read": true,
+        "notification": {
+          "notification": "not_needed",
+          "event": "no_new_articles"
+        }
+      },
+      "stderr_bytes": 0
+    }
+  ],
+  "notification_test": {
+    "submission_exit": 0,
+    "desktop_visibility_verified": false
+  },
+  "configuration": {
+    "installed_path": "/Users/chenge/Library/LaunchAgents/local.liumo.maobidao.plist",
+    "mode": "0o644",
+    "label": "local.liumo.maobidao",
+    "domain": "gui/501",
+    "sha256": "76f6ae70e669fd638a14a1aab4b395a02b69c482360cae52d61528888c0fd78e",
+    "heartbeat": "each_calendar_minute",
+    "query_timezone": "Asia/Shanghai",
+    "query_slots": [
+      "22:00",
+      "22:30",
+      "23:00",
+      "23:30"
+    ],
+    "python_gate_handles_missed_checks_and_backoff": true
+  },
+  "preexisting_source_failure": {
+    "last_attempt": "2026-10-20T12:47:07.109435+00:00",
+    "last_outcome": {
+      "status": "failed",
+      "reason": "public_transport_failed"
+    },
+    "next_retry_at": "2026-10-20T13:02:07.109435+00:00",
+    "cause_not_inferred": true,
+    "not_created_by_this_installation": true
+  },
+  "code_changed": false,
+  "code_hashes_match_previous_415_test_run": true,
+  "verification": "actual_launchctl_load_and_calendar_executions_no_synthetic_clock_or_forced_source_call",
+  "unverified": [
+    "nighttime_22xx_trigger",
+    "actual_network_disconnect_and_reconnect",
+    "sleep_and_wake",
+    "logout_and_login",
+    "desktop_notification_display",
+    "formal_new_article_if_none_available"
+  ],
+  "safety": {
+    "other_jobs_modified": false,
+    "system_timezone_changed": false,
+    "proxy_or_certificates_changed": false,
+    "credentials_exported": false,
+    "article_profile_used": false,
+    "user_data_deleted": false,
+    "git_operations": false
+  },
+  "scheduled_recovery_observation": {
+    "observed_at": "2026-10-20T13:03:14.768312+00:00",
+    "scheduled_result_observed": true,
+    "result": {
+      "at": "2026-10-20T13:03:05.867322+00:00",
+      "discovered": 0,
+      "feed_issues": [],
+      "feed_items": 20,
+      "status": "complete",
+      "results": [],
+      "pending_or_failed": 0,
+      "feed_read": true,
+      "notification": {
+        "notification": "not_needed",
+        "event": "no_new_articles"
+      }
+    },
+    "original_page_requests": 0,
+    "observer_network_requests": 0
+  },
+  "formal_state_after": {
+    "status": "complete",
+    "start_at": "2026-10-19T15:51:46.228864+00:00",
+    "last_feed_success": "2026-10-20T13:03:05.184762+00:00",
+    "last_attempt": "2026-10-20T13:03:05.184762+00:00",
+    "last_outcome": {
+      "status": "complete",
+      "feed_items": 20,
+      "discovered": 0,
+      "pending_or_failed": 0
+    },
+    "next_retry_at": null,
+    "feed_issues": [],
+    "source_changed_keys": [],
+    "article_access_paused": false,
+    "source_access_paused": null,
+    "needs_manual_retry": 0,
+    "counts": {
+      "baseline": 20
+    },
+    "recent": [],
+    "comments_status": "not_requested",
+    "background_installation": "not_managed_by_cli"
+  },
+  "formal_start_at_preserved": true,
+  "manual_forced_source_check_this_task": false,
+  "physical_network_disconnect_tested": false,
+  "document_checks": {
+    "files": 7,
+    "absolute_local_links": 119,
+    "structure_and_fragments": "passed",
+    "roadmap_order_and_counts": "passed"
+  },
+  "documents_sha256": {
+    "AGENTS.md": "ae72ad02b488ff3d3e549b010beda03b6155b66bfb25b11653cbb7274565c268",
+    "README.md": "4cb120179c9eea6c3152553a25cd83ee34ff18f4e0201b30cd88457995a3b7c8",
+    "PRODUCT_DESIGN.md": "3b7f9214507bd250015bb88c01b545e3dba7b0686e7f53fc3c623080266b9a9b",
+    "ROADMAP.md": "35399972b93da8d52efc1736a1f0258823e3d78ba71eaaf55dffae53d58dcc76",
+    "goal/20261019-2328-maobidao-mvp.md": "b70e163126467cc817d71ec1b8c798ea368cf6f356707ea19e131265f2e23a68",
+    "docs/maobidao-mvp.md": "0af7bfe72a98a268ae098cb870ddb073dec557f7583d0b536c0527854f7a3af2",
+    "docs/maobidao-scheduler.md": "228957ee21f8f79718bf6e759ee4c9a78ce9fcc15a2a2cf4b913482c9a63a1a2"
+  },
+  "delivered_at_beijing": "2026-10-20 21:04"
+}

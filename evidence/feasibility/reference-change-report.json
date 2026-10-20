@@ -1,0 +1,13 @@
+{
+  "reference_url": "https://github.com/rachelos/we-mp-rss/pull/478",
+  "reference_type": "pull_request_author_report",
+  "created_at": "2026-10-14T13:36:35Z",
+  "retrieved_at": "see sources.json repository metadata entry",
+  "response_sha256": "ed2dd1a8b83d55aacd5656f8dd8d05073ab84b902abcd07bc88a9869ee9f9e6c",
+  "claims_not_verified_here": [
+    "author reports missing js_content in changed article HTML",
+    "proposed content_noencode fallback is plain text and can lose images"
+  ],
+  "adoption": "not adopted; cannot satisfy full fidelity or comments screenshot by itself",
+  "local_real_page_evidence": "pending"
+}

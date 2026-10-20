@@ -1,0 +1,154 @@
+{
+  "reviewed_at_beijing": "2026-10-17 17:23",
+  "evidence": "real_user_terminal_session_and_agent_artifact_review",
+  "status": "capture_and_normal_recovery_verified_source_unverified",
+  "goal_service_status_observed": "blocked",
+  "new_goal_created": false,
+  "session": {
+    "at": "2026-10-17T09:16:41.903248+00:00",
+    "status": "restored",
+    "finished": true,
+    "reason": "two_credentials_saved_authentication_unverified",
+    "trust_scope_verified": true,
+    "proxy_roundtrip_verified": true,
+    "capture_disabled": true,
+    "recovery": {
+      "proxy": "restored_and_read_back",
+      "trust": "revoked_and_checked",
+      "safe_to_stop_proxy": true,
+      "verified": true
+    },
+    "proxy_process_stopped": true,
+    "capture": {
+      "running": false,
+      "passthrough_only": true,
+      "diagnostics": {
+        "tls_client_failures_seen": 198,
+        "target_host_responses_seen": 40,
+        "article_like_responses_seen": 2
+      },
+      "status": "closed",
+      "saved_by_account": {
+        "stormzhang": 1,
+        "猫笔刀": 1
+      },
+      "events": {
+        "capture_saved_not_authentication_verified": 2
+      },
+      "authentication_verified": false,
+      "automatic_renewal_verified": false
+    }
+  },
+  "credential_storage_metadata": {
+    "maobidao": {
+      "file_exists": true,
+      "current_user_owned": true,
+      "mode": "0o600",
+      "contents_read_for_this_report": false,
+      "credential_digest_generated": false
+    },
+    "stormzhang": {
+      "file_exists": true,
+      "current_user_owned": true,
+      "mode": "0o600",
+      "contents_read_for_this_report": false,
+      "credential_digest_generated": false
+    }
+  },
+  "sources": [
+    {
+      "account": "猫笔刀",
+      "output": "/Users/chenge/project/liumo/archives/feasibility/20261017T092102597647Z-mp-source",
+      "at": "2026-10-17T09:21:02.602557+00:00",
+      "status": "not_verified",
+      "evidence": "live_source_attempt",
+      "requests_attempted": 1,
+      "coverage_complete": false,
+      "pages": [
+        {
+          "cursor": "0",
+          "error": "source_shape_changed"
+        }
+      ],
+      "publication_times_verified": false,
+      "account_identity_verified": false,
+      "reason": "source_shape_changed"
+    },
+    {
+      "account": "stormzhang",
+      "output": "/Users/chenge/project/liumo/archives/feasibility/20261017T092102819685Z-mp-source",
+      "at": "2026-10-17T09:21:02.824189+00:00",
+      "status": "not_verified",
+      "evidence": "live_source_attempt",
+      "requests_attempted": 1,
+      "coverage_complete": false,
+      "pages": [
+        {
+          "cursor": "0",
+          "error": "source_shape_changed"
+        }
+      ],
+      "publication_times_verified": false,
+      "account_identity_verified": false,
+      "reason": "source_shape_changed"
+    }
+  ],
+  "agent_schema_diagnostic": {
+    "at": "2026-10-17T09:22:04.904662+00:00",
+    "account": "stormzhang",
+    "evidence": "live_schema_diagnostic_attempt",
+    "requests_attempted": 1,
+    "status": "blocked",
+    "reason": "transport_failed"
+  },
+  "artifacts": [
+    {
+      "path": "archives/feasibility/20261017T092102505240Z-capture-session/session-summary.json",
+      "sha256": "3fd9206e4d76ee9eba58af0540d7d44b22a44621be29b6633b38852a812308c7",
+      "privacy": "sanitized_metadata_only_no_credential_values"
+    },
+    {
+      "path": "archives/feasibility/20261017T092102505240Z-capture-session/source-probes.json",
+      "sha256": "4a225559705096bf10919d46abc6bddb9a84b72f1537709e23408d30a30056b3",
+      "privacy": "sanitized_metadata_only_no_credential_values"
+    },
+    {
+      "path": "archives/feasibility/20261017T092204911777Z-mp-schema-diagnostic/schema.json",
+      "sha256": "e46f575a1eec54101acfd76d3c74574a6797e5b8269e3fed0a8d3ae41ac797b1",
+      "privacy": "sanitized_metadata_only_no_credential_values"
+    }
+  ],
+  "tests": {
+    "rerun_this_turn": false,
+    "reason": "program_and_test_sources_unchanged_since_112_test_baseline",
+    "baseline": "evidence/feasibility/wechat-session-runner.json",
+    "total": 112,
+    "passed": 108,
+    "skipped": 4,
+    "source_hashes_still_match": true
+  },
+  "user_action": {
+    "open_samples": "completed",
+    "another_open_or_login_requested_now": false,
+    "user_image_scope": "two article tabs and visible comment excerpt; not a full-page artifact"
+  },
+  "not_verified": [
+    "credentials accepted for list/body/comment functions",
+    "real multi-article listing and pagination",
+    "source publication time and account identity",
+    "comment/reply API retrieval",
+    "single full original page screenshot containing comments/replies/ancillary areas",
+    "automatic reopening/reacquisition",
+    "natural expiry/renewal",
+    "abnormal system recovery, device sleep/wake and power loss"
+  ],
+  "next_step": "Compare fixed protocol implementation and safe response structure before a bounded re-test; do not repeat capture experiment or anonymous article requests.",
+  "delivery_checks": {
+    "at": "2026-10-17T17:23:50.480623+08:00",
+    "markdown_files": 9,
+    "local_links": 122,
+    "python_ast_files": 24,
+    "result": "passed",
+    "scope": "static documentation and sanitized artifact consistency only; no test rerun or new system mutation"
+  }
+}

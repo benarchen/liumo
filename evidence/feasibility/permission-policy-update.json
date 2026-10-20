@@ -1,0 +1,62 @@
+{
+  "recorded_at_beijing": "2026-10-19 21:42",
+  "policy_change": "Project-specific per-experiment approvals and fixed single-use directory approval requirements revoked by explicit user instruction; global rules and platform gates retained.",
+  "runtime_code_changed": false,
+  "system_settings_changed": false,
+  "user_codex_config_modified": false,
+  "old_experiments_started": false,
+  "credentials_read": false,
+  "goal_lifecycle_changed": false,
+  "cli_version": "0.163.0",
+  "user_config_selected_keys": {
+    "approvals_reviewer": "auto_review"
+  },
+  "observed_capabilities": {
+    "at_beijing": "2026-10-19T21:40:38.000370+08:00",
+    "scope": "No credentials; public HEAD only; isolated local browser; no system changes",
+    "checks": {
+      "workspace_write_read": true,
+      "loopback_bind": {
+        "status": "unavailable",
+        "errno": 1
+      },
+      "dependency_registry": {
+        "curl_exit": 6,
+        "http_status": 0,
+        "tls_verify_result": 0,
+        "seconds": 0.01,
+        "credentials_sent": false
+      },
+      "weread_public_origin": {
+        "curl_exit": 6,
+        "http_status": 0,
+        "tls_verify_result": 0,
+        "seconds": 0.01,
+        "credentials_sent": false
+      },
+      "isolated_local_browser": {
+        "status": "unavailable",
+        "error_class": "TargetClosedError"
+      }
+    }
+  },
+  "unresolved": [
+    "Current shell DNS/network access",
+    "Loopback bind permission",
+    "Isolated browser launch; exact cause unverified",
+    "Effective policy source not diagnosed from user config alone"
+  ],
+  "historical_constraints": "docs/legacy-experiment-constraints.md",
+  "current_rules": "AGENTS.md",
+  "document_checks": {
+    "status": "passed",
+    "markdown_files": 7,
+    "absolute_local_links": 142,
+    "roadmap_records": {
+      "最近完成": 20,
+      "最近验证": 20
+    },
+    "legacy_repeated_approval_requirements_removed_from_current_rules": true,
+    "runtime_tests_rerun": false
+  }
+}
