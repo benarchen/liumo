@@ -41,7 +41,7 @@
 
 - 运行代码：[liumo/](/Users/chenge/project/liumo/liumo) 。
 - 正式状态：[state/maobidao/](/Users/chenge/project/liumo/state/maobidao) 下的 SQLite、互斥锁及最近回执。
-- 正式归档：位于 [archives/](/Users/chenge/project/liumo/archives) 下的 `maobidao/<article-key>/<attempt-id>/`，在首次有文章归档时创建。
+- 正式归档：位于 [archives/maobidao/](/Users/chenge/project/liumo/archives/maobidao) 下的 `<article-key>/<attempt-id>/`，保存自动追更结果。
 - 技术样本：[archives/mvp-samples/](/Users/chenge/project/liumo/archives/mvp-samples) ，不混入正式追更状态。
 - 每份 RSS 快照包含 `article.md`、`images/` 和 `metadata.json`，图片使用相对路径与校验值；没有伪造的 `article.png`。
 
@@ -55,19 +55,20 @@
 .venv/bin/python -m liumo plist --output .tmp/maobidao-mvp/review.plist
 ```
 
-配置是每分钟的轻量 `tick`；实际是否访问 RSS 由 Python 按 `Asia/Shanghai` 判定，不修改 Mac 时区。后台能运行不代表每次服务请求成功；设备休眠／唤醒、夜间到点和正式新增分别观察。停用、恢复及证据见 [后台运行说明](/Users/chenge/project/liumo/docs/maobidao-scheduler.md) 。
+配置是每分钟的轻量 `tick`；实际是否访问 RSS 由 Python 按 `Asia/Shanghai` 判定，不修改 Mac 时区。后台已完成正式新增文章的 RSS 快照归档，通知使用 Mac 系统通知，无新增时不通知。停用与恢复见 [后台运行说明](/Users/chenge/project/liumo/docs/maobidao-scheduler.md) ，验收与限制统一见 [ROADMAP](/Users/chenge/project/liumo/ROADMAP.md) 。
 
 ## 验证
 
 ```bash
+mkdir -p .tmp/wechat-session-validation
 .venv/bin/python -m unittest discover -s tests -v
 LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-后一入口显式运行本地构造页面测试，不访问微信原文。RSS MVP 默认不需要启动浏览器；完整历史回归仍使用现有 Chrome／Node／Acorn。依赖清单见 [requirements.txt](/Users/chenge/project/liumo/requirements.txt) 。
+首行准备历史组件测试使用的空临时父目录，不包含账号或运行数据。后一入口显式运行本地构造页面测试，不访问微信原文。RSS MVP 默认不需要启动浏览器；完整历史回归仍使用现有 Chrome／Node／Acorn。依赖清单见 [requirements.txt](/Users/chenge/project/liumo/requirements.txt) 。
 
 ## 版本管理
 
-日常开发使用 `dev`，通过检查的集成快照同步到 `main`，附注标签 `baseline-20261020` 标识首次工程基线。源码公开同步目标为 [benarchen/liumo](https://github.com/benarchen/liumo) ；版本操作、基线范围与本机数据边界见 [版本管理说明](/Users/chenge/project/liumo/docs/version-control.md) 。Git 只保存代码、文档、脱敏证据与构造样本，不备份真实归档、凭证或运行数据库。
+日常开发使用 `dev`，通过检查的集成快照同步到 `main`。附注标签 `baseline-20261020` 标识首次工程基线，`mvp-rss-20261021` 标识猫笔刀单号 RSS MVP 结项快照。源码仓库为 [benarchen/liumo](https://github.com/benarchen/liumo) ；版本操作、标签范围与本机数据边界见 [版本管理说明](/Users/chenge/project/liumo/docs/version-control.md) 。Git 只保存代码、文档、脱敏证据与构造样本，不备份真实归档、凭证或运行数据库。
 
 [施工与验收记录](/Users/chenge/project/liumo/goal/20261019-2328-maobidao-mvp.md) 、[历史验证工具](/Users/chenge/project/liumo/docs/legacy-validation-commands.md) 。原页诊断保留为显式的 `page-sample` 命令，退出默认运行链，不作为当前正常使用步骤。

@@ -29,6 +29,14 @@ git switch dev
 
 ## 公开范围与本机数据
 
+### MVP 结项标签
+
+`mvp-rss-20261021` 标记 2026-10-21 完成验收的猫笔刀单号 RSS MVP，标签日期沿用验收日期；Git 提交及推送按实际操作时间记录。本次提交纳入结项文档、正式运行脱敏证据和必要的历史任务待办说明，运行代码／测试／固定依赖保持与初始基线相同。历史导入的未完成程序和共享模块改动留在本机，不进入该提交或标签。
+
+先从 Git 暂存区导出独立快照验证，再在 `dev` 提交，`main` 使用 `--ff-only` 同步，创建附注标签，推送两个分支与标签，最后切回 `dev`。隔离快照复用本机已有虚拟环境和 Acorn 依赖，先创建历史测试需要的空 `.tmp/wechat-session-validation/` 父目录，不复制账号、文章或状态，不安装依赖；其验证结果与工作区包含未提交改动时的结项测试分别记录。[提交快照验证](/Users/chenge/project/liumo/evidence/feasibility/maobidao-mvp-release.json) 。
+
+### 数据范围
+
 公开同步目标：[https://github.com/benarchen/liumo](https://github.com/benarchen/liumo) 。推送使用本机已有 SSH 身份，远端 `main` 为默认分支，同时同步 `dev` 和上述基线标签；不创建 GitHub Release。
 
 `.gitignore` 排除 `.auth/`、`archives/`、`state/`、`.tmp/`、日志、环境文件、虚拟环境、Node 依赖及本地 AI 配置。公开范围检查包含：Git 实际候选清单、私钥／常见 token／凭证赋值／敏感 URL 扫描、命中项人工分类、受保护路径的忽略核对；构造值和公开文章 ID 与真实凭证分开。扫描不构成不存在任意未知秘密的绝对保证。

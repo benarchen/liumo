@@ -1,0 +1,74 @@
+{
+  "phase": "isolated_staged_snapshot_verified",
+  "verified_at_beijing": "2026-10-22 00:08",
+  "tag": "mvp-rss-20261021",
+  "tag_date_basis": "2026-10-21_mvp_acceptance_date",
+  "scope": "closeout_documents_sanitized_evidence_and_unfinished_history_plan_only",
+  "baseline_commit": "66373d814cd92bc31b78200f570335fbc6dffc75",
+  "runtime_tests_dependencies_identical_to_baseline": true,
+  "runtime_tests_dependency_git_blob_manifest_sha256": "109e4e06573fd1d1ed407ccb39ef45f85901707ac5744bcf75d7040e9098dd6b",
+  "snapshot_import_root_verified": true,
+  "history_module_in_snapshot": false,
+  "excluded_unfinished_code": [
+    "liumo/__main__.py",
+    "liumo/rss.py",
+    "liumo/rss_archive.py",
+    "liumo/history.py"
+  ],
+  "excluded_code_preserved": true,
+  "runtime_sha256": {
+    "liumo/__init__.py": "e9e2260a65e0e170ea50bf63fcae41db283a3814572fef6384805f3b014336f0",
+    "liumo/__main__.py": "daa28706fe1d26ab25660a282f9141269c2bd49a73dd8aa69caeaad8625ee898",
+    "liumo/archive.py": "8e9bbce1e6e7310f298e8ccc215a3143197d68b3313b9fa51631fbb1b5c1ca20",
+    "liumo/rss.py": "1153cfae25d5702fca9200c27dba8d59b1b64d517e4936989ce3e8d4c9e6d8f7",
+    "liumo/rss_archive.py": "4a8a9f483e7b25e996b773bc85fa5f4f4649dd97cbbee7039c0abdbd3b4f78c9",
+    "liumo/runner.py": "fa13c0fc585e613685293748f7c2e623726d6aa1bda069d40ff935840e69c4df",
+    "liumo/store.py": "5a412839b5183b8d051c9e7ddf749a2ddd259dea3a6205d15778124463484928"
+  },
+  "test_environment": {
+    "dependencies": "reuse_existing_venv_venv_capture_and_acorn_via_snapshot_only_symlinks",
+    "preparation": "mkdir -p .tmp/wechat-session-validation",
+    "new_dependencies_installed": false,
+    "private_data_copied": false,
+    "system_settings_changed": false,
+    "wechat_pages_accessed": false
+  },
+  "tests": {
+    "command": "LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v",
+    "tests": 415,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 43.454,
+    "log_sha256": "00cbfc46282d351eb1accb2996daa6f36aabc8407dbe89f64b2519c7a1f1059c",
+    "initial_attempt": {
+      "tests": 415,
+      "failures": 4,
+      "cause": "missing_snapshot_local_temporary_parent_directory",
+      "log_sha256": "7548b38948defcc200baac1aed6e584c5975bc5b386b18c290b095b730bb359b",
+      "remedy": "create_empty_temporary_parent_without_code_changes"
+    }
+  },
+  "security_scan": {
+    "candidate_files": 13,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "cloud_key",
+      "literal_credential",
+      "credential_url"
+    ],
+    "findings": []
+  },
+  "formal_runtime_evidence": "evidence/feasibility/maobidao-mvp-closeout.json",
+  "note": "This record verifies the candidate snapshot; actual commit, annotated tag and remote refs are verified after creation without moving existing tags.",
+  "document_and_scope_checks": {
+    "staged_files": 13,
+    "markdown_docs": 11,
+    "local_links_checked": 199,
+    "roadmap_order_and_caps": true,
+    "secret_pattern_matches": 0,
+    "unversioned_nonlocal_artifact_links": 0,
+    "excluded_code_preserved": 4
+  }
+}
