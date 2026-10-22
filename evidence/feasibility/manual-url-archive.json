@@ -1,0 +1,140 @@
+{
+  "checked_at_beijing": "2026-10-22 08:11",
+  "goal": "帮我增加给任意链接立即归档的能力",
+  "scope": "public_wechat_article_url; manual_page_snapshot; no comments or screenshot",
+  "real": {
+    "status": "passed",
+    "command": ".venv/bin/python -m liumo save 'https://mp.weixin.qq.com/s/aZD7YZl0Fjsjsa7MHVyMoA' --wait-seconds 180",
+    "exit_code": 0,
+    "source_url": "https://mp.weixin.qq.com/s/aZD7YZl0Fjsjsa7MHVyMoA",
+    "title": "-12%，跌太狠了",
+    "account": "猫笔刀",
+    "identity": {
+      "biz": "MzE5ODk2NjUwOA==",
+      "mid": "2247498693",
+      "idx": "1"
+    },
+    "output_relative_to_project": "archives/manual/b04c2db047ed9e226fe64ba4/20261022T000729-53dd4719",
+    "started_at": "2026-10-22T00:07:29.917297+00:00",
+    "finished_at": "2026-10-22T00:07:32.623731+00:00",
+    "markdown_bytes": 6385,
+    "markdown_sha256": "22635c5bd9a86b05cdc39c1433638388214769450f3d345c721adf5462f1e0ae",
+    "body_sha256": "acbcf95cd815c1ae5e76443961e8a6cf97e1cfa8bad79b4e3b44f5a602eafbbe",
+    "images": [
+      {
+        "index": 0,
+        "path": "images/149c46749899eb51c039387f.png",
+        "sha256": "149c46749899eb51c039387fc55f6ddf52286e1064485254456b384bf73934e8",
+        "bytes": 251441,
+        "dimensions": [
+          1080,
+          539
+        ]
+      },
+      {
+        "index": 1,
+        "path": "images/b1a94df795c6e7f2496ee445.png",
+        "sha256": "b1a94df795c6e7f2496ee4458896c9b6e99c1deedb7bb8cb6acf0edf5b943cd6",
+        "bytes": 144248,
+        "dimensions": [
+          1079,
+          488
+        ]
+      }
+    ],
+    "offline_image_references_verified": true,
+    "body_end_present": true,
+    "published_at": "2026-10-21T14:22:15+00:00",
+    "publication_time_verified": true,
+    "scroll": {
+      "bottom_reached": true,
+      "steps": 6,
+      "height": 3311
+    },
+    "blocked_request_count": 8,
+    "human_verification_needed": false,
+    "account_login_requested": false,
+    "repeat": {
+      "exit_code": 0,
+      "reused": true,
+      "same_output": true
+    },
+    "comments_status": "not_requested",
+    "screenshot": {
+      "status": "deferred"
+    }
+  },
+  "constructed": {
+    "unit_tests": 17,
+    "local_chrome_tests": 4,
+    "passed": true,
+    "coverage": [
+      "another_account",
+      "invalid_input_no_requests",
+      "independent_page_identity",
+      "paid_or_hidden_body",
+      "partial_image_retry",
+      "short_long_alias_dedup",
+      "refresh_preserves_old",
+      "damaged_cache",
+      "index_path_and_symlink_boundary",
+      "overlap_lock",
+      "wait_budget",
+      "offline_browser_image_loading"
+    ],
+    "does_not_prove": "all publishers, all layouts, all access conditions"
+  },
+  "full_regression": {
+    "command": "LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v",
+    "tests": 436,
+    "duration_seconds": 43.824,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "preservation": {
+    "preexisting_history_sources_unchanged": {
+      "liumo/rss.py": true,
+      "liumo/rss_archive.py": true,
+      "liumo/history.py": true
+    },
+    "main_only_adds_save": true,
+    "automatic_follow_baseline_and_counts_unchanged": true,
+    "formal_status_counts": {
+      "baseline": 20,
+      "complete": 1
+    },
+    "git_commit_push_or_tag_performed": false,
+    "system_or_scheduler_changes": false
+  },
+  "code_sha256": {
+    "liumo/manual.py": "dc3f7f7253dda7468ddb64af8591092ff2556ed33601cd8fdf2b617e13189396",
+    "tests/test_manual.py": "d247616ff36590dcfbba65e63c9ea23accf69c9b7851615cbabd084a6078b176",
+    "tests/test_manual_browser.py": "8477083986554706cc9c9b6e07914d5024e576b9a45be7c044d3d04fdfa2d6f2"
+  },
+  "limitations": [
+    "restricted, paid and deleted content are not bypassed",
+    "one real article tested; other account is constructed",
+    "image galleries, video, audio and interactive components are not full exports",
+    "no comments or original-page screenshot",
+    "normal human verification may be necessary on other visits"
+  ],
+  "previous_http_failure_record": "evidence/feasibility/manual-article-link.json; unchanged failure, not reclassified",
+  "documentation": {
+    "files": [
+      "AGENTS.md",
+      "README.md",
+      "PRODUCT_DESIGN.md",
+      "ROADMAP.md",
+      "docs/manual-archive.md",
+      "goals/20261022-0800-manual-url-archive.md"
+    ],
+    "local_links_checked": 124,
+    "structure_passed": true,
+    "roadmap_record_counts": {
+      "最近完成": 20,
+      "最近验证": 20
+    },
+    "all_goal_checkpoints_checked": true
+  }
+}

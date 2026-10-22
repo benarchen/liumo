@@ -2,20 +2,22 @@
 
 ## 当前状态
 
+- 2026-10-22 20:18：按用户指令准备提交整个 `dev` 工程工作区，包含已验收手动归档和未完成历史导入实现；完整 436 项回归通过、无跳过，公开候选检查通过。集成采用 `main --ff-only`，附注标签为 `snapshot-20261022`；实际提交、推送结果以 Git 引用为准。历史任务不因版本化升级为已完成。[快照范围](/Users/chenge/project/liumo/docs/version-control.md#2026-10-22-工作区快照) 。
+- 2026-10-22 08:13：任意公众号链接的独立 `save URL` 已实现并验收，Goal 工具返回 `complete`。用户指定文章猫笔刀《-12%，跌太狠了》真实保存为 6385 字节 Markdown、2 张本地图片，重复命令直接复用。436 项完整回归全部通过、无跳过；自动基线、正式状态计数与既有历史实现保全。使用正常项目浏览器，本次无需人工验证，不包含评论／截图。[用法](/Users/chenge/project/liumo/docs/manual-archive.md) 、[施工验收](/Users/chenge/project/liumo/goals/20261022-0800-manual-url-archive.md) 、[证据](/Users/chenge/project/liumo/evidence/feasibility/manual-url-archive.json) 。
 - 2026-10-22 00:08：按用户授权将 MVP 结项材料与历史任务待办说明纳入一次文档提交，`main` 快进集成后创建附注标签 `mvp-rss-20261021`，推送两个分支和标签，最后回到 `dev`。标签日期沿用 2026-10-21 的验收日期；未完成历史导入代码留在本机，提交快照的运行代码／测试／依赖与首次基线相同。[快照验证](/Users/chenge/project/liumo/evidence/feasibility/maobidao-mvp-release.json) 。
 - 2026-10-21 23:56：首个 Goal 按用户明确修订的猫笔刀单号 RSS MVP 范围结项，Goal 工具已返回 `complete`；正式新增已自动归档，后台保持运行。最终交付、范围修订与后续边界见 [结项报告](/Users/chenge/project/liumo/docs/maobidao-mvp-closeout.md) 、[施工清单](/Users/chenge/project/liumo/goal/20261019-2328-maobidao-mvp.md) 。
 - 2026-10-21 23:54：复核 22:00:05 正式新增《带头大哥肿么了...》，22:00:07 归档完成；5998 字节 Markdown、3 图及哈希／本地引用通过。随后三次检查无重复、无未完成，最近 23:30 来源检查成功；正式归档通知调用成功，测试通知桌面可见性由用户确认。[正式证据](/Users/chenge/project/liumo/evidence/feasibility/maobidao-mvp-closeout.json) 。
 - 2026-10-21 23:54：结项工作区完整回归 415 项全部通过、无跳过，耗时 46.725 秒；该工作区包含未提交历史改动，与本次排除历史代码的提交快照分别验收。构造异常、隔离闭环、正式自动归档及用户可见通知证据分别记录，不互相替代。
 - 正式启用时间保持 2026-10-19 23:51（北京时间），20 条历史仅作 baseline，新增已 complete 1 篇。默认运行仍为 RSS 快照，原文时间未核实、评论 not_requested、截图 deferred，不声称原站完整归档。
-- 首次 Git 基线为 `66373d8`／`baseline-20261020`，本地日常分支 `dev`，公开仓库 `benarchen/liumo`。本次仅提交结项文档、脱敏证据及必要待办说明，历史导入工作树代码改动保持原样，未标完成；不改系统设置或重启后台。
+- 首次 Git 基线为 `66373d8`／`baseline-20261020`，日常分支 `dev`，公开仓库 `benarchen/liumo`。`mvp-rss-20261021` 的历史代码排除范围不变；本轮工作区快照纳入当前工程改动，历史导入仍未验收。
 
 ## 进行中
 
-- 历史导入：已有未完成的工作树实现及 [历史归档清单](/Users/chenge/project/liumo/goals/20261020-2339-rss-history.md) ，不纳入本次结项；未证明猫笔刀 2026 年历史完整，也未把相关功能标为已交付。
+- 历史导入：当前实现纳入工作区工程快照，按 [历史归档清单](/Users/chenge/project/liumo/goals/20261020-2339-rss-history.md) 继续验收；未证明猫笔刀 2026 年历史完整，也未把相关功能标为已交付。完整既有回归通过不替代历史模块专项与真实覆盖验收。
 - 延迟及覆盖：本次用户观察到约一天滞后，尚未分别记录上游首次可见时间与本机等待；来源保留窗口与群发范围有限，不保证当日收齐。持续试用和更及时来源评估保留后续。
 - 设备可靠性：休眠／唤醒、物理断网恢复及注销／重登仍未实测，不影响本次用户修订范围结项，不能写成已验证。
 - 备份恢复：本机 SQLite 重开与失败恢复已验证；项目外备份目标、恢复和长期保全仍待后续处理。
-- 原文时间、原页截图、评论与 stormzhang：按用户最新范围暂缓，退出当前 MVP 门槛；原站访问失败记录保留，不继续实验。
+- 自动 RSS 原文时间、原页截图、评论与 stormzhang 自动追更：按用户范围暂缓；手动入口可在页面 epoch 与渲染时间相符时单篇核实原文时间。旧原站失败证据保留，不重启旧实验。
 
 ## 当前验收快照
 
@@ -23,21 +25,24 @@
 | --- | --- | --- |
 | 猫笔刀公开 RSS 多篇发现 | 通过分项 | 真实 20 条及跨两份快照新增 1 条；只覆盖源可见范围 |
 | RSS 正文及配图快照 | 通过 | 真实 Markdown、6 张本地配图；不声称对照原站完整 |
+| 任意公众号链接手动归档 | 通过当前范围 | 用户指定文章真实 Markdown／2 图及重复复用通过；其他号为构造测试，不承诺全版式或绕过访问限制 |
 | 入队、去重、失败与恢复 | 通过 | 真实 RSS 隔离闭环；故障注入、中断、有限重试和保留旧产物回归 |
 | 上海四点、合并补查与互斥 | 分项通过 | 四点与锁逻辑、已知失败后自动补查通过；正式夜间新增归档及后续三次检查通过，物理断网及设备唤醒另验 |
 | 正式 start_at 后新增文章 | 通过 | 2026-10-21 22:00 自动发现并归档 1 篇，Markdown／3 图校验通过，后续无重复 |
 | 后台调度、通知、外部备份 | 分项通过 | 已加载／自然心跳／停用恢复／夜间 RSS 检查通过，用户确认通知可见；设备行为及数据备份另验 |
-| 原站截图／发布时间／评论／第二号 | 用户暂缓 | 不影响当前 RSS 快照 complete，不改写历史失败 |
+| 原站截图／RSS 原文时间／评论／第二号自动追更 | 用户暂缓 | 不影响 RSS 快照 complete；手动入口单篇时间核实另有真实证据，不改写历史失败 |
 
 ## 下一步执行顺序
 
-1. 首个 Goal 已完成，保留后台与正式基线继续自动运行，不重新初始化。
+1. 首个 RSS MVP 已结项，手动链接归档已交付；保留后台与正式基线继续自动运行，不重新初始化。手动归档不代表已实现跨公众号自动发现。
 2. 历史导入按独立清单继续核对来源覆盖、未完成实现与必要测试，不能承接本次结项声明为历史任务完成。
 3. 后续优先量化上游收录与本机检查延迟，再决定检查窗口或来源变更；设备中断实验、备份目标按对应授权执行。
 4. 原页、原文时间、评论及第二号保持暂缓，不重新开展旧微信实验。
 
 ## 最近完成
 
+- 2026-10-22 20:18：完成当前工作区提交范围核对与版本说明同步，明确手动链接归档和历史导入代码均纳入 `snapshot-20261022`，保留历史未验收标记；公开范围排除凭证、文章、状态、日志和依赖，无运行代码变更。[版本说明](/Users/chenge/project/liumo/docs/version-control.md) 。
+- 2026-10-22 08:10：新增任意公众号 `save URL`，独立会话／索引／归档，输入与页面身份核对、短长链去重、图片失败恢复、刷新保留旧快照及损坏重取齐备。真实指定文章已保存，文档与验收证据同步；不新增依赖，不提交或推送 Git，不修改调度或既有历史代码。[交付](/Users/chenge/project/liumo/docs/manual-archive.md) 。
 - 2026-10-22 00:08：明确 MVP 结项提交与附注标签范围，历史导入计划以未交付状态版本化，4 份未完成程序留在本机。补齐完整历史测试的空临时目录准备说明，区分工作区证据与独立 Git 快照验证。[版本说明](/Users/chenge/project/liumo/docs/version-control.md) 。
 - 2026-10-21 23:54：按用户指令完成 RSS MVP 结项验收、正式自动归档证据和当前文档同步；后台继续运行，历史导入和设备可靠性独立保留后续。[结项报告](/Users/chenge/project/liumo/docs/maobidao-mvp-closeout.md) 。
 - 2026-10-20 23:31：新增 Git 分支／基线及公开同步约定，提交排除凭证、文章、日志、依赖和状态；同步用户确认的通知可见性及 23:30 无新增检查。首次工程基线范围与限制见 [说明](/Users/chenge/project/liumo/docs/version-control.md) 。
@@ -68,12 +73,11 @@
 
 - 2026-10-19 00:20：C24／C25 连续头部失败后，已复核 RFC 9110、官方 API 与锁定 mitmproxy 源码／构造双头，确认计数为独立字段。C26 仅对完整归一化声明一致的双头继续，其余停止；329 项为 325 通过、4 跳过，63 份 AST、旧回执及新授权拒绝核对。新授权／UI／目录未创建，无新系统或微信请求；真实 HTML／评论通道及原 Goal 未完成，服务 blocked。[准备与方案](/Users/chenge/project/liumo/evidence/feasibility/article-static-duplicates-preparation.json) 。
 
-- 2026-10-19 00:20：C25 已关闭：控制 HTTP 200／各 1、匹配文章响应 1 次；实测 HTTP 200／gzip／两条 Content-Type，按 ambiguous 拒绝，未读 HTML 或生成静态摘要。15.664 秒内四项恢复通过，公共材料身份、私钥不存在及 C24 旧回执另验；两条值未留存，不知是否一致或冲突，不重跑。[真实证据](/Users/chenge/project/liumo/evidence/feasibility/article-static-metadata-live.json) 。
-
-- 2026-10-19 00:10：C25 本次授权已记录并绑定已恢复 C24，旧十一次关闭回执及 61 份代码的 321 项基线核对通过。固定文章 UI 已截图确认、聊天隐藏，300 秒就绪记录已创建；Agent 系统预检仍权限不可用。尚未创建实验目录、改系统、刷新或读取 HTML，待普通终端启动，无需重复授权；C24 私有回执不变，原 Goal 仍 blocked、未完成。[现场记录](/Users/chenge/project/liumo/evidence/feasibility/article-static-metadata-live.json) 。
-
 ## 最近验证
 
+- 2026-10-22 20:18：提交前完整回归 436 项全部通过、无跳过，46.338 秒；候选源码／文档强特征秘密扫描无命中，8 类本机敏感路径忽略核对通过；获取远端后 main／dev 均无分叉。不将通用回归视为历史导入功能已验收。
+- 2026-10-22 08:10：用户短链正常 Chrome 真实读取与滚动到底通过，文章身份及原文时间核对、6385 字节 Markdown、2 图 SHA-256／PNG 尺寸／本地引用通过，重复命令退出 0 并复用。17 项逻辑、4 项本地浏览器专项通过；完整 436 项全部通过、无跳过，43.824 秒。历史 3 个独立文件哈希保持，主入口仅追加 save，正式基线和状态计数未变。[证据](/Users/chenge/project/liumo/evidence/feasibility/manual-url-archive.json) 。
+- 2026-10-22 07:54：指定短链一次匿名 HTTPS GET 被 302 重定向门槛停止；一次不跟随 HEAD 记录验证页类别，curl 92 独立保留，未推断 GET 目标完全相同或必须登录。0 篇正文／0 张图片；4 份历史程序哈希保全，脱敏 JSON 和文档链接核对，无产品代码变更。[证据](/Users/chenge/project/liumo/evidence/feasibility/manual-article-link.json) 。
 - 2026-10-22 00:08：从 Git 暂存区导出的独立提交快照完整回归 415 项全部通过、无跳过，43.454 秒；运行代码／测试／依赖与 `66373d8` 相同，未导出历史实现。首轮 4 项因缺少历史测试临时父目录失败，补建快照内空目录后复测通过，复现说明已同步；不改业务代码。[快照验证](/Users/chenge/project/liumo/evidence/feasibility/maobidao-mvp-release.json) 。
 - 2026-10-21 23:54：完整回归 415 项全部通过、无跳过，46.725 秒；正式文章 Markdown／3 图哈希、本地引用、一次后台归档和随后三次无重复检查通过，安装配置与模板一致。保留既有 6 份历史导入文件身份，结项不改代码或系统。[正式验收证据](/Users/chenge/project/liumo/evidence/feasibility/maobidao-mvp-closeout.json) 。
 - 2026-10-20 23:31：显式启用本地浏览器完整回归，415 项全部通过、无跳过，耗时 43.516 秒。沙盒首轮阻止浏览器／回环，未计为通过；经正式权限门禁后完成，不访问微信、不改运行代码。[基线验证](/Users/chenge/project/liumo/evidence/feasibility/git-baseline.json) 。
@@ -101,9 +105,3 @@
 - 2026-10-19 07:39：C27 离线 JS 分析准备通过：普通终端安装 Acorn 8.19.0 后，缓存包 SHA-512／lockfile 及 10 个安装文件逐一核对；语法分析辅助程序和受限 Python 包装交付。12 项构造专项通过，完整 341 项为 337 通过、4 跳过；仅输出固定计数，不执行输入。真实 HTML 连接／评论通道未验，无新微信或系统实验，C26 旧回执保全，原 Goal 未完成。[实现与复现](/Users/chenge/project/liumo/docs/inline-script-validation.md) 、[证据](/Users/chenge/project/liumo/evidence/feasibility/inline-script-preparation.json) 。
 
 - 2026-10-19 00:44：用户明确授权 Agent 直接安装后，已执行 C27 项目内隔离命令，仍退出 1／ENOTFOUND registry.npmjs.org；累计两次失败，Acorn／lockfile 均不存在。分析程序和自测尚未实现，当前依赖安装需要具备网络能力的执行环境；不重复尝试、不启动新微信实验，原 Goal 仍未完成。[证据](/Users/chenge/project/liumo/evidence/feasibility/inline-script-preparation.json) 、[操作说明](/Users/chenge/project/liumo/docs/inline-script-validation.md) 。
-
-- 2026-10-19 00:42：项目内依赖安装实际退出 1／ENOTFOUND，确认 Acorn 和 lockfile 均不存在；未执行脚本分析自测，不计为通过。空 npm 配置、禁用生命周期脚本／重试与官方 TLS 范围保持；没有替代传输或新系统实验。[安装证据](/Users/chenge/project/liumo/evidence/feasibility/inline-script-preparation.json) 。
-
-- 2026-10-19 00:35：C26 真实核对：HTTP 200／gzip、两条 Content-Type 完整归一化等价，789852 字节编码／3493845 字节解码 HTML，独立文章身份通过。57 个 script、2 个外部来源均被拒绝，无可用公共脚本地址；固定词频不足以证明调用关系，静态取证整体 partial，评论及完整归档未通过。16.313 秒内四项恢复通过，公共材料身份、私钥不存在及 C25 回执另验；63 份代码与 329 项基线一致，未重复测试。原 Goal 服务仍 blocked、未完成。[真实证据](/Users/chenge/project/liumo/evidence/feasibility/article-static-duplicates-live.json) 。
-
-- 2026-10-19 00:20：完整回归 329 项，325 通过、4 跳过；实际 mitmproxy 构造双头区分等价／冲突并保持 gzip 字节，63 份 AST 与 C24／C25 私有回执核对。标准和 API／安装源码仅为机制证据，新真实验证未通过。[准备索引](/Users/chenge/project/liumo/evidence/feasibility/article-static-duplicates-preparation.json) 。

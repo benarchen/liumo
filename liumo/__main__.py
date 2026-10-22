@@ -14,8 +14,27 @@ from .store import Store
 
 
 def main():
-    parser = argparse.ArgumentParser(description='留墨：猫笔刀单号 RSS 归档。')
+    parser = argparse.ArgumentParser(description='留墨：RSS 自动追更与按公众号、日期导入历史。')
     sub = parser.add_subparsers(dest='command', required=True)
+    manual = sub.add_parser('save', help='立即归档任意微信公众号文章链接，不等待 RSS。')
+    manual.add_argument('url', help='微信公众号公开文章的 HTTPS 短链或长链。')
+    manual.add_argument('--refresh', action='store_true', help='重新读取并保留新快照，不覆盖旧结果。')
+    manual.add_argument('--headless', action='store_true', help='不显示浏览器，遇验证立即报告。')
+    manual.add_argument('--wait-seconds', type=int, metavar='0..300', default=180,
+                        help='有界面时等待正常验证的秒数，默认 180。')
+    history = sub.add_parser('history', help='按上海日期范围显式保存 RSS 历史快照。')
+    history.add_argument('--account', required=True, help='公众号名称，首个预置为猫笔刀。')
+    history.add_argument('--biz', help='其他公众号必填的公开 __biz 身份。')
+    history.add_argument('--start', required=True, help='起始日期 YYYY-MM-DD，包含当天。')
+    history.add_argument('--end', required=True, help='结束日期 YYYY-MM-DD，包含当天。')
+    source = history.add_mutually_exclusive_group()
+    source.add_argument('--feed-url', help='公开 Wechat2RSS XML 地址。猫笔刀可省略。')
+    source.add_argument('--rss-file', type=Path, action='append', default=[], help='本地 RSS XML，可重复传入。')
+    source.add_argument('--resume', action='store_true', help='只用已保存的本地输入续跑，不请求 RSS。')
+    history.add_argument('--retry', action='store_true', help='显式重试已达到 3 次的失败任务。')
+    history.add_argument('--limit', type=int, choices=range(1, 101), default=20, help='本次最多处理篇数，默认 20。')
+    history.add_argument('--data-dir', type=Path, help='历史任务本机状态目录。')
+    history.add_argument('--archive-dir', type=Path, help='历史快照输出目录。')
     for name in ('init', 'check', 'retry', 'tick', 'status', 'source', 'sample', 'page-sample', 'plist'):
         cmd = sub.add_parser(name)
         if name in ('init', 'check', 'retry', 'tick', 'status', 'plist'):
@@ -29,7 +48,17 @@ def main():
             cmd.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     try:
-        if args.command == 'source':
+        if args.command == 'save':
+            from .manual import save_article
+            result = save_article(args.url, refresh=args.refresh, headless=args.headless,
+                                  wait_seconds=args.wait_seconds)
+        elif args.command == 'history':
+            from .history import import_history
+            result = import_history(args.account, args.start, args.end, biz=args.biz,
+                                    feed_url=args.feed_url, rss_files=args.rss_file,
+                                    resume=args.resume, retry=args.retry, limit=args.limit,
+                                    data_dir=args.data_dir, archive_dir=args.archive_dir)
+        elif args.command == 'source':
             items = discover()
             result = {'status':'complete','feed':FEED,'items':[{k:v for k,v in x.items() if k!='body_html'} for x in items],
                       'original_times_verified':False}

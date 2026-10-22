@@ -11,18 +11,19 @@ from validation.common import timestamp, write_json
 from .rss import ACCOUNT, FEED, MVPError, canonical, read_image
 
 
-def archive_rss(item, output, start_at=None, image_fetch=read_image):
+def archive_rss(item, output, start_at=None, image_fetch=read_image, *,
+                account=ACCOUNT, biz=None, feed_source=FEED, history_selection=None):
     output=Path(output)
     output.mkdir(parents=True,exist_ok=False,mode=0o700)
-    result={'status':'failed','archive_kind':'rss_snapshot','account':ACCOUNT,
-            'source_url':item['url'],'feed_source':FEED,'title':item['title'],'key':item['key'],
+    result={'status':'failed','archive_kind':'rss_snapshot','account':account,
+            'source_url':item['url'],'feed_source':feed_source,'title':item['title'],'key':item['key'],
             'first_seen_at':item.get('first_seen_at'),'feed_time_candidate':item.get('feed_time'),
             'original_publication_time':None,'publication_time_verified':False,
             'body_completeness':'as_provided_by_feed_unverified_against_original',
             'screenshot':{'status':'deferred'},'comments_status':'not_requested',
             'started_at':timestamp(),'reasons':[]}
     try:
-        _,key,identity=canonical(item['url'])
+        _,key,identity=canonical(item['url'], biz) if biz is not None else canonical(item['url'])
         if key!=item['key'] or identity!=item['identity']:
             raise MVPError('rss_article_identity_mismatch')
         if not item.get('first_seen_at'):
@@ -53,6 +54,11 @@ def archive_rss(item, output, start_at=None, image_fetch=read_image):
         provenance=(f'\n> 保存类型：RSS 内容快照。原文发布时间待核实；原页截图暂缓。\n'
                     f'> 原文链接：{item["url"]}\n'
                     f'> 首次发现时间：{item["first_seen_at"]}\n')
+        if history_selection is not None:
+            result['history_selection']=history_selection
+            provenance+=(f'> 历史筛选依据：RSS pubDate（原文时间未核实），上海日期范围 '
+                         f'{history_selection["start"]} 至 {history_selection["end"]}（含首尾）。\n'
+                         f'> RSS 时间：{item.get("feed_time")}\n')
         path.write_text(heading+'\n'+provenance+'\n'+body.lstrip(),encoding='utf-8')
         result['markdown_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
         result['rss_body_sha256']=hashlib.sha256(html.encode()).hexdigest()

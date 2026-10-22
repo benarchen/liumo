@@ -2,6 +2,8 @@
 
 当前提供猫笔刀单号的 **RSS 内容快照归档**：读取公开 RSS，保存 Markdown、本地配图、公开原链接和元数据；有去重、失败恢复、上海时区门控及本机通知出口。默认运行不打开微信原文、不使用账号会话、不读取评论。
 
+也提供独立的 `save URL`，立即保存任意微信公众号可正常访问的标准图文文章，不等待 RSS。这个显式入口使用项目专用 Chrome 页面，保存原文正文快照及本地配图，不读取评论、不生成截图。
+
 `complete` 表示 RSS 快照产物齐全。原文发布时间仍待核实，原页截图暂缓；不能解释为已对照原站完整归档。新内容按启用后的首次发现处理，初始化时列表中的文章只建立基线。详细状态见 [ROADMAP](/Users/chenge/project/liumo/ROADMAP.md) ，运行与恢复说明见 [MVP 使用说明](/Users/chenge/project/liumo/docs/maobidao-mvp.md) 。
 
 ## 使用
@@ -13,12 +15,14 @@
 .venv/bin/python -m liumo status
 .venv/bin/python -m liumo check
 .venv/bin/python -m liumo tick
+.venv/bin/python -m liumo save 'https://mp.weixin.qq.com/s/aZD7YZl0Fjsjsa7MHVyMoA'
 ```
 
 - `check` 立即检查 RSS，串行处理最多 3 篇待处理文章；可用 `--limit 1` 至 `--limit 5` 调整本次预算。
 - `tick` 只在北京时间 22:00、22:30、23:00、23:30 到期或需要恢复补查时执行，错过多次合并。普通空闲心跳不请求 RSS。
 - `status` 查看启用时间、成功检查、任务与人工处理项；未初始化返回 `not_initialized`，不创建空数据库。
 - `retry` 有限处理未完成任务，包含已用尽自动次数的任务。访问／来源拒绝时先检查原因，不盲目循环执行。
+- `save URL` 立即归档单篇公开微信文章，输出保存目录；重复成功结果校验后直接复用，`--refresh` 保留新的读取结果。使用方法与访问限制见 [链接归档说明](/Users/chenge/project/liumo/docs/manual-archive.md) 。
 
 当前 Mac 的正式基线已初始化，**不要重复执行 init**。新环境首次使用才运行：
 
@@ -43,9 +47,10 @@
 - 正式状态：[state/maobidao/](/Users/chenge/project/liumo/state/maobidao) 下的 SQLite、互斥锁及最近回执。
 - 正式归档：位于 [archives/maobidao/](/Users/chenge/project/liumo/archives/maobidao) 下的 `<article-key>/<attempt-id>/`，保存自动追更结果。
 - 技术样本：[archives/mvp-samples/](/Users/chenge/project/liumo/archives/mvp-samples) ，不混入正式追更状态。
+- 手动文章：[archives/manual/](/Users/chenge/project/liumo/archives/manual) ，状态在 [state/manual/](/Users/chenge/project/liumo/state/manual) ，与 RSS 账本独立；元数据为 `archive_kind=manual_page_snapshot`，`complete` 表示当次可见正文与配图齐全。
 - 每份 RSS 快照包含 `article.md`、`images/` 和 `metadata.json`，图片使用相对路径与校验值；没有伪造的 `article.png`。
 
-状态、内容、缓存与会话均按 `.gitignore` 留在本机，Git 不包含它们。运行无需读取 `.auth/`。公开 RSS 请求只发往 Wechat2RSS；配图按 RSS 明示的腾讯原图地址通过 HTTPS 下载，不把浏览器凭证发送给第三方。
+状态、内容、缓存与会话均按 `.gitignore` 留在本机，Git 不包含它们。自动 RSS 运行无需读取 `.auth/`；显式 `save` 仅使用 [.auth/manual-article/](/Users/chenge/project/liumo/.auth/manual-article) 专用会话。公开 RSS 请求只发往 Wechat2RSS；配图按来源明示的腾讯原图地址通过 HTTPS 下载，不把浏览器凭证发送给第三方。
 
 ## 调度配置
 
@@ -70,5 +75,7 @@ LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v
 ## 版本管理
 
 日常开发使用 `dev`，通过检查的集成快照同步到 `main`。附注标签 `baseline-20261020` 标识首次工程基线，`mvp-rss-20261021` 标识猫笔刀单号 RSS MVP 结项快照。源码仓库为 [benarchen/liumo](https://github.com/benarchen/liumo) ；版本操作、标签范围与本机数据边界见 [版本管理说明](/Users/chenge/project/liumo/docs/version-control.md) 。Git 只保存代码、文档、脱敏证据与构造样本，不备份真实归档、凭证或运行数据库。
+
+`snapshot-20261022` 是包含手动链接归档和当前历史导入代码的工作区快照；标签范围与验证边界见版本管理说明，功能验收状态以 Roadmap 为准。
 
 [施工与验收记录](/Users/chenge/project/liumo/goal/20261019-2328-maobidao-mvp.md) 、[历史验证工具](/Users/chenge/project/liumo/docs/legacy-validation-commands.md) 。原页诊断保留为显式的 `page-sample` 命令，退出默认运行链，不作为当前正常使用步骤。

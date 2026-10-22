@@ -35,7 +35,13 @@ git switch dev
 
 先从 Git 暂存区导出独立快照验证，再在 `dev` 提交，`main` 使用 `--ff-only` 同步，创建附注标签，推送两个分支与标签，最后切回 `dev`。隔离快照复用本机已有虚拟环境和 Acorn 依赖，先创建历史测试需要的空 `.tmp/wechat-session-validation/` 父目录，不复制账号、文章或状态，不安装依赖；其验证结果与工作区包含未提交改动时的结项测试分别记录。[提交快照验证](/Users/chenge/project/liumo/evidence/feasibility/maobidao-mvp-release.json) 。
 
-### 数据范围
+### 2026-10-22 工作区快照
+
+用户明确要求提交 `dev` 当前工作区，快进集成到 `main`、创建附注标签并推送。标签采用 `snapshot-20261022`，包含已验收的手动链接归档功能、相关测试／文档／脱敏证据，以及当前历史导入实现和共享 RSS 模块改动。这次范围不同于 `mvp-rss-20261021`：历史代码一并版本化，但历史来源覆盖、全年完整性和专门验收仍未完成，不将其标为稳定历史导入版本。
+
+提交前执行完整回归、文档结构／链接检查、公开候选文件与忽略目录检查；历史功能的未验收状态保留在 Roadmap。无新增依赖、系统设置或后台调度变更。提交信息和附注标签均注明工作区快照范围；远端分支与标签的实际结果通过 Git 引用核对，不创建 GitHub Release。
+
+### 本机数据隔离
 
 公开同步目标：[https://github.com/benarchen/liumo](https://github.com/benarchen/liumo) 。推送使用本机已有 SSH 身份，远端 `main` 为默认分支，同时同步 `dev` 和上述基线标签；不创建 GitHub Release。
 

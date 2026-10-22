@@ -1,0 +1,31 @@
+{
+  "status": "not_archived",
+  "requested_url": "https://mp.weixin.qq.com/s/aZD7YZl0Fjsjsa7MHVyMoA",
+  "output": "/Users/chenge/project/liumo/archives/manual/maobidao/20261021T235255406400Z",
+  "request_scope": "one_anonymous_GET_and_one_nonfollowing_HEAD",
+  "credentials_read": false,
+  "browser_opened": false,
+  "comments_requested": false,
+  "screenshot_requested": false,
+  "article_GET": {
+    "requests": 1,
+    "reason": "redirect_blocked",
+    "curl_exit_success_in_GET_transport": true,
+    "http_status": 302
+  },
+  "HEAD_observation": {
+    "method": "HEAD",
+    "curl_exit": 92,
+    "http_status": 302,
+    "redirect_category": "wechat_verification_page",
+    "redirect_followed": false,
+    "raw_headers_saved": false
+  },
+  "interpretation": "HEAD_headers_pointed_to_wechat_verification_page_but_curl_exit_92_is_not_a_successful_complete_transfer_and_HEAD_is_not_GET",
+  "raw_html_headers_or_session_values_saved": false,
+  "markdown_saved": false,
+  "images_saved": 0,
+  "automatic_follow_state_written": false,
+  "preexisting_history_code_preserved": true,
+  "next_condition": "normal_readable_article_input_or_a_source_with_verified_same_article_identity_no_automatic_retry"
+}
