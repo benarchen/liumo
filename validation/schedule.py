@@ -1,31 +1,20 @@
 """Beijing schedule decisions; a lightweight local probe, no installed job."""
 
+from liumo.schedule import SHANGHAI, SLOTS, latest_slot, next_slot
+
 import json
 import plistlib
 import time
-from datetime import datetime, time as wall_time, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 from .common import ROOT, parse_time, timestamp, write_json
 from .state import exclusive
 
-SHANGHAI = ZoneInfo("Asia/Shanghai")
-SLOTS = ((22, 0), (22, 30), (23, 0), (23, 30))
 
 
-def latest_slot(now):
-    local = now.astimezone(SHANGHAI)
-    candidates = [datetime.combine(local.date() - timedelta(days=day), wall_time(h, m), SHANGHAI)
-                  for day in (0, 1) for h, m in SLOTS]
-    return max(value for value in candidates if value <= local).astimezone(timezone.utc)
 
 
-def next_slot(now):
-    local = now.astimezone(SHANGHAI)
-    candidates = [datetime.combine(local.date() + timedelta(days=day), wall_time(h, m), SHANGHAI)
-                  for day in (0, 1) for h, m in SLOTS]
-    return min(value for value in candidates if value > local).astimezone(timezone.utc)
 
 
 def decide(now, last_attempt, online, last_online=None):

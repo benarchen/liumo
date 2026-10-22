@@ -6,8 +6,8 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from validation.archive import render_markdown
-from validation.common import timestamp, write_json
+from .render import render_markdown
+from .common import timestamp, write_json
 from .rss import ACCOUNT, FEED, MVPError, canonical, read_image
 
 

@@ -1,0 +1,405 @@
+{
+  "goal": "G4",
+  "scope": "runtime boundary, compatible shared functions, quality entry and environment reproduction",
+  "runtime_boundary": {
+    "validation_imports": 0,
+    "static_literal_dynamic_check": true,
+    "fresh_process_optional_import_guard": true,
+    "playwright_load": "only explicit browser driver request",
+    "graph": {
+      "liumo/repair.py": [
+        ".common",
+        ".integrity",
+        ".manual",
+        ".rss",
+        ".rss_archive",
+        "bs4",
+        "contextlib",
+        "datetime",
+        "hashlib",
+        "pathlib",
+        "sqlite3",
+        "urllib.parse",
+        "uuid"
+      ],
+      "liumo/store.py": [
+        ".rss",
+        "json",
+        "pathlib",
+        "sqlite3"
+      ],
+      "liumo/rss.py": [
+        "bs4",
+        "email.utils",
+        "hashlib",
+        "os",
+        "re",
+        "subprocess",
+        "urllib.parse",
+        "xml.etree.ElementTree"
+      ],
+      "liumo/runner.py": [
+        ".common",
+        ".notify",
+        ".rss",
+        ".rss_archive",
+        ".schedule",
+        ".store",
+        "datetime",
+        "pathlib",
+        "plistlib",
+        "uuid"
+      ],
+      "liumo/rss_archive.py": [
+        ".common",
+        ".render",
+        ".rss",
+        "bs4",
+        "datetime",
+        "hashlib",
+        "pathlib"
+      ],
+      "liumo/render.py": [
+        ".common",
+        "base64",
+        "bs4",
+        "hashlib",
+        "markdownify",
+        "pathlib",
+        "struct",
+        "urllib.parse"
+      ],
+      "liumo/__init__.py": [],
+      "liumo/notify.py": [
+        "subprocess"
+      ],
+      "liumo/manual.py": [
+        ".browser",
+        ".common",
+        ".integrity",
+        ".render",
+        ".rss",
+        "base64",
+        "datetime",
+        "hashlib",
+        "html",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "sys",
+        "time",
+        "urllib.parse",
+        "uuid"
+      ],
+      "liumo/browser.py": [
+        ".rss",
+        "datetime",
+        "playwright.sync_api",
+        "re",
+        "zoneinfo"
+      ],
+      "liumo/common.py": [
+        "contextlib",
+        "datetime",
+        "fcntl",
+        "json",
+        "os",
+        "pathlib",
+        "urllib.parse"
+      ],
+      "liumo/archive.py": [
+        ".browser",
+        ".common",
+        ".render",
+        ".rss",
+        "datetime",
+        "hashlib",
+        "os",
+        "pathlib",
+        "time",
+        "urllib.parse"
+      ],
+      "liumo/schedule.py": [
+        "datetime",
+        "zoneinfo"
+      ],
+      "liumo/integrity.py": [
+        ".rss",
+        "contextlib",
+        "datetime",
+        "hashlib",
+        "json",
+        "pathlib",
+        "re",
+        "sqlite3",
+        "urllib.parse"
+      ],
+      "liumo/__main__.py": [
+        ".common",
+        ".history",
+        ".integrity",
+        ".manual",
+        ".repair",
+        ".rss",
+        ".rss_archive",
+        ".runner",
+        ".store",
+        "argparse",
+        "datetime",
+        "json",
+        "pathlib"
+      ],
+      "liumo/history.py": [
+        ".common",
+        ".integrity",
+        ".repair",
+        ".rss",
+        ".rss_archive",
+        "base64",
+        "datetime",
+        "hashlib",
+        "json",
+        "pathlib",
+        "re",
+        "uuid",
+        "zoneinfo"
+      ]
+    }
+  },
+  "compatibility": {
+    "behavior_equal": true,
+    "unchanged_functions": 17,
+    "before_after_sha256": "26222d5c9214e865a46709f808a0aa0422dd061a3946abc0ebf57682342260b0"
+  },
+  "collection": {
+    "before_G4": 484,
+    "new_engineering_tests": 7,
+    "after_G4": 491,
+    "omitted_existing_tests": 0,
+    "file_groups": {
+      "product": [
+        "test_engineering.py",
+        "test_history.py",
+        "test_integrity.py",
+        "test_manual.py",
+        "test_mvp.py",
+        "test_mvp_rss_archive.py"
+      ],
+      "browser": [
+        "test_manual_browser.py",
+        "test_mvp_browser.py"
+      ],
+      "legacy": [
+        "test_anchor_scope.py",
+        "test_capture.py",
+        "test_capture_component.py",
+        "test_capture_observation.py",
+        "test_capture_preflight.py",
+        "test_capture_session.py",
+        "test_certificate_scope.py",
+        "test_comment_baseline.py",
+        "test_comment_refresh.py",
+        "test_compat_session.py",
+        "test_curl_bridge.py",
+        "test_functional_session.py",
+        "test_html_inline.py",
+        "test_html_static.py",
+        "test_html_static_duplicates.py",
+        "test_html_static_metadata.py",
+        "test_http_route.py",
+        "test_inline_scripts.py",
+        "test_mp_diagnostic.py",
+        "test_profile_capture.py",
+        "test_profile_context.py",
+        "test_sample_check.py",
+        "test_transport_diagnostic.py",
+        "test_validation.py",
+        "test_wechat_compat.py",
+        "test_weread_discovery.py"
+      ]
+    }
+  },
+  "full_regression": {
+    "command": "LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v",
+    "tests": 490,
+    "passed": 490,
+    "skipped": 0,
+    "seconds": 44.842,
+    "note": "before the final engineering subtest-report regression was added"
+  },
+  "final_quality_run": {
+    "suite": "all",
+    "collected": 491,
+    "run": 491,
+    "passed": 491,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "expected_failures": 0,
+    "layers": {
+      "product": {
+        "run": 108,
+        "passed": 108,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "browser": {
+        "run": 11,
+        "passed": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "legacy": {
+        "run": 372,
+        "passed": 372,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "seconds": 45.077,
+    "command": ".venv/bin/python -m tools.check --suite all"
+  },
+  "fresh_core_environment": {
+    "path": ".tmp/p1-p2-remediation/g4/env",
+    "new_venv": true,
+    "system_site_packages": false,
+    "installed_from": "existing pinned local wheels; --no-index; no old site-packages reuse",
+    "requirements": "requirements-core.txt",
+    "new_dependency_types": 0,
+    "wheel_sha256": {
+      "beautifulsoup4-4.15.0-py3-none-any.whl": "d6f88de62e1d4e38ecb1077eb9724cd0eff29d2a08ca16a401e9b9e93f117cf9",
+      "soupsieve-3.0.3-py3-none-any.whl": "fa30e3ba4809cb81ce1f3209f2fbe3e779fc445f0439bc147a0d7c4601743f21",
+      "markdownify-1.2.3-py3-none-any.whl": "a189a0bedfd14009030fde5f85bb6f77c56897cb839b5c25315dd7d4e3e290ba",
+      "six-1.17.0-py2.py3-none-any.whl": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    "pip_check": "passed",
+    "optional_packages_installed": false,
+    "node_absent_from_test_PATH": true,
+    "machine_Chrome_retained_but_not_used_by_core": true,
+    "tests": {
+      "suite": "product",
+      "collected": 108,
+      "run": 108,
+      "passed": 108,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "expected_failures": 0,
+      "layers": {
+        "product": {
+          "run": 108,
+          "passed": 108,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "browser": {
+          "run": 0,
+          "passed": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "legacy": {
+          "run": 0,
+          "passed": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      }
+    },
+    "cli_help_exit": 0,
+    "uninitialized_status_exit": 2,
+    "uninitialized_status_creates_state": false
+  },
+  "real_readonly_archives": [
+    {
+      "scope": "rss",
+      "status": "complete",
+      "counts": {
+        "intact": 2,
+        "missing": 0,
+        "corrupt": 0,
+        "unverifiable": 0
+      },
+      "baseline_count": 20
+    },
+    {
+      "scope": "manual",
+      "status": "complete",
+      "counts": {
+        "intact": 2,
+        "missing": 0,
+        "corrupt": 0,
+        "unverifiable": 0
+      },
+      "baseline_count": 0
+    },
+    {
+      "scope": "history",
+      "status": "complete",
+      "counts": {
+        "intact": 0,
+        "missing": 0,
+        "corrupt": 0,
+        "unverifiable": 0
+      },
+      "baseline_count": 0
+    }
+  ],
+  "environment": {
+    "python": "3.14.5",
+    "macOS": "27.0.1",
+    "architecture": "arm64",
+    "curl": "system curl 8.7.1",
+    "chrome": "155.0.8059.85",
+    "node": "v26.0.0"
+  },
+  "migration": {
+    "page_sample": "python -m validation page-sample; removed from ordinary liumo CLI",
+    "legacy_helpers": "compatibility imports delegate into liumo; no data migration"
+  },
+  "failures_and_resolution": [
+    "static document checker initially misread angle-bracket paths containing parentheses and file:line links; fixed parser and added regressions",
+    "git diff --check detected an extraction-created trailing blank line; removed; no behavioral change"
+  ],
+  "not_done": [
+    "online package download not retested",
+    "other OS/Python combinations not tested",
+    "no real legacy system/capture experiment restarted",
+    "no product schema, scheduler or credentials changed",
+    "no Git commit/tag/push",
+    "backup removed by user"
+  ],
+  "source_sha256": {
+    "liumo/repair.py": "f7e35485fdcbef94dfba0e5a488f0b75f05178ae4b31845d4b38eab01561fa4e",
+    "liumo/store.py": "6784c1a55e43bae0b444ae1ed8f0745cb365783297085f1ef68c5fd4c0b5b50c",
+    "liumo/rss.py": "fd997c8910e0ee7833b3934211721622b00e7d50c57b62cd105a57a521cc552a",
+    "liumo/runner.py": "e6686307762db67a83100db6a8870b234c450200e05a72cb11c0980e4441c27d",
+    "liumo/rss_archive.py": "dea8fe80ee38f710d6da0a2af26709aab0be1cfe409497cd9024772f0431af95",
+    "liumo/render.py": "3426b8d91756c0945774c8faa62d1a6f4828bcc28821a6fe19da4769ca2ef417",
+    "liumo/__init__.py": "e9e2260a65e0e170ea50bf63fcae41db283a3814572fef6384805f3b014336f0",
+    "liumo/notify.py": "a65dac6a711382154d973e0f4c560c5159eea6f08263cf4ea3471264ae137646",
+    "liumo/manual.py": "53823af4dafef652433f8cc6509fa74e9dbe655d0789fb5b4c1af4c4a64f60be",
+    "liumo/browser.py": "2b0c0899f279913eecd65a51343817edccd583a19140cb841aff0d3d0b1d7bce",
+    "liumo/common.py": "da607276b3be155027f2cc1171dfa66c66d27001eac6f9d679ed0e793e1da911",
+    "liumo/archive.py": "d583203036e0e8a84d03916a149f9dbfef325988ad50b72adb2f6e92c81676c0",
+    "liumo/schedule.py": "5126f924737942546ff0e04b34ba65977f268ef7c8024409182674aace1b01ce",
+    "liumo/integrity.py": "4450b000dd7d229359fcba5d1a51a8f0b250fb85a924b853c7f3124fe643d704",
+    "liumo/__main__.py": "44e141203ec97a961eeaaa81b3d2ce7963f9be464871b088755c759177e9e643",
+    "liumo/history.py": "1f9f6325c7dc3c420051eae79cdfe523233dfb9f0ffb7b19af1fed014ca96f5b",
+    "tools/check.py": "9cf89c1e7d43c8c299065749670603d198862a07d076fb1978bee43b0c09b7c5",
+    "tools/__init__.py": "7f0b5321edafcbd8b775cacba7184074c79a7bc77bd568f227d6252eea0cf702",
+    "tests/test_engineering.py": "680930098d478041e1d053ea2da1ea2b7cdb1957c9cff8dd2849ade2abda4596",
+    "requirements-core.txt": "00228886b80dd59ae521e05f710c42db23af311d197c0003f89fcb76f32b3abe",
+    "requirements-browser.txt": "7f8aa21e0c5971099dfc845afdb830147f36e0fab668114c790ed976a102cb93",
+    "requirements.txt": "d92e8ca334bf9b94375dea7df1bdba67344317f446dbbf83cd5b23e7fbd4e80f"
+  },
+  "accepted_at_shanghai": "2026-10-22 23:09"
+}

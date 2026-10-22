@@ -41,6 +41,14 @@ git switch dev
 
 提交前执行完整回归、文档结构／链接检查、公开候选文件与忽略目录检查；历史功能的未验收状态保留在 Roadmap。无新增依赖、系统设置或后台调度变更。提交信息和附注标签均注明工作区快照范围；远端分支与标签的实际结果通过 Git 引用核对，不创建 GitHub Release。
 
+### 2026-10-22 P1／P2 整改版本
+
+用户在 G1、G3、G4 验收完成后，明确授权提交当前工作区，快进合并到 `main`、创建附注标签并推送 GitHub。版本标签采用 `remediation-20261022`，包括归档完整性检查与显式修复、已验证的给定 RSS 历史输入处理、正式共享模块与旧实验分离、核心／浏览器依赖分组、质量入口及施工／验收文档。
+
+本次复用紧邻实施完成的全量 491 项通过、无跳过证据，提交前核对 22 份实现／测试／依赖文件 SHA-256 未变，并重新检查文档、公开范围与忽略目录。不把备份移出范围或全年来源未齐写成验证通过。验证结果见 [工程证据](/Users/chenge/project/liumo/evidence/feasibility/engineering-consolidation.json) ，验收范围见 [整改结项](/Users/chenge/project/liumo/docs/p1-p2-remediation-closeout.md) 。
+
+顺序为 `dev` 提交 → `main --ff-only` → 在该提交创建附注标签 → 推送 `main`、`dev` 与这个标签 → 回到 `dev`。不移动旧标签、不强推、不创建 GitHub Release；最终提交及远端状态以实际 Git 引用为准。
+
 ### 本机数据隔离
 
 公开同步目标：[https://github.com/benarchen/liumo](https://github.com/benarchen/liumo) 。推送使用本机已有 SSH 身份，远端 `main` 为默认分支，同时同步 `dev` 和上述基线标签；不创建 GitHub Release。

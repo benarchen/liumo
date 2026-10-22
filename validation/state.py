@@ -1,25 +1,11 @@
 """Incremental discovery with an independent pending archive queue."""
 
-import fcntl
-from contextlib import contextmanager
-from pathlib import Path
+from liumo.common import exclusive
+
 
 from .common import article_key, article_url, parse_time, timestamp
 
 
-@contextmanager
-def exclusive(path):
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a+") as stream:
-        try:
-            fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError:
-            raise RuntimeError("already_running") from None
-        try:
-            yield
-        finally:
-            fcntl.flock(stream, fcntl.LOCK_UN)
 
 
 def empty_state():

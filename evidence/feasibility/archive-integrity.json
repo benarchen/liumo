@@ -1,0 +1,166 @@
+{
+  "goal": "G1",
+  "plan": "goals/20261022-2046-p1-p2-remediation.md",
+  "verified_at_beijing": "2026-10-22 22:29",
+  "baseline_commit": "9031b7a",
+  "evidence_levels": {
+    "defect_reproduction": "constructed_history_ledger_and_real_renderer",
+    "logic_regressions": "constructed_inputs_and_fault_injection",
+    "existing_archive_audit": "real_readonly_local_files",
+    "recovery_drill": "real_archive_isolated_copy_offline",
+    "browser_regression": "local_constructed_pages_only"
+  },
+  "original_defect": {
+    "tests": 2,
+    "failures_before_fix": 2,
+    "cause": "complete rows filtered before artifact validation",
+    "assertion": "archiver expected once but called zero times",
+    "fixed_same_tests_pass": true
+  },
+  "tests": {
+    "integrity": 30,
+    "history": 5,
+    "full": 471,
+    "full_seconds": 45.249,
+    "full_skipped": 0,
+    "full_command": "LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v",
+    "post_full_change": "Only history subcommand help description and its assertion were added; integrity suite of 30 passed again.",
+    "first_isolated_full_attempt": {
+      "passed": false,
+      "reason": "isolated environment paths missing; sandbox browser and loopback restrictions",
+      "errors": 14,
+      "skipped": 10
+    },
+    "resolved_by": "Reuse existing project virtualenvs in isolated tree; platform-approved local regression execution; no dependency installation"
+  },
+  "readonly_audit": {
+    "status": "complete",
+    "scopes": [
+      {
+        "scope": "rss",
+        "status": "complete",
+        "counts": {
+          "intact": 2,
+          "missing": 0,
+          "corrupt": 0,
+          "unverifiable": 0
+        },
+        "checked": 2,
+        "baseline_count": 20,
+        "empty": false,
+        "reasons": []
+      },
+      {
+        "scope": "manual",
+        "status": "complete",
+        "counts": {
+          "intact": 2,
+          "missing": 0,
+          "corrupt": 0,
+          "unverifiable": 0
+        },
+        "checked": 2,
+        "baseline_count": 0,
+        "empty": false,
+        "reasons": []
+      },
+      {
+        "scope": "history",
+        "status": "complete",
+        "counts": {
+          "intact": 0,
+          "missing": 0,
+          "corrupt": 0,
+          "unverifiable": 0
+        },
+        "checked": 0,
+        "baseline_count": 0,
+        "empty": true,
+        "reasons": []
+      }
+    ]
+  },
+  "real_recovery": {
+    "evidence_level": "real_existing_archive_isolated_copy_offline",
+    "at": "2026-10-22T14:29:50.216923+00:00",
+    "scope": "rss",
+    "key": "683c401ed253dc2768653943",
+    "data_dir": "state/integrity-validation/20261022T142950-4de1d49f",
+    "archive_root": "archives/integrity-validation/20261022T142950-4de1d49f",
+    "source_files": {
+      "article.md": "09804f2e15f20d6ca95218d853b5d882f2dfbb2ecc34c5d1d51b6740ab791d2a",
+      "images/48859a3a720ac31478bee3de.png": "48859a3a720ac31478bee3de1a8a7bcaa1ebc197217d9d0a40058eb3778310c3",
+      "images/5f9882c19464d36a3df5ac3e.jpg": "5f9882c19464d36a3df5ac3e2b05dea684ca93eba0a59d64b37d5428eef40121",
+      "images/7c4abf97d54830d9e0ffb1c6.png": "7c4abf97d54830d9e0ffb1c6e6defa120f7d3b6fc8ad9247c93130b696f0b841",
+      "metadata.json": "79e973e0d89684bdf9c66e023456da5d1ec22c34dedca4d1192cb19470821f21"
+    },
+    "source_files_unchanged": true,
+    "source_database_unchanged": true,
+    "before": {
+      "intact": 1,
+      "missing": 0,
+      "corrupt": 0,
+      "unverifiable": 0
+    },
+    "damaged": {
+      "intact": 0,
+      "missing": 0,
+      "corrupt": 1,
+      "unverifiable": 0
+    },
+    "after": {
+      "intact": 1,
+      "missing": 0,
+      "corrupt": 0,
+      "unverifiable": 0
+    },
+    "repair_status": "complete",
+    "repeat_reused": true,
+    "network_requests": 0,
+    "markdown_matches_original": true,
+    "old_damaged_copy_retained": true,
+    "restored_output": "archives/integrity-validation/20261022T142950-4de1d49f/683c401ed253dc2768653943/20261022T142950-f0e9f9206688",
+    "image_references": 3,
+    "unique_images": 3
+  },
+  "boundaries": {
+    "formal_data_repair": false,
+    "new_wechat_requests": 0,
+    "new_dependencies": 0,
+    "system_scheduler_changes": false,
+    "git_commit_or_push": false,
+    "comments_or_screenshots_added": false,
+    "production_schema_changed": false
+  },
+  "limitations": [
+    "hashes validate local consistency, not original website completeness or authenticity",
+    "manual repair live network recovery not newly tested; local browser regressions and existing manual artifacts verified",
+    "no real history ledger exists locally; history fault and recovery tests use constructed inputs",
+    "history remains experimental pending G3; no annual coverage claim",
+    "backup goal removed from current scope by user on 2026-10-22; no disaster-recovery claim",
+    "manual images lack persisted URL mapping and are fetched again during repair"
+  ],
+  "source_sha256": {
+    "liumo/integrity.py": "4450b000dd7d229359fcba5d1a51a8f0b250fb85a924b853c7f3124fe643d704",
+    "liumo/repair.py": "d202500336cec08369863c8ac785d51c5dba7e2d1a2b23d8a88fd9a57bc851e4",
+    "liumo/history.py": "c99cf57453ad0444c48defbf889137accb968aba122c419fbe09087800d910e6",
+    "liumo/manual.py": "cecfb4426505699896e79be117ee73e2ccf73434dd67c4cdf4e2ca61e82e7683",
+    "liumo/store.py": "6784c1a55e43bae0b444ae1ed8f0745cb365783297085f1ef68c5fd4c0b5b50c",
+    "liumo/__main__.py": "842057a050b632f4dbec54b3bbb9151a30abb6b2182d5bb90ec0056e96ec7af9",
+    "tests/test_integrity.py": "07d6faa1fb02ed8a5a9ef908bf488f866bf89b2b2186250093a3e2d970c5b0cf",
+    "tests/test_history.py": "990d0c72d901b30354b6552bbd2a36fad6b112bbfbbd6520a0ec23d1126e24e6"
+  },
+  "cli_real_copy": {
+    "verify_exit": 0,
+    "repair_exit": 0,
+    "repair_reused": true,
+    "scope": "rss"
+  },
+  "documentation_checks": {
+    "documents": 6,
+    "local_links": 135,
+    "anchors": 5,
+    "roadmap_order_and_limits": true,
+    "g1_checkpoints_closed": 6
+  }
+}

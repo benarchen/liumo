@@ -1,0 +1,89 @@
+{
+  "goal": "G3",
+  "scope": "given RSS input and inclusive Shanghai date range; not annual inventory",
+  "real_evidence": {
+    "input": "previously fetched public RSS; exact bytes preserved in ignored state",
+    "source_sha256": "fe98201413c9805d94b4acff610e535921126fa2e0bee85712dd84b9ddb12145",
+    "input_items": 20,
+    "selected_dates": [
+      "2026-10-17",
+      "2026-10-18"
+    ],
+    "selected_complete": 2,
+    "artifacts": [
+      {
+        "key": "f4ead5d44ea029ecb19cc6df",
+        "markdown_sha256": "23b80d366a1d0f02736f20534b192a35d4bbde0de0c3c1764cb5fc968cd27210",
+        "images": 6,
+        "metadata_sha256": "ef2e9ffe0212743dc5a7e98713453c34c414ebe9dce91dab0091a636f7091171",
+        "integrity_status": "intact",
+        "previous_failed_outputs_retained": 1
+      },
+      {
+        "key": "8ec0c8bef2566628e0a3ae34",
+        "markdown_sha256": "cec0d0590df09d0ce2f77765def281811b3d40e0dbed3bc3934bafc13c1fff45",
+        "images": 5,
+        "metadata_sha256": "610e350979aef8b63e9dd0f3c73e2245b44661b48244d8aa14cb933f6eeab349",
+        "integrity_status": "intact",
+        "previous_failed_outputs_retained": 1
+      }
+    ],
+    "repeat_new_results": 0,
+    "repeat_image_requests": 0,
+    "processing_status": "complete",
+    "coverage_complete": false,
+    "formal_ledgers_unchanged": true,
+    "whole_ledger_verify": {
+      "status": "partial",
+      "intact": 2,
+      "outside_range_pending_without_output": 18,
+      "unindexed_prior_attempts": 2
+    }
+  },
+  "failures_and_resolution": [
+    "initial sandbox image fetch failed; not counted as success",
+    "authorized image requests exposed one rejected official WeChat emoji path per sample; both outputs partial",
+    "res.wx.qq.com official static Expression path narrowly allowed with regression; 2 missing image requests; all other images reused",
+    "initial smoke assertion incorrectly required whole-ledger complete despite 18 outside-range pending entries; corrected to inspect both selected artifacts",
+    "full suite after maturity update caught stale top-level help assertion; updated expectation without weakening coverage contract"
+  ],
+  "constructed_tests": {
+    "history_tests": 18,
+    "scenarios": [
+      "account/biz identity",
+      "Shanghai inclusive boundaries",
+      "leap day and invalid date",
+      "unknown/future time",
+      "all sources validate before persistence",
+      "cross-file duplicate and conflict",
+      "outside-range conflicts separate",
+      "retry budget and explicit retry",
+      "resume without feed fetch",
+      "window loss",
+      "limit and lock",
+      "CLI exit code",
+      "official emoji path boundary",
+      "G1 damage and interruption regressions"
+    ]
+  },
+  "limits": [
+    "no full historical inventory; no annual completeness claim",
+    "dates from RSS pubDate, not verified original times",
+    "real input is an older local source snapshot, not current online window"
+  ],
+  "source_sha256": {
+    "liumo/history.py": "b37fe9ef0cadadffae5c58252cb576756e5d2bd045eee48c33a2d93448d5afb7",
+    "liumo/rss.py": "fd997c8910e0ee7833b3934211721622b00e7d50c57b62cd105a57a521cc552a",
+    "liumo/__main__.py": "f2b4a762312b48a6ab93465b20ec137c1e8c232230c30035ccaa1bfd55bf6b55",
+    "tests/test_history.py": "7d9d88518d8b32eb08ee80a424c00ab3cc2ad8b5bb868844ef71f1be8ca1c5ee",
+    "tests/test_integrity.py": "ba12ce35d14ce3880842b03be6d1aad4bea8f2a53e241cf694a125d3547cffe2"
+  },
+  "accepted_at_shanghai": "2026-10-22 22:53",
+  "full_regression": {
+    "tests": 484,
+    "passed": 484,
+    "skipped": 0,
+    "seconds": 44.668,
+    "command": "LIUMO_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -v"
+  }
+}

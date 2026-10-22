@@ -10,7 +10,7 @@ from unittest.mock import patch
 from playwright.sync_api import sync_playwright
 
 from liumo.archive import snapshot
-from validation.common import ROOT
+from liumo.common import ROOT
 from test_mvp import NOW, item
 
 

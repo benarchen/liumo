@@ -11,7 +11,7 @@ from liumo.archive import publication
 from liumo.rss import BIZ, MVPError, canonical, parse_feed
 from liumo.runner import check, due, render_plist, run
 from liumo.store import Store
-from validation.common import ROOT
+from liumo.common import ROOT
 
 NOW = datetime.fromisoformat('2026-10-19T22:00:00+08:00')
 
@@ -211,7 +211,7 @@ class QueueTests(unittest.TestCase):
         self.assertTrue(self.store.get('article_blocked'))
 
     def test_cross_process_lock_blocks_overlapping_run(self):
-        from validation.state import exclusive
+        from liumo.common import exclusive
         with exclusive(self.path/'data/run.lock'), self.assertRaisesRegex(RuntimeError,'already_running'):
             run(self.path/'data',now=NOW,source=lambda:[item()])
 

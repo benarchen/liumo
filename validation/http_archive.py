@@ -1,5 +1,7 @@
 """HTTP body/images and an independent comment snapshot, never a fake screenshot."""
 
+from liumo.browser import literal
+
 import hashlib
 import json
 import re
@@ -18,16 +20,6 @@ from .http import ProbeError, WechatHTTP
 SAMPLE_ACCOUNTS = {"maobidao": "猫笔刀", "stormzhang": "stormzhang"}
 
 
-def literal(scripts, name):
-    # Only literal assignments/fields; no eval, JS execution or guessed decoding.
-    key = re.escape(name)
-    match = re.search(r"\b" + key + r"\s*(?:=|:)\s*['\"]([A-Za-z0-9+/=_-]+)['\"]", scripts)
-    if match:
-        return match[1]
-    match = re.search(r"\b" + key + r"\s*=\s*(\d+)\b", scripts)
-    if match:
-        return match[1]
-    return None
 
 
 def parse_article(html, url, account):

@@ -19,6 +19,15 @@ class MVPError(Exception):
     """Only fixed, locally defined reason codes may reach ordinary output."""
 
 
+def public_image_url(url):
+    p = urlsplit(url)
+    return (p.scheme == 'https' and not p.username and not p.password
+            and p.port in (None, 443) and not p.fragment
+            and ((p.hostname or '').endswith(('.qpic.cn', '.qlogo.cn'))
+                 or (p.netloc == 'res.wx.qq.com' and not p.query
+                     and re.fullmatch(r'/t/wx_fed/we-emoji/res/assets/Expression/Expression_[0-9]+@2x\.png', p.path))))
+
+
 def image_source(url):
     """Use the explicit Tencent image URL carried by the feed's public proxy URL.
 
@@ -32,8 +41,7 @@ def image_source(url):
             raise MVPError('image_proxy_url_rejected')
         url=q['u'][0]
         p=urlsplit(url)
-    if (p.scheme!='https' or p.username or p.password or p.port not in (None,443) or p.fragment
-            or not (p.hostname or '').endswith(('.qpic.cn','.qlogo.cn'))):
+    if not public_image_url(url):
         raise MVPError('image_source_rejected')
     return url
 
@@ -77,11 +85,9 @@ def read_public(url, limit=4 * 1024 * 1024):
         query = parse_qs(p.query)
         upstream = urlsplit(query.get('u',[''])[0])
         proxy_image = (set(query) == {'k','u'} and all(len(v)==1 for v in query.values())
-                       and upstream.scheme=='https' and not upstream.username and not upstream.password
-                       and upstream.port in (None,443) and not upstream.fragment
-                       and (upstream.hostname or '').endswith(('.qpic.cn','.qlogo.cn')))
+                       and public_image_url(query['u'][0]))
     if (p.scheme != 'https' or p.username or p.password or p.port not in (None, 443)
-            or p.fragment or not (public_feed_url(url) or proxy_image or host.endswith(('.qpic.cn', '.qlogo.cn')))):
+            or p.fragment or not (public_feed_url(url) or proxy_image or public_image_url(url))):
         raise MVPError('public_fetch_target_rejected')
     env = {k: v for k, v in os.environ.items() if k.upper() not in
            {'SSLKEYLOGFILE', 'CURL_CA_BUNDLE', 'SSL_CERT_FILE', 'SSL_CERT_DIR'}}

@@ -14,8 +14,8 @@ from urllib.parse import urlencode
 
 from liumo.manual import article_key, identity, normalize_url, save_article
 from liumo.rss import MVPError
-from validation.common import ROOT
-from validation.state import exclusive
+from liumo.common import ROOT
+from liumo.common import exclusive
 
 BIZ=base64.b64encode(b'3075446573').decode()
 SHORT='https://mp.weixin.qq.com/s/public_example'

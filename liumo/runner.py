@@ -5,10 +5,10 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from uuid import uuid4
 
-from validation.common import ROOT, timestamp, write_json
-from validation.notify import notify
-from validation.schedule import latest_slot, next_slot
-from validation.state import exclusive
+from .common import ROOT, timestamp, write_json
+from .notify import notify
+from .schedule import latest_slot, next_slot
+from .common import exclusive
 from .rss_archive import archive_rss as archive_article
 from .rss import MVPError, discover
 from .store import Store

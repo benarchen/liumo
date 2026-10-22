@@ -9,8 +9,8 @@ from pathlib import Path
 from uuid import uuid4
 from zoneinfo import ZoneInfo
 
-from validation.common import ROOT, write_json
-from validation.state import exclusive
+from .common import ROOT, write_json
+from .common import exclusive
 from .rss import ACCOUNT, BIZ, FEED, MVPError, parse_feed, public_feed_url, read_public
 from .rss_archive import archive_rss
 
@@ -63,22 +63,9 @@ def _signature(item):
     return tuple(item.get(k) for k in ('url', 'source_sha256', 'feed_time'))
 
 
-def verify_archive(output):
-    """Check the on-disk content referenced by a completed history task."""
-    try:
-        output = Path(output)
-        meta = json.loads((output/'metadata.json').read_text())
-        if meta['status'] != 'complete' or meta['archive_kind'] != 'rss_snapshot':
-            return False
-        files = [('article.md', meta['markdown_sha256'])]
-        files.extend((x['path'], x['sha256']) for x in meta['images'])
-        for relative, digest in files:
-            path = (output/relative).resolve()
-            if not path.is_relative_to(output.resolve()) or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
-                return False
-        return True
-    except (OSError, ValueError, KeyError, TypeError):
-        return False
+def verify_archive(output, *, root=None, key=None):
+    from .integrity import inspect_archive
+    return bool(output) and inspect_archive(output,root=root,key=key,kind='rss_snapshot')['integrity_status']=='intact'
 
 
 def import_history(account, start, end, *, biz=None, feed_url=None, rss_files=(),
@@ -155,38 +142,59 @@ def import_history(account, start, end, *, biz=None, feed_url=None, rss_files=()
             else:
                 matching.append(key)
         results = []
-        candidates = [key for key in matching if ledger['tasks'][key]['status'] != 'complete'
+        damaged = {key for key in matching if ledger['tasks'][key]['status']=='complete'
+                   and not verify_archive(ledger['tasks'][key].get('output'),root=archive_root,key=key)}
+        candidates = [key for key in matching if (ledger['tasks'][key]['status'] != 'complete' or (retry and key in damaged))
                       and not ledger['tasks'][key]['conflicts']
                       and (retry or ledger['tasks'][key]['attempts'] < 3)]
         candidates.sort(key=lambda key:(ledger['tasks'][key]['attempts'],
                                        ledger['tasks'][key]['item']['feed_time'], key))
         for key in candidates[:limit]:
             row = ledger['tasks'][key]
-            output = archive_root/key/(now.strftime('%Y%m%dT%H%M%S')+'-'+uuid4().hex[:12])
-            row.update(status='running', attempts=row['attempts']+1, output=str(output.resolve()))
+            from .integrity import KEY, safe_path
+            if not isinstance(key,str) or not KEY.fullmatch(key):
+                raise MVPError('history_key_invalid')
+            output = safe_path(archive_root,Path(key)/(now.strftime('%Y%m%dT%H%M%S')+'-'+uuid4().hex[:12]))
+            previous = row.get('output')
+            if previous:
+                row.setdefault('previous_outputs',[])
+                if previous not in row['previous_outputs']:
+                    row['previous_outputs'].append(previous)
+            row.update(status='running', attempts=row['attempts']+1)
+            row['attempt_output'] = str(output.resolve())
             write_json(path, ledger)
             origin = ledger['sources'][row['sources'][0]]
             selection = {'start':start, 'end':end, 'timezone':'Asia/Shanghai',
                          'date_basis':'rss_pubDate_unverified', 'source_sha256':origin['sha256']}
             try:
+                options = {}
+                if previous:
+                    from .repair import cached_images
+                    options['image_fetch'] = cached_images(row['item'],previous,archive_root)
                 result = archiver(row['item'], output, account=account, biz=config['biz'],
-                                  feed_source=origin['feed_url'] or origin['path'], history_selection=selection)
+                                  feed_source=origin['feed_url'] or origin['path'], history_selection=selection,**options)
+                if result.get('status')=='complete' and not verify_archive(output,root=archive_root,key=key):
+                    result = {'status':'partial','reasons':['history_post_write_integrity_failed']}
                 if result.get('status') not in ('complete', 'partial', 'failed', 'blocked'):
                     raise MVPError('invalid_archive_result')
             except Exception:
                 result = {'status':'failed', 'reasons':['history_archive_operation_failed']}
             row.update(status=result['status'], reasons=result.get('reasons', []))
+            if row['status']=='complete' or not previous:
+                row['output']=str(output.resolve())
             write_json(path, ledger)
-            results.append({'key':key, 'status':row['status'], 'output':row['output'], 'reasons':row['reasons']})
+            results.append({'key':key, 'status':row['status'], 'output':str(output.resolve()), 'reasons':row['reasons']})
             if row['status'] == 'blocked':
                 break
         complete = [key for key in matching if ledger['tasks'][key]['status'] == 'complete']
-        corrupt = [key for key in complete if not verify_archive(ledger['tasks'][key]['output'])]
-        conflicts = [key for key, row in ledger['tasks'].items() if row['conflicts']]
+        corrupt = [key for key in complete if not verify_archive(ledger['tasks'][key].get('output'),root=archive_root,key=key)]
+        conflicts = [key for key in matching if ledger['tasks'][key]['conflicts']]
+        outside_conflicts = [key for key, row in ledger['tasks'].items()
+                             if row['conflicts'] and key not in matching]
         times = [_feed_time(row['item']) for row in ledger['tasks'].values()]
         times = [value for value in times if value is not None]
         unfinished = [key for key in matching if ledger['tasks'][key]['status'] != 'complete']
-        report = {'status':'partial', 'account':account, 'biz':config['biz'],
+        report = {'status':'partial', 'maturity':'validated_rss_input', 'account':account, 'biz':config['biz'],
                   'request':{'start':start, 'end':end, 'timezone':'Asia/Shanghai', 'inclusive':True},
                   'date_basis':'rss_pubDate_unverified', 'original_times_verified':False,
                   'coverage':{'complete':False, 'reason':'source_inventory_not_verified',
@@ -198,6 +206,7 @@ def import_history(account, start, end, *, biz=None, feed_url=None, rss_files=()
                   'known_items':len(ledger['tasks']), 'matching':len(matching), 'outside_range':outside,
                   'complete':len(complete)-len(corrupt), 'unfinished':unfinished,
                   'unknown_time':unknown, 'future_time':future, 'source_conflicts':conflicts,
+                  'outside_selection_conflicts':outside_conflicts,
                   'archive_integrity_failed':corrupt, 'results':results,
                   'needs_manual_retry':[key for key in unfinished if ledger['tasks'][key]['attempts'] >= 3],
                   'ledger':str(path.resolve()), 'at':now.isoformat()}

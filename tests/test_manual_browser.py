@@ -10,7 +10,7 @@ from playwright.sync_api import sync_playwright
 
 from liumo.manual import capture_page, save_article
 from liumo.rss import MVPError
-from validation.common import ROOT
+from liumo.common import ROOT
 from test_manual import BIZ, LONG, SHORT, PNG
 
 

@@ -1,0 +1,5 @@
+# Optional manual-page/browser component. Uses installed Chrome; no browser download.
+-r requirements-core.txt
+playwright==1.64.0
+pyee==14.0.0
+greenlet==3.5.6

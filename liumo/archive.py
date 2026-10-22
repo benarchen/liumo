@@ -1,40 +1,18 @@
 """Original browser page, visible Markdown and local images; comments are excluded."""
 
+
 import hashlib
 import os
-import re
 import time
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
-from playwright.sync_api import sync_playwright
 
-from validation.archive import (BLOCK_MARKERS, image_node_observations, png_size,
-                                render_markdown, scroll_document, select_markdown_body)
-from validation.common import ROOT, timestamp, write_json
-from validation.http_archive import literal
+from .render import png_size, render_markdown
+from .browser import (BLOCK_MARKERS, image_node_observations, scroll_document,
+                      select_markdown_body, sync_playwright, publication, literal)
+from .common import ROOT, timestamp, write_json
 from .rss import ACCOUNT, BIZ, MVPError, read_public
-
-SHANGHAI = ZoneInfo('Asia/Shanghai')
-
-
-def publication(epoch, visible, now=None):
-    """Cross-check original epoch with the rendered calendar date/minute."""
-    try:
-        when = datetime.fromtimestamp(int(epoch), timezone.utc)
-        now = now or datetime.now(timezone.utc)
-        if not 946684800 <= int(epoch) <= int(now.timestamp()) + 300:
-            raise ValueError
-        local = when.astimezone(SHANGHAI)
-        match = re.search(r'(20\d{2})[年/-](\d{1,2})[月/-](\d{1,2})(?:日)?(?:\s+(\d{1,2}):(\d{2}))?', visible)
-        if not match or tuple(map(int, match.groups()[:3])) != (local.year, local.month, local.day):
-            raise ValueError
-        if match[4] and (int(match[4]), int(match[5])) != (local.hour, local.minute):
-            raise ValueError
-        return when.isoformat()
-    except (TypeError, ValueError, OverflowError, OSError):
-        raise MVPError('original_publication_time_unverified') from None
 
 
 def inspect_article(page, item):

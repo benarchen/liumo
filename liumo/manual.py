@@ -13,13 +13,12 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urlsplit, urlunsplit
 from uuid import uuid4
 
-from playwright.sync_api import sync_playwright
 
-from validation.archive import (image_node_observations, render_markdown,
-                                scroll_document, select_markdown_body)
-from validation.common import ROOT, timestamp, write_json
-from validation.state import exclusive
-from .archive import publication
+from .render import render_markdown
+from .browser import (image_node_observations, scroll_document,
+                      select_markdown_body, sync_playwright, publication)
+from .common import ROOT, timestamp, write_json
+from .common import exclusive
 from .rss import MVPError, read_image
 
 DATA = ROOT/'state/manual'
@@ -108,7 +107,9 @@ def capture_page(page, url):
 
 
 def _private_directory(path):
+    from .integrity import safe_path
     path=Path(path)
+    safe_path(path,path)
     if path.is_symlink() or path.parent.is_symlink():
         raise MVPError('manual_symlink_directory_rejected')
     path.mkdir(parents=True,exist_ok=True,mode=0o700)
@@ -193,33 +194,30 @@ def _artifact(root, relative):
 def _cached(root, relative):
     if not isinstance(relative,str):
         return None
+    from .integrity import inspect_archive, read_json
     try:
         output=_artifact(root,relative)
-        meta_path=output/'metadata.json'
-        if meta_path.is_symlink() or meta_path.stat().st_size>1024*1024:
+        if inspect_archive(output,root=root,kind='manual_page_snapshot')['integrity_status']!='intact':
             return None
-        result=json.loads(meta_path.read_text())
-        if result['status']!='complete':
-            return None
-        md=output/'article.md'
-        if md.is_symlink() or hashlib.sha256(md.read_bytes()).hexdigest()!=result['markdown_sha256']:
-            return None
-        for im in result['images']:
-            p=_artifact(output,im['path'])
-            if p.stat().st_size!=im['bytes'] or hashlib.sha256(p.read_bytes()).hexdigest()!=im['sha256']:
-                return None
-        return {**result,'output':str(output)}
+        return {**read_json(output/'metadata.json'),'output':str(output)}
     except (OSError,ValueError,KeyError,TypeError,MVPError):
         return None
 
 
 def save_article(url, *, refresh=False, headless=False, wait_seconds=180,
-                 data_dir=DATA, archive_root=ARCHIVES, loader=None, image_fetch=read_image):
-    url,expected=normalize_url(url)
+                 data_dir=DATA, archive_root=ARCHIVES, loader=None, image_fetch=read_image, repair_key=None):
+    if repair_key is not None:
+        if not isinstance(repair_key,str) or not re.fullmatch(r'[0-9a-f]{24}',repair_key):
+            raise MVPError('repair_key_invalid')
+        expected=None
+    else:
+        url,expected=normalize_url(url)
     if type(wait_seconds) is not int or not 0<=wait_seconds<=300:
         raise MVPError('manual_wait_out_of_range')
     data_dir,archive_root=Path(data_dir),Path(archive_root)
     _private_directory(data_dir);_private_directory(archive_root)
+    _artifact(data_dir,'run.lock')
+    _artifact(data_dir,'index.json.tmp')
     with exclusive(data_dir/'run.lock'):
         state_path=data_dir/'index.json'
         try:
@@ -230,7 +228,14 @@ def save_article(url, *, refresh=False, headless=False, wait_seconds=180,
                 raise ValueError
         except (OSError,ValueError,AttributeError):
             raise MVPError('manual_index_invalid') from None
-        known=article_key(expected) if expected else state['aliases'].get(url)
+        if repair_key is not None:
+            if repair_key not in state['articles']:
+                raise MVPError('repair_key_not_found')
+            candidates=sorted(alias for alias,key in state['aliases'].items() if key==repair_key)
+            if not candidates:
+                return {'status':'unrecoverable','key':repair_key,'reasons':['repair_source_unavailable']}
+            url,expected=normalize_url(candidates[0])
+        known=repair_key or (article_key(expected) if expected else state['aliases'].get(url))
         previous=_cached(archive_root,state['articles'].get(known))
         if previous and previous.get('key')!=known:
             previous=None
@@ -249,6 +254,8 @@ def save_article(url, *, refresh=False, headless=False, wait_seconds=180,
             if expected and expected!=actual:
                 raise MVPError('manual_article_identity_mismatch')
             key=article_key(actual)
+            if repair_key is not None and key!=repair_key:
+                raise MVPError('manual_article_identity_mismatch')
             previous=_cached(archive_root,state['articles'].get(key))
             if previous and previous.get('key')!=key:
                 previous=None
@@ -279,7 +286,14 @@ def save_article(url, *, refresh=False, headless=False, wait_seconds=180,
                 result.update(previous_output=previous['output'],body_changed=previous['body_sha256']!=result['body_sha256'])
             result['status']='partial' if result['reasons'] else 'complete'
             if result['status']=='complete':
-                state['articles'][key]=relative
+                from .integrity import inspect_archive
+                result['finished_at']=timestamp()
+                write_json(output/'metadata.json',result)
+                if inspect_archive(output,root=archive_root,key=key,kind='manual_page_snapshot')['integrity_status']!='intact':
+                    result['status']='partial'
+                    result['reasons'].append('manual_post_write_integrity_failed')
+                else:
+                    state['articles'][key]=relative
             write_json(state_path,state)
         except MVPError as exc:
             result['status']='blocked';result['reasons'].append(str(exc))

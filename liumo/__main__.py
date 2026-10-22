@@ -5,8 +5,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from validation.common import ROOT, timestamp
-from validation.state import exclusive
+from .common import ROOT, timestamp
+from .common import exclusive
 from .rss_archive import archive_rss
 from .rss import FEED, MVPError, discover
 from .runner import ARCHIVES, DATA, render_plist, run
@@ -22,7 +22,8 @@ def main():
     manual.add_argument('--headless', action='store_true', help='不显示浏览器，遇验证立即报告。')
     manual.add_argument('--wait-seconds', type=int, metavar='0..300', default=180,
                         help='有界面时等待正常验证的秒数，默认 180。')
-    history = sub.add_parser('history', help='按上海日期范围显式保存 RSS 历史快照。')
+    history = sub.add_parser('history', help='按上海日期保存给定 RSS 输入中的历史快照。',
+                             description='已验证给定 RSS 输入的处理能力；处理完成不代表来源或全年完整。')
     history.add_argument('--account', required=True, help='公众号名称，首个预置为猫笔刀。')
     history.add_argument('--biz', help='其他公众号必填的公开 __biz 身份。')
     history.add_argument('--start', required=True, help='起始日期 YYYY-MM-DD，包含当天。')
@@ -31,24 +32,38 @@ def main():
     source.add_argument('--feed-url', help='公开 Wechat2RSS XML 地址。猫笔刀可省略。')
     source.add_argument('--rss-file', type=Path, action='append', default=[], help='本地 RSS XML，可重复传入。')
     source.add_argument('--resume', action='store_true', help='只用已保存的本地输入续跑，不请求 RSS。')
-    history.add_argument('--retry', action='store_true', help='显式重试已达到 3 次的失败任务。')
+    history.add_argument('--retry', action='store_true', help='显式重试失败任务及文件已损坏的完成条目。')
     history.add_argument('--limit', type=int, choices=range(1, 101), default=20, help='本次最多处理篇数，默认 20。')
     history.add_argument('--data-dir', type=Path, help='历史任务本机状态目录。')
     history.add_argument('--archive-dir', type=Path, help='历史快照输出目录。')
-    for name in ('init', 'check', 'retry', 'tick', 'status', 'source', 'sample', 'page-sample', 'plist'):
+    for name in ('verify','repair'):
+        integrity = sub.add_parser(name,help='离线只读核验归档。' if name=='verify' else '显式修复单篇归档，保留旧快照。')
+        integrity.add_argument('--scope',choices=('rss','manual','history','all') if name=='verify' else ('rss','manual','history'),
+                               default='all' if name=='verify' else None,required=name=='repair')
+        integrity.add_argument('--data-dir',type=Path)
+        integrity.add_argument('--archive-dir',type=Path)
+        if name=='repair':
+            integrity.add_argument('--key',required=True)
+            integrity.add_argument('--headless',action='store_true')
+            integrity.add_argument('--wait-seconds',type=int,default=180)
+    for name in ('init', 'check', 'retry', 'tick', 'status', 'source', 'sample', 'plist'):
         cmd = sub.add_parser(name)
         if name in ('init', 'check', 'retry', 'tick', 'status', 'plist'):
             cmd.add_argument('--data-dir', type=Path, default=DATA)
         if name in ('check', 'retry', 'tick'):
             cmd.add_argument('--limit', type=int, choices=range(1, 6), default=3)
-        if name == 'page-sample':
-            cmd.add_argument('--headed', action='store_true')
-            cmd.add_argument('--wait-readable', action='store_true')
         if name == 'plist':
             cmd.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     try:
-        if args.command == 'save':
+        if args.command == 'verify':
+            from .integrity import verify
+            result = verify(args.scope,data_dir=args.data_dir,archive_root=args.archive_dir)
+        elif args.command == 'repair':
+            from .repair import repair
+            result = repair(args.scope,args.key,data_dir=args.data_dir,archive_root=args.archive_dir,
+                            headless=args.headless,wait_seconds=args.wait_seconds)
+        elif args.command == 'save':
             from .manual import save_article
             result = save_article(args.url, refresh=args.refresh, headless=args.headless,
                                   wait_seconds=args.wait_seconds)
@@ -62,15 +77,11 @@ def main():
             items = discover()
             result = {'status':'complete','feed':FEED,'items':[{k:v for k,v in x.items() if k!='body_html'} for x in items],
                       'original_times_verified':False}
-        elif args.command in ('sample','page-sample'):
+        elif args.command == 'sample':
             item = {**discover()[0],'first_seen_at':timestamp()}
             stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
             output = ROOT/'archives/mvp-samples'/stamp
-            if args.command == 'page-sample':
-                from .archive import archive_article
-                saved=archive_article(item,output,headed=args.headed,wait_readable=args.wait_readable)
-            else:
-                saved=archive_rss(item,output)
+            saved=archive_rss(item,output)
             result = {'output':str(output),'technical_sample_only':True,**saved}
         elif args.command == 'plist':
             result = render_plist(args.output, args.data_dir)

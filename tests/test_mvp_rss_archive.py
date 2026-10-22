@@ -14,7 +14,7 @@ from liumo.rss_archive import archive_rss
 from liumo.runner import run
 from liumo.store import Store
 from test_mvp import NOW, feed, item
-from validation.common import ROOT
+from liumo.common import ROOT
 
 PNG=base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl2nKsAAAAASUVORK5CYII=')
 

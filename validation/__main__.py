@@ -11,6 +11,9 @@ from .common import ROOT, SAMPLES, article_url, error_kind, parse_time, write_js
 def main():
     parser = argparse.ArgumentParser(description="留墨可行性验证，不启用正式订阅。")
     commands = parser.add_subparsers(dest="command", required=True)
+    page_sample = commands.add_parser("page-sample", help="历史原页诊断，不属于 RSS 产品验收。")
+    page_sample.add_argument('--headed', action='store_true')
+    page_sample.add_argument('--wait-readable', action='store_true')
     commands.add_parser("weread-plan", help="离线审阅两号发现请求、公开标识和待验证范围，不读取会话或联网。")
     commands.add_parser("certificate-scope-fixture", help="仅离线证书域名约束验证；使用 .venv-capture，不安装信任或访问微信。")
     commands.add_parser("anchor-scope-session", help="已单独授权的 C15 用户级临时信任对照；仅离线，最多 120 秒，无代理或微信请求。")
@@ -122,7 +125,16 @@ def main():
     notify_parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     try:
-        if args.command == "archive":
+        if args.command == 'page-sample':
+            from datetime import datetime, timezone
+            from liumo.archive import archive_article
+            from liumo.rss import discover
+            from liumo.common import timestamp
+            item = {**discover()[0], 'first_seen_at':timestamp()}
+            output = ROOT/'archives/mvp-samples'/datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+            result = {'output':str(output), 'technical_sample_only':True,
+                      **archive_article(item,output,headed=args.headed,wait_readable=args.wait_readable)}
+        elif args.command == "archive":
             if args.interactive and (not args.headed or not sys.stdin.isatty()):
                 raise ValueError("interactive_requires_headed_terminal")
             from .archive import archive

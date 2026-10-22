@@ -10,6 +10,10 @@
 
 项目已取消旧实验附加的逐轮授权和固定单次目录审批，按全局规则及用户明确授权范围执行；历史命令中的授权文件／固定目录检查仍是现有程序行为，尚未迁移，也不用于 V1。当前环境能力与调整边界见 [执行权限说明](/Users/chenge/project/liumo/docs/execution-permissions.md) 。
 
+## 2026-10-22 入口迁移
+
+当前正式共享实现位于 `liumo/`，旧验证模块保留兼容导入，单向引用正式实现。旧原页诊断入口已从 `python -m liumo page-sample` 迁到 `python -m validation page-sample`，仍是显式诊断，不进入 RSS 自动运行。核心／浏览器依赖和产品／浏览器／旧实验测试分组见 [开发说明](/Users/chenge/project/liumo/docs/development.md) 。下文保留当时使用记录，不能当作当前产品安装要求。
+
 ## 隔离环境
 
 本机已在 `.venv/` 安装固定版本依赖，使用现有 Google Chrome。重新创建环境时：

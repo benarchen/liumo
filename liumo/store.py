@@ -94,7 +94,7 @@ class Store:
         counts = dict(self.db.execute('SELECT status,count(*) FROM articles GROUP BY status').fetchall())
         recent = [dict(x) for x in self.db.execute('SELECT key,status,attempts,reason,output,published_at FROM articles WHERE status != ? ORDER BY observed_at DESC LIMIT 10', ('baseline',))]
         review = self.db.execute("SELECT count(*) FROM articles WHERE status='blocked' OR (status IN ('failed','partial','running') AND attempts>=3)").fetchone()[0]
-        return {'start_at':self.get('start_at'),'last_feed_success':self.get('last_feed_success'),
+        return {'integrity_checked':False,'status_basis':'task_ledger','start_at':self.get('start_at'),'last_feed_success':self.get('last_feed_success'),
                 'last_attempt':self.get('last_attempt'),'last_outcome':self.get('last_outcome'),
                 'next_retry_at':self.get('next_retry_at'),'feed_issues':self.get('feed_issues', []),
                 'source_changed_keys':self.get('source_changed_keys', []),

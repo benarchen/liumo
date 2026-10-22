@@ -1,0 +1,6 @@
+# RSS, history, integrity and injected manual-page tests; no browser required.
+beautifulsoup4==4.15.0
+markdownify==1.2.3
+six==1.17.0
+soupsieve==3.0.3
+typing_extensions==4.16.0

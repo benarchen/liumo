@@ -1,12 +1,12 @@
 """Local artifacts and credential-safe summaries."""
 
+from liumo.common import timestamp, parse_time, public_content_link, write_json, error_kind
+
 import hashlib
-import json
-import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import parse_qs, parse_qsl, urlencode, urlsplit, urlunsplit
+from urllib.parse import parse_qs, urlencode, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLES = {
@@ -15,15 +15,8 @@ SAMPLES = {
 }
 
 
-def timestamp():
-    return datetime.now(timezone.utc).isoformat()
 
 
-def parse_time(value):
-    result = datetime.fromisoformat(value.replace("Z", "+00:00"))
-    if result.tzinfo is None:
-        raise ValueError("timezone_required")
-    return result.astimezone(timezone.utc)
 
 
 def article_url(value):
@@ -50,15 +43,6 @@ def article_key(value, stable_id=None, account=None):
     return hashlib.sha256(raw.encode()).hexdigest()[:24]
 
 
-def public_content_link(value):
-    """Remove WeChat session query fields before links enter an archive."""
-    parts = urlsplit(value)
-    if parts.hostname == "mp.weixin.qq.com":
-        private = {"uin", "key", "pass_ticket", "appmsg_token", "wap_sid2", "wxtoken", "poc_token"}
-        query = [(key, item) for key, item in parse_qsl(parts.query, keep_blank_values=True)
-                 if key.lower() not in private]
-        return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
-    return value
 
 
 def new_run(name):
@@ -67,22 +51,3 @@ def new_run(name):
     path = base / (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ-") + name)
     path.mkdir(mode=0o700)
     return path
-
-
-def write_json(path, data):
-    """Atomic local update; callers use a process lock for shared state."""
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(path.name + ".tmp")
-    with temporary.open("w", encoding="utf-8") as stream:
-        json.dump(data, stream, ensure_ascii=False, indent=2)
-        stream.write("\n")
-        stream.flush()
-        os.fsync(stream.fileno())
-    temporary.replace(path)
-
-
-def error_kind(error):
-    # Exception strings may contain response URLs or headers. Never persist them.
-    name = type(error).__name__
-    return "timeout" if "Timeout" in name else name
