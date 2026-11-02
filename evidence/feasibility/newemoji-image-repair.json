@@ -1,0 +1,78 @@
+{
+  "at_shanghai": "2026-10-25 02:20",
+  "article_key": "44b91f3d58a1b4460fa2a180",
+  "title": "肾结石都震碎了",
+  "root_cause": {
+    "reason": "image_source_rejected",
+    "host": "res.wx.qq.com",
+    "path": "/t/wx_fed/we-emoji/res/assets/newemoji/Lol.png",
+    "previous_allowlist": "Expression/Expression_[0-9]+@2x.png only"
+  },
+  "change": "allow only PNG basenames in the same host official emoji newemoji directory; reject query, fragment, userinfo, other paths or hosts; preserve TLS and no redirects",
+  "before_regression": {
+    "tests": 10,
+    "failures": 1,
+    "reason": "newemoji sample remained partial with image_source_rejected"
+  },
+  "after_regression": {
+    "tests": 10,
+    "passed": 10,
+    "full_tests": 493,
+    "full_passed": 493,
+    "full_skipped": 0,
+    "full_seconds": 46.543
+  },
+  "real_repair": {
+    "status": "complete",
+    "previous_status": "partial",
+    "attempts_before": 3,
+    "attempts_after": 4,
+    "missing_image_requests": [
+      {
+        "host": "res.wx.qq.com",
+        "path": "/t/wx_fed/we-emoji/res/assets/newemoji/Lol.png",
+        "bytes": 5293,
+        "sha256": "455d5d76c2fce45335650838f07eb00672eae88a1e7673ef6010cd7ecc948b7a"
+      }
+    ],
+    "other_articles_unchanged": true,
+    "source_and_schedule_meta_unchanged": true,
+    "old_files_unchanged": true,
+    "old_files_checked": 21,
+    "first_observed_at_unchanged": true,
+    "images": 6,
+    "markdown_sha256": "ad4cefb17ae1aaa6b2723ba8e5dda798828982d962aef0be266c8b0e2db4d4bc"
+  },
+  "integrity": {
+    "integrity_status": "intact",
+    "reasons": [],
+    "checked_files": 7
+  },
+  "new_image_dimensions": [
+    128,
+    128
+  ],
+  "repeat_cli": {
+    "status": "complete",
+    "reused": true
+  },
+  "formal_archive_counts": {
+    "rss_complete": 4,
+    "manual_complete": 2,
+    "unique_complete_articles": 5,
+    "duplicate_between_scopes": 1
+  },
+  "old_attempts": "three previous partial outputs retained; verifier lists them as unindexed, not corrupt current archives",
+  "boundaries": {
+    "new_rss_fetch": false,
+    "new_image_downloads": 1,
+    "credentials_read": false,
+    "system_changes": false,
+    "git_commit_or_push": false,
+    "automatic_attempt_budget_changed": false
+  },
+  "source_sha256": {
+    "liumo/rss.py": "8ef6ca2bbdf69f9ee3794522b4e9285e5415c86d203f22f3756b8068b18b08a0",
+    "tests/test_mvp_rss_archive.py": "51428293c6e24a71f0c35351d5acc791a6c6c28a5f8d570a088408d9f758ef53"
+  }
+}

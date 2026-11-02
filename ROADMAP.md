@@ -2,6 +2,7 @@
 
 ## 当前状态
 
+- 2026-10-25 02:20：修复 RSS 表情图 newemoji 路径误拒绝，显式恢复《肾结石都震碎了》；正文及 6 张本地图核验完整。正式 RSS 4 份、手动 2 份，跨入口去重后 5 篇完整文章；原 3 次部分快照保留为旧尝试。[修复证据](/Users/chenge/project/liumo/evidence/feasibility/newemoji-image-repair.json) 。
 - 2026-10-22 23:18：用户授权发布当前整改工程版本，标签采用 remediation-20261022：dev 提交后 main 快进集成，推送两个分支与附注标签。范围与实际引用核对方式见 [版本管理说明](/Users/chenge/project/liumo/docs/version-control.md#2026-10-22-p1p2-整改版本) 。
 - 2026-10-22 23:09：G1、G3、G4 均已完成并按当前范围结项，R1／R2／R3／R5／R6／R7 验收通过；G2 已按用户指令移出。给定 RSS 历史处理与全年来源覆盖分别判断。[结项报告](/Users/chenge/project/liumo/docs/p1-p2-remediation-closeout.md) 、[施工回执](/Users/chenge/project/liumo/goals/20261022-2046-p1-p2-remediation.md) 。
 - 2026-10-22 20:18：按用户指令准备提交整个 `dev` 工程工作区，包含已验收手动归档和未完成历史导入实现；完整 436 项回归通过、无跳过，公开候选检查通过。集成采用 `main --ff-only`，附注标签为 `snapshot-20261022`；实际提交、推送结果以 Git 引用为准。历史任务不因版本化升级为已完成。[快照范围](/Users/chenge/project/liumo/docs/version-control.md#2026-10-22-工作区快照) 。
@@ -44,6 +45,8 @@
 
 ## 最近完成
 
+- 2026-11-02 21:48：按用户指令准备提交并推送当前 `dev` 工作区，纳入 RSS newemoji 图片路径修复、回归测试、说明与脱敏证据；同时将旧路线评审中不可用的本机原文链接改为来源说明，保留既有证据索引。实际提交与远端同步结果以 Git 引用为准。
+- 2026-10-25 02:20：限定允许同一微信 CDN 的 newemoji PNG 静态路径，补取 1 张缺失表情图，将目标文章从 partial 恢复为 complete。其余 5 张配图复用，21 个旧文件、首次发现时间、其他文章及来源／门控元数据不变；未改自动重试预算。[说明](/Users/chenge/project/liumo/docs/archive-integrity.md) 。
 - 2026-10-22 23:18：同步整改工程版本范围、附注标签及公开边界说明；保留 G1／G3／G4 的验收状态与全年覆盖限制，不改运行代码或本机数据。
 - 2026-10-22 23:09：G4 完成正式共享模块归属、延迟加载浏览器、依赖分组、新核心环境、分层质量入口及文档收敛；旧诊断迁至 validation page-sample，未改正式数据格式、调度或 Git。[开发说明](/Users/chenge/project/liumo/docs/development.md) 。
 - 2026-10-22 22:53：G3 完成日期／身份／冲突／重试／续跑专项，修复跨范围冲突和官方表情路径；两篇真实隔离归档、11 条配图记录及重复去重通过。[用法](/Users/chenge/project/liumo/docs/history-import.md) 。
@@ -66,13 +69,12 @@
 
 - 2026-10-19 21:42：作废项目附加重复审批条款，精简 AGENTS 并保留历史存档，同步 README 和 V1 清单；运行代码、用户配置、凭证、系统设置与 Goal 生命周期均未改。[说明](/Users/chenge/project/liumo/docs/execution-permissions.md) 。
 
-- 2026-10-19 21:25：完成 Workbuddy 路线评审及 V1 范围同步，按用户指定新增 goal/ 施工清单；停止评论系统实验主线，未改运行代码、未发微信请求，来源与整图仍待验。[评审](/Users/chenge/project/liumo/docs/route-review-20261019.md) 、[施工清单](/Users/chenge/project/liumo/goal/20261019-2121-v1-auto-follow.md) 。
-
-- 2026-10-19 08:06：离线容量复核交付：55 段构造 JS、3493944／4194304 字节在 20 万节点均失败，候选 8388608 上限各完成，耗时 0.677／0.788 秒、退出 0；源码／超时／old-space 边界保持，运行时上限未改。RSS 计量因 sysctl 权限不可用，明确未验证；真实脚本容量及评论仍未知。新增可复现构造程序，完整回归 355 项为 351 通过、4 跳过。建议下一轮受控保留一份本机私有 HTML，扩大仅内存范围需用户决策，尚未实现或创建新授权／目录。[对比证据](/Users/chenge/project/liumo/evidence/feasibility/parser-capacity.json) 、[待决方案](/Users/chenge/project/liumo/docs/inline-script-validation.md#下一轮证据保留方式待用户决策) 。
 
 
 ## 最近验证
 
+- 2026-11-02 21:48：提交前显式启用本地浏览器的完整回归 493 项全部通过、无跳过，49.122 秒；首轮沙盒限制导致的浏览器失败与回环跳过不计为通过，通过正式权限机制重跑后通过。语法／导入边界／文档链接及 `git diff --check` 通过；6 份公开候选无受保护路径或强特征秘密命中，8 类本机路径忽略核对通过，实现与测试哈希匹配既有修复证据；获取远端后 `dev` 无分叉。
+- 2026-10-25 02:20：先复现新表情路径失败断言，再通过 10 项 RSS 专项与 493 项完整回归，无跳过，46.543 秒；新增表情图 5293 字节、128×128，目标正文及 6 图 intact，CLI 重复修复 reused。当前 6 份正式快照均 intact，跨入口去重 5 篇；保留的 3 个旧失败尝试单列未索引。文档／边界／语法及 diff 检查通过。[证据](/Users/chenge/project/liumo/evidence/feasibility/newemoji-image-repair.json) 。
 - 2026-10-22 23:18：提交前获取远端后 main／dev 均无分叉；22 份实现／测试／依赖哈希与 491 项通过证据一致。238 份工程候选无受保护路径、强特征秘密扫描无命中，8 类忽略路径核对通过；文档与 diff 检查通过。
 - 2026-10-22 23:09：最终质量入口 491 项全部通过、无跳过，45.077 秒：产品 108／浏览器 11／旧实验 372。新核心 venv 108 项及 pip check 通过；正式 RSS 2 篇、手动 2 篇只读 intact；17 个共享函数 AST 及构造输出兼容，语法／导入边界／文档和 diff 检查通过。[证据](/Users/chenge/project/liumo/evidence/feasibility/engineering-consolidation.json) 。
 - 2026-10-22 22:53：G3 专项 18 项、完整回归 484 项通过，无跳过，44.668 秒；两篇选中快照 intact，整账本含范围外待办仍为 partial。正式账本未改。
@@ -92,7 +94,3 @@
 
 - 2026-10-19 22:22：真实正常网页操作：猫笔刀显示「电子书」及全文提及书籍 1210，stormzhang 显示全文提及书籍 2；这些不是文章数。未进入两号文章列表，无多篇／翻页通过证据。未改产品代码，不重复旧完整回归。[证据](/Users/chenge/project/liumo/evidence/feasibility/weread-normal-pages.json) 。
 - 2026-10-19 22:09：完整 372 项为 368 通过、4 跳过；正式授权 HTTPS 200／TLS 0 及无账号 Chrome 本地渲染通过。两号首轮各 -2012，会话变化后猫笔刀 -2041，共 3 次列表／0 篇；公开猫笔刀 RSS 20 个不同原链接，时间／覆盖未验。[真实证据](/Users/chenge/project/liumo/evidence/feasibility/v1-source-live.json) 。
-
-- 2026-10-19 21:54：完整回归 368 项为 364 通过、4 跳过，13 项新增来源回归通过；weread-plan 离线输出两号候选及请求边界。一次标准提权申请在执行前被策略拒绝，不算连通性测试；未重复旧系统实验。[证据](/Users/chenge/project/liumo/evidence/feasibility/weread-discovery-preparation.json) 。
-
-- 2026-10-19 21:42：权限能力核对：工作区读写通过；无凭证公开 HEAD 两站均 curl 6／HTTP 0，回环绑定 errno 1，隔离浏览器 TargetClosedError；CLI 0.163.0，用户配置已有 auto_review。未取得账号／微信接口通过证据，不把 TLS 数值 0 当握手成功；文档结构、链接及记录顺序检查通过。[证据](/Users/chenge/project/liumo/evidence/feasibility/permission-policy-update.json) 。

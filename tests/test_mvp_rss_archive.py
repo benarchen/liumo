@@ -70,6 +70,36 @@ class RSSArchiveTests(unittest.TestCase):
                     'https://wechat2rss.xlab.app/img-proxy/?'+urlencode({'k':'public','u':'https://127.0.0.1/x'})]:
             with self.subTest(url=bad),self.assertRaises(MVPError): image_source(bad)
 
+    def test_newemoji_static_image_is_archived_from_explicit_upstream(self):
+        from liumo.rss import read_image
+        from subprocess import CompletedProcess
+        upstream='https://res.wx.qq.com/t/wx_fed/we-emoji/res/assets/newemoji/Lol.png'
+        proxy='https://wechat2rss.xlab.app/img-proxy/?'+urlencode({'k':'public','u':upstream})
+        sample={**self.sample(),'body_html':f'<p>构造正文</p><img src="{proxy}">'}
+        with patch('liumo.rss.subprocess.run',return_value=CompletedProcess([],0,PNG+b'\n200',b'')) as transport:
+            result=archive_rss(sample,self.path/'newemoji',image_fetch=read_image)
+        self.assertEqual(result['status'],'complete',result)
+        transport.assert_called_once()
+        args=transport.call_args.args[0]
+        self.assertEqual(args[-1],upstream)
+        self.assertIn('--no-insecure',args)
+        self.assertIn('--no-location',args)
+        self.assertNotIn('wechat2rss.xlab.app',' '.join(args))
+        self.assertEqual((self.path/'newemoji'/result['images'][0]['path']).read_bytes(),PNG)
+
+    def test_newemoji_allowlist_rejects_other_hosts_paths_and_private_urls(self):
+        upstream='https://res.wx.qq.com/t/wx_fed/we-emoji/res/assets/newemoji/Lol.png'
+        for bad in [upstream.replace('https:','http:'),upstream+'?token=secret',upstream+'#fragment',
+                    upstream.replace('res.wx.qq.com','res.wx.qq.com.evil.test'),
+                    upstream.replace('res.wx.qq.com','user@res.wx.qq.com'),
+                    upstream.replace('/Lol.png','/../Lol.png'),
+                    upstream.replace('/Lol.png','/%2e%2e%2fLol.png'),
+                    upstream.replace('/Lol.png','/nested/Lol.png'),
+                    upstream.replace('/Lol.png','/Lol.svg'),
+                    upstream.replace('/newemoji/','/unknown/'),
+                    upstream.replace('res.wx.qq.com','res.wx.qq.com:444')]:
+            with self.subTest(url=bad),self.assertRaises(MVPError):image_source(bad)
+
     def test_encoded_content_preferred_and_scripts_forms_hidden_removed(self):
         data=feed([item()]).replace(b'<rss>',b'<rss xmlns:content="http://purl.org/rss/1.0/modules/content/">')
         content='<p>完整正文</p><script>secret_script()</script><form>隐藏操作</form><div hidden>隐藏内容</div>'

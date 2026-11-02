@@ -50,6 +50,8 @@
 - 回执的 `body_changed` 比较新旧可用 RSS 正文指纹；旧指纹不足时为 `null`。新快照不等于逐字恢复当初原文，尤其手动入口的原文可能已经变化。无可用来源、网络／图片失败或写盘失败都不能提前标完整。
 - 修复不会通知、补导基线、推进来源检查位置或改变其他 scope。自动追更的暂停状态不会被修复命令清除；仍需按原有流程处理来源拒绝。
 
+若元数据记录 `image_source_rejected`，先核对 RSS 明示的上游地址和路径，再决定是否修正规则；重复下载不会改变地址被拒绝的结果。当前允许的微信静态表情限定于 `res.wx.qq.com/t/wx_fed/we-emoji/res/assets/` 下的 `Expression/Expression_<数字>@2x.png` 和 `newemoji/<受限文件名>.png`，不开放整个主机；后者不允许目录层级、查询参数、片段或其他格式。保持 HTTPS、TLS 验证和禁止重定向，沿用既有普通配图规则。实际修复与回归见 [表情图恢复证据](/Users/chenge/project/liumo/evidence/feasibility/newemoji-image-repair.json) 。
+
 `history --retry` 另已修复：候选筛选前检查已完成快照，显式重试纳入损坏项；无 `--retry` 时只报告损坏。成功结果必须经过实际文件校验；原目录保留，失败后的任务仍可重试。history 的帮助与回执保持 `experimental`，不代表历史模块专项验收或全年来源完整。
 
 ## 复现与证据

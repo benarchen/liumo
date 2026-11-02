@@ -25,7 +25,7 @@ def public_image_url(url):
             and p.port in (None, 443) and not p.fragment
             and ((p.hostname or '').endswith(('.qpic.cn', '.qlogo.cn'))
                  or (p.netloc == 'res.wx.qq.com' and not p.query
-                     and re.fullmatch(r'/t/wx_fed/we-emoji/res/assets/Expression/Expression_[0-9]+@2x\.png', p.path))))
+                     and re.fullmatch(r'/t/wx_fed/we-emoji/res/assets/(?:Expression/Expression_[0-9]+@2x|newemoji/[A-Za-z][A-Za-z0-9_]{0,63})\.png', p.path))))
 
 
 def image_source(url):
